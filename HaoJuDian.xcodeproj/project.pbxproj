@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05BF1A541D2BEBB60095E18A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1A531D2BEBB60095E18A /* main.m */; };
+		05BF1A571D2BEBB60095E18A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1A561D2BEBB60095E18A /* AppDelegate.m */; };
+		05BF1A5A1D2BEBB60095E18A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1A591D2BEBB60095E18A /* ViewController.m */; };
+		05BF1A5D1D2BEBB60095E18A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05BF1A5B1D2BEBB60095E18A /* Main.storyboard */; };
+		05BF1A5F1D2BEBB60095E18A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05BF1A5E1D2BEBB60095E18A /* Assets.xcassets */; };
+		05BF1A621D2BEBB60095E18A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05BF1A601D2BEBB60095E18A /* LaunchScreen.storyboard */; };
+		05BF1A6D1D2BEBB60095E18A /* HaoJuDianTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1A6C1D2BEBB60095E18A /* HaoJuDianTests.m */; };
+		05BF1A781D2BEBB60095E18A /* HaoJuDianUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1A771D2BEBB60095E18A /* HaoJuDianUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		05BF1A691D2BEBB60095E18A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05BF1A471D2BEBB60095E18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05BF1A4E1D2BEBB60095E18A;
+			remoteInfo = HaoJuDian;
+		};
+		05BF1A741D2BEBB60095E18A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05BF1A471D2BEBB60095E18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05BF1A4E1D2BEBB60095E18A;
+			remoteInfo = HaoJuDian;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05BF1A4F1D2BEBB60095E18A /* HaoJuDian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaoJuDian.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05BF1A531D2BEBB60095E18A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		05BF1A551D2BEBB60095E18A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		05BF1A561D2BEBB60095E18A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		05BF1A581D2BEBB60095E18A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		05BF1A591D2BEBB60095E18A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		05BF1A5C1D2BEBB60095E18A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		05BF1A5E1D2BEBB60095E18A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		05BF1A611D2BEBB60095E18A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		05BF1A631D2BEBB60095E18A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05BF1A681D2BEBB60095E18A /* HaoJuDianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HaoJuDianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		05BF1A6C1D2BEBB60095E18A /* HaoJuDianTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaoJuDianTests.m; sourceTree = "<group>"; };
+		05BF1A6E1D2BEBB60095E18A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05BF1A731D2BEBB60095E18A /* HaoJuDianUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HaoJuDianUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		05BF1A771D2BEBB60095E18A /* HaoJuDianUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaoJuDianUITests.m; sourceTree = "<group>"; };
+		05BF1A791D2BEBB60095E18A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		05BF1A4C1D2BEBB60095E18A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05BF1A651D2BEBB60095E18A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05BF1A701D2BEBB60095E18A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05BF1A461D2BEBB60095E18A = {
+			isa = PBXGroup;
+			children = (
+				05BF1A511D2BEBB60095E18A /* HaoJuDian */,
+				05BF1A6B1D2BEBB60095E18A /* HaoJuDianTests */,
+				05BF1A761D2BEBB60095E18A /* HaoJuDianUITests */,
+				05BF1A501D2BEBB60095E18A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		05BF1A501D2BEBB60095E18A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				05BF1A4F1D2BEBB60095E18A /* HaoJuDian.app */,
+				05BF1A681D2BEBB60095E18A /* HaoJuDianTests.xctest */,
+				05BF1A731D2BEBB60095E18A /* HaoJuDianUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		05BF1A511D2BEBB60095E18A /* HaoJuDian */ = {
+			isa = PBXGroup;
+			children = (
+				05BF1A551D2BEBB60095E18A /* AppDelegate.h */,
+				05BF1A561D2BEBB60095E18A /* AppDelegate.m */,
+				05BF1A581D2BEBB60095E18A /* ViewController.h */,
+				05BF1A591D2BEBB60095E18A /* ViewController.m */,
+				05BF1A5B1D2BEBB60095E18A /* Main.storyboard */,
+				05BF1A5E1D2BEBB60095E18A /* Assets.xcassets */,
+				05BF1A601D2BEBB60095E18A /* LaunchScreen.storyboard */,
+				05BF1A631D2BEBB60095E18A /* Info.plist */,
+				05BF1A521D2BEBB60095E18A /* Supporting Files */,
+			);
+			path = HaoJuDian;
+			sourceTree = "<group>";
+		};
+		05BF1A521D2BEBB60095E18A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				05BF1A531D2BEBB60095E18A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		05BF1A6B1D2BEBB60095E18A /* HaoJuDianTests */ = {
+			isa = PBXGroup;
+			children = (
+				05BF1A6C1D2BEBB60095E18A /* HaoJuDianTests.m */,
+				05BF1A6E1D2BEBB60095E18A /* Info.plist */,
+			);
+			path = HaoJuDianTests;
+			sourceTree = "<group>";
+		};
+		05BF1A761D2BEBB60095E18A /* HaoJuDianUITests */ = {
+			isa = PBXGroup;
+			children = (
+				05BF1A771D2BEBB60095E18A /* HaoJuDianUITests.m */,
+				05BF1A791D2BEBB60095E18A /* Info.plist */,
+			);
+			path = HaoJuDianUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		05BF1A4E1D2BEBB60095E18A /* HaoJuDian */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05BF1A7C1D2BEBB60095E18A /* Build configuration list for PBXNativeTarget "HaoJuDian" */;
+			buildPhases = (
+				05BF1A4B1D2BEBB60095E18A /* Sources */,
+				05BF1A4C1D2BEBB60095E18A /* Frameworks */,
+				05BF1A4D1D2BEBB60095E18A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HaoJuDian;
+			productName = HaoJuDian;
+			productReference = 05BF1A4F1D2BEBB60095E18A /* HaoJuDian.app */;
+			productType = "com.apple.product-type.application";
+		};
+		05BF1A671D2BEBB60095E18A /* HaoJuDianTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05BF1A7F1D2BEBB60095E18A /* Build configuration list for PBXNativeTarget "HaoJuDianTests" */;
+			buildPhases = (
+				05BF1A641D2BEBB60095E18A /* Sources */,
+				05BF1A651D2BEBB60095E18A /* Frameworks */,
+				05BF1A661D2BEBB60095E18A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05BF1A6A1D2BEBB60095E18A /* PBXTargetDependency */,
+			);
+			name = HaoJuDianTests;
+			productName = HaoJuDianTests;
+			productReference = 05BF1A681D2BEBB60095E18A /* HaoJuDianTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		05BF1A721D2BEBB60095E18A /* HaoJuDianUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05BF1A821D2BEBB60095E18A /* Build configuration list for PBXNativeTarget "HaoJuDianUITests" */;
+			buildPhases = (
+				05BF1A6F1D2BEBB60095E18A /* Sources */,
+				05BF1A701D2BEBB60095E18A /* Frameworks */,
+				05BF1A711D2BEBB60095E18A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05BF1A751D2BEBB60095E18A /* PBXTargetDependency */,
+			);
+			name = HaoJuDianUITests;
+			productName = HaoJuDianUITests;
+			productReference = 05BF1A731D2BEBB60095E18A /* HaoJuDianUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		05BF1A471D2BEBB60095E18A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "陈义德";
+				TargetAttributes = {
+					05BF1A4E1D2BEBB60095E18A = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = F76X23Q8KN;
+					};
+					05BF1A671D2BEBB60095E18A = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = F76X23Q8KN;
+						TestTargetID = 05BF1A4E1D2BEBB60095E18A;
+					};
+					05BF1A721D2BEBB60095E18A = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = F76X23Q8KN;
+						TestTargetID = 05BF1A4E1D2BEBB60095E18A;
+					};
+				};
+			};
+			buildConfigurationList = 05BF1A4A1D2BEBB60095E18A /* Build configuration list for PBXProject "HaoJuDian" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 05BF1A461D2BEBB60095E18A;
+			productRefGroup = 05BF1A501D2BEBB60095E18A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				05BF1A4E1D2BEBB60095E18A /* HaoJuDian */,
+				05BF1A671D2BEBB60095E18A /* HaoJuDianTests */,
+				05BF1A721D2BEBB60095E18A /* HaoJuDianUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		05BF1A4D1D2BEBB60095E18A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05BF1A621D2BEBB60095E18A /* LaunchScreen.storyboard in Resources */,
+				05BF1A5F1D2BEBB60095E18A /* Assets.xcassets in Resources */,
+				05BF1A5D1D2BEBB60095E18A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05BF1A661D2BEBB60095E18A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05BF1A711D2BEBB60095E18A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05BF1A4B1D2BEBB60095E18A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05BF1A5A1D2BEBB60095E18A /* ViewController.m in Sources */,
+				05BF1A571D2BEBB60095E18A /* AppDelegate.m in Sources */,
+				05BF1A541D2BEBB60095E18A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05BF1A641D2BEBB60095E18A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05BF1A6D1D2BEBB60095E18A /* HaoJuDianTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05BF1A6F1D2BEBB60095E18A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05BF1A781D2BEBB60095E18A /* HaoJuDianUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05BF1A6A1D2BEBB60095E18A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05BF1A4E1D2BEBB60095E18A /* HaoJuDian */;
+			targetProxy = 05BF1A691D2BEBB60095E18A /* PBXContainerItemProxy */;
+		};
+		05BF1A751D2BEBB60095E18A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05BF1A4E1D2BEBB60095E18A /* HaoJuDian */;
+			targetProxy = 05BF1A741D2BEBB60095E18A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		05BF1A5B1D2BEBB60095E18A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05BF1A5C1D2BEBB60095E18A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		05BF1A601D2BEBB60095E18A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05BF1A611D2BEBB60095E18A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		05BF1A7A1D2BEBB60095E18A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		05BF1A7B1D2BEBB60095E18A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		05BF1A7D1D2BEBB60095E18A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HaoJuDian/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CYD.HaoJuDian;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		05BF1A7E1D2BEBB60095E18A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HaoJuDian/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CYD.HaoJuDian;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		05BF1A801D2BEBB60095E18A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HaoJuDianTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CYD.HaoJuDianTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HaoJuDian.app/HaoJuDian";
+			};
+			name = Debug;
+		};
+		05BF1A811D2BEBB60095E18A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HaoJuDianTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CYD.HaoJuDianTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HaoJuDian.app/HaoJuDian";
+			};
+			name = Release;
+		};
+		05BF1A831D2BEBB60095E18A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HaoJuDianUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CYD.HaoJuDianUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HaoJuDian;
+			};
+			name = Debug;
+		};
+		05BF1A841D2BEBB60095E18A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HaoJuDianUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CYD.HaoJuDianUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HaoJuDian;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05BF1A4A1D2BEBB60095E18A /* Build configuration list for PBXProject "HaoJuDian" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05BF1A7A1D2BEBB60095E18A /* Debug */,
+				05BF1A7B1D2BEBB60095E18A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05BF1A7C1D2BEBB60095E18A /* Build configuration list for PBXNativeTarget "HaoJuDian" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05BF1A7D1D2BEBB60095E18A /* Debug */,
+				05BF1A7E1D2BEBB60095E18A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		05BF1A7F1D2BEBB60095E18A /* Build configuration list for PBXNativeTarget "HaoJuDianTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05BF1A801D2BEBB60095E18A /* Debug */,
+				05BF1A811D2BEBB60095E18A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		05BF1A821D2BEBB60095E18A /* Build configuration list for PBXNativeTarget "HaoJuDianUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05BF1A831D2BEBB60095E18A /* Debug */,
+				05BF1A841D2BEBB60095E18A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 05BF1A471D2BEBB60095E18A /* Project object */;
+}
