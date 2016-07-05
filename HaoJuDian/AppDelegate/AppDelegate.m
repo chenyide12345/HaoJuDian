@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "CYDBaseNavigationController.h"
+#import "CYDNavigationController.h"
+#import "MainViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +19,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [[CYDBaseNavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];
+    
+    [CYDBaseNavigationController shareNavgationController].fullScreenPopGestureEnable = YES; //开启全屏返回手势
+    
+    //    [CYDBaseNavigationController shareNavgationController].backButtonImage = [UIImage imageNamed:@"backImage"]; //设置返回按钮图片
+    
+    [self.window makeKeyAndVisible];
+    
+    self.window.backgroundColor = [UIColor whiteColor];
     return YES;
 }
 

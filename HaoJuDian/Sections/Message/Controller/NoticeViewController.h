@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  NoticeViewController.h
 //  HaoJuDian
 //
 //  Created by 陈义德 on 16/7/5.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface NoticeViewController : UIViewController
 
 @end
-
