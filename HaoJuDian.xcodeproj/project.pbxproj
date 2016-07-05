@@ -33,7 +33,7 @@
 		05BF1ADC1D2BEC9D0095E18A /* NoticeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1AB91D2BEC9D0095E18A /* NoticeCell.m */; };
 		05BF1ADD1D2BEC9D0095E18A /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1ABD1D2BEC9D0095E18A /* MineViewController.m */; };
 		05BF1ADE1D2BEC9D0095E18A /* NearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1AC31D2BEC9D0095E18A /* NearbyViewController.m */; };
-		05BF1ADF1D2BEC9D0095E18A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1AC91D2BEC9D0095E18A /* SearchViewController.m */; };
+		05BF1AE71D2BEE170095E18A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1AE41D2BEE170095E18A /* SearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,9 +100,9 @@
 		05BF1ABD1D2BEC9D0095E18A /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		05BF1AC21D2BEC9D0095E18A /* NearbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyViewController.h; sourceTree = "<group>"; };
 		05BF1AC31D2BEC9D0095E18A /* NearbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyViewController.m; sourceTree = "<group>"; };
-		05BF1AC81D2BEC9D0095E18A /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
-		05BF1AC91D2BEC9D0095E18A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		05BF1AE01D2BECC20095E18A /* HaoJuDian.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaoJuDian.pch; sourceTree = "<group>"; };
+		05BF1AE31D2BEE170095E18A /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		05BF1AE41D2BEE170095E18A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,7 +247,6 @@
 				05BF1AAC1D2BEC9D0095E18A /* Message */,
 				05BF1ABA1D2BEC9D0095E18A /* Mine */,
 				05BF1AC01D2BEC9D0095E18A /* Nearby */,
-				05BF1AC61D2BEC9D0095E18A /* Search */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -321,6 +320,7 @@
 		05BF1AAC1D2BEC9D0095E18A /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				05BF1AE11D2BEE170095E18A /* Search */,
 				05BF1AAD1D2BEC9D0095E18A /* Controller */,
 				05BF1AB41D2BEC9D0095E18A /* Model */,
 				05BF1AB51D2BEC9D0095E18A /* View */,
@@ -425,44 +425,44 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		05BF1AC61D2BEC9D0095E18A /* Search */ = {
+		05BF1ACC1D2BEC9D0095E18A /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				05BF1AC71D2BEC9D0095E18A /* Controller */,
-				05BF1ACA1D2BEC9D0095E18A /* Model */,
-				05BF1ACB1D2BEC9D0095E18A /* View */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		05BF1AE11D2BEE170095E18A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				05BF1AE21D2BEE170095E18A /* Controller */,
+				05BF1AE51D2BEE170095E18A /* Model */,
+				05BF1AE61D2BEE170095E18A /* View */,
 			);
 			path = Search;
 			sourceTree = "<group>";
 		};
-		05BF1AC71D2BEC9D0095E18A /* Controller */ = {
+		05BF1AE21D2BEE170095E18A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				05BF1AC81D2BEC9D0095E18A /* SearchViewController.h */,
-				05BF1AC91D2BEC9D0095E18A /* SearchViewController.m */,
+				05BF1AE31D2BEE170095E18A /* SearchViewController.h */,
+				05BF1AE41D2BEE170095E18A /* SearchViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		05BF1ACA1D2BEC9D0095E18A /* Model */ = {
+		05BF1AE51D2BEE170095E18A /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		05BF1ACB1D2BEC9D0095E18A /* View */ = {
+		05BF1AE61D2BEE170095E18A /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		05BF1ACC1D2BEC9D0095E18A /* Vendors */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Vendors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -609,8 +609,8 @@
 				05BF1AD71D2BEC9D0095E18A /* MeetViewController.m in Sources */,
 				05BF1ADB1D2BEC9D0095E18A /* NewsCell.m in Sources */,
 				05BF1ACE1D2BEC9D0095E18A /* MainViewController.m in Sources */,
+				05BF1AE71D2BEE170095E18A /* SearchViewController.m in Sources */,
 				05BF1A541D2BEBB60095E18A /* main.m in Sources */,
-				05BF1ADF1D2BEC9D0095E18A /* SearchViewController.m in Sources */,
 				05BF1ADE1D2BEC9D0095E18A /* NearbyViewController.m in Sources */,
 				05BF1ACF1D2BEC9D0095E18A /* CYDBaseNavigationController.m in Sources */,
 				05BF1ADA1D2BEC9D0095E18A /* NoticeViewController.m in Sources */,
