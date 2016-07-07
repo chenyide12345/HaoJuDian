@@ -7,16 +7,16 @@
 //
 
 #import "MessageViewController.h"
-#import "NoticeViewController.h"
-#import "NewsViewController.h"
+#import "NoticeCell.h"
+#import "NewsCell.h"
 
-@interface MessageViewController ()
-
-@property (nonatomic, strong) NoticeViewController * noticeVC;
-@property (nonatomic, strong) NewsViewController * newsVC;
+@interface MessageViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UIButton * tongZhiBtn;
 @property (nonatomic, strong) UIButton * xiaoXiBtn;
+
+@property (nonatomic, strong) UITableView * tableView;
+@property (nonatomic, assign) int selectNum; //通知:1000 消息:1001
 
 @end
 
@@ -25,15 +25,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.noticeVC = [NoticeViewController new];
-    self.newsVC = [NewsViewController new];
-    
-    [self addChildViewController:self.noticeVC];
-    [self addChildViewController:self.newsVC];
-    [self.view addSubview:self.noticeVC.view];
-    
+    self.selectNum = 1000;
     
     [self setupNav];
+    [self setupViews];
     
 }
 
@@ -88,18 +83,45 @@
 }
 
 
+
+#pragma mark - 加载Views
+
+- (void)setupViews
+{
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT- 49) style:UITableViewStylePlain];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    //    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.tableFooterView = [UIView new];
+    self.tableView.showsVerticalScrollIndicator = NO;
+    //    self.tableView.backgroundColor = [UIColor orangeColor];
+    //    self.tableView.scrollEnabled = NO;
+    [self.view addSubview:self.tableView];
+    
+    
+    
+}
+
+
+
 #pragma mark - 通知方法
 
 - (void)tongZhiBtnMethod:(UIButton *)sender
 {
+    self.selectNum = 1000;
+    [self.tableView reloadData];
+    
     [self.tongZhiBtn setBackgroundColor:[UIColor whiteColor]];
     [self.tongZhiBtn setTitleColor:MAINCOLOR forState:UIControlStateNormal];
     
     [self.xiaoXiBtn setBackgroundColor:MAINCOLOR];
     [self.xiaoXiBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
-    [self.view.subviews[0] removeFromSuperview];
-    [self.view insertSubview:self.noticeVC.view atIndex:0];
+//    [self.newsVC.view removeFromSuperview];
+//    [self.newsVC removeFromParentViewController];
+//    [self addChildViewController:self.noticeVC];
+//    
+//    [self.view addSubview:self.noticeVC.view];
     
 }
 
@@ -107,16 +129,89 @@
 
 - (void)xiaoXiBtnMethod:(UIButton *)sender
 {
+    self.selectNum = 1001;
+    [self.tableView reloadData];
+    
     [self.tongZhiBtn setBackgroundColor:MAINCOLOR];
     [self.tongZhiBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     [self.xiaoXiBtn setBackgroundColor:[UIColor whiteColor]];
     [self.xiaoXiBtn setTitleColor:MAINCOLOR forState:UIControlStateNormal];
     
-    [self.view.subviews[0] removeFromSuperview];
-    [self.view insertSubview:self.newsVC.view atIndex:0];
+//    [self.noticeVC.view removeFromSuperview];
+//    [self.noticeVC removeFromParentViewController];
+//    [self addChildViewController:self.newsVC];
+//    [self.view addSubview:self.newsVC.view];
     
 }
+
+
+
+#pragma mark - UITableViewDataSource And Delegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (self.selectNum == 1000) {
+        return 10;
+    } else {
+       return 10;
+    }
+    
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.selectNum == 1000) {
+        
+        static NSString * cellIdentifier = @"cell";
+        NoticeCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if (!cell) {
+            cell = [[NoticeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        }
+        
+        
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+        
+    } else {
+        
+        static NSString * cellIdentifier = @"celll";
+        NewsCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if (!cell) {
+            cell = [[NewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        }
+        
+        
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+        
+    }
+    
+    
+    
+    
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.selectNum == 1000) {
+        return 70;
+    } else {
+        return 70;
+    }
+    
+}
+
+
+
+
+
+
+
 
 
 - (void)didReceiveMemoryWarning {

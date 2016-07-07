@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+//    self.navigationController.navigationBar.translucent = NO;
     //配置标签栏当前选中标签的渲染颜色
     self.tabBar.tintColor = MAINCOLOR;
 //    self.selectedIndex = 1;
@@ -76,6 +76,7 @@
     CYDNavigationController *fifthNav = [[CYDNavigationController alloc] initWithRootViewController:mineVC];
     
     self.viewControllers = @[firstNav, secondNav, thirdNav, fourthNav, fifthNav];
+    self.selectedIndex = 4;
 }
 
 - (void)didReceiveMemoryWarning {

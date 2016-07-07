@@ -43,6 +43,7 @@
     }
     
     viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:backButtonImage style:UIBarButtonItemStylePlain target:self action:@selector(didTapBackButton)];
+    [viewController.navigationItem.leftBarButtonItem setTintColor:[UIColor whiteColor]];
     
     [[CYDBaseNavigationController shareNavgationController] pushViewController:[CYDWrapViewController wrapViewControllerWithViewController:viewController] animated:animated];
 }

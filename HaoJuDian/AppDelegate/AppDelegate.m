@@ -25,7 +25,7 @@
     
     [CYDBaseNavigationController shareNavgationController].fullScreenPopGestureEnable = YES; //开启全屏返回手势
     
-    //    [CYDBaseNavigationController shareNavgationController].backButtonImage = [UIImage imageNamed:@"backImage"]; //设置返回按钮图片
+    [CYDBaseNavigationController shareNavgationController].backButtonImage = [UIImage imageNamed:@"backImage"]; //设置返回按钮图片
     
     [self.window makeKeyAndVisible];
     
