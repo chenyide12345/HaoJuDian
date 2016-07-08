@@ -6,8 +6,10 @@
 //  Copyright © 2016年 陈义德. All rights reserved.
 //
 
+#define PI 3.14159265358979323846
 #import "MineViewController.h"
 #import "CYDSlider.h"
+#import "SetViewController.h"
 
 @interface MineViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -16,6 +18,14 @@
 @property (nonatomic, strong) UIImageView * iconImg;
 @property (nonatomic, strong) UILabel * jingshenLab;
 @property (nonatomic, strong) UILabel * wuzhiLab;
+
+@property (nonatomic, strong) UILabel * yueNumLab;
+@property (nonatomic, strong) UILabel * qingdouNumLab;
+@property (nonatomic, strong) UILabel * flowerNumLab;
+
+@property (nonatomic, strong) UIImageView * phoneRZImg; //手机认证
+@property (nonatomic, strong) UIImageView * nameRZImg; //实名认证
+@property (nonatomic, strong) UIImageView * emailRZImg; //邮箱认证
 
 @end
 
@@ -40,7 +50,7 @@
 
 - (void)setupNav
 {
-    self.view.backgroundColor = BACKGROUNDCOLOR;
+//    self.view.backgroundColor = BACKGROUNDCOLOR;
     self.navigationController.navigationBar.hidden = YES;
     
     
@@ -103,7 +113,9 @@
     
     if (indexPath.section == 0) {
         
-        UIImageView * backImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 150)];
+        CGFloat backImgW = 150;
+        
+        UIImageView * backImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, backImgW)];
         backImgView.backgroundColor = [UIColor cyanColor];
         [cell.contentView addSubview:backImgView];
         
@@ -148,17 +160,10 @@
         jingshenImg.backgroundColor = MAINCOLOR;
         [cell.contentView addSubview:jingshenImg];
         
-        self.jingshenLab = [[UILabel alloc] init];
+        self.jingshenLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(jingshenImg.frame), CGRectGetMinY(jingshenImg.frame), 50, 20)];
         self.jingshenLab.text = @"精神50%";
         self.jingshenLab.textColor = [UIColor blackColor];
         self.jingshenLab.font = [UIFont systemFontOfSize:11];
-        self.jingshenLab.numberOfLines = 0;//根据最大行数需求来设置
-        self.jingshenLab.lineBreakMode = NSLineBreakByTruncatingTail;
-        CGSize maximumLabelSize2 = CGSizeMake(9999, 20);//labelsize的最大值
-        //关键语句
-        CGSize expectSize2 = [self.jingshenLab sizeThatFits:maximumLabelSize2];
-        //别忘了把frame给回label，如果用xib加了约束的话可以只改一个约束的值
-        self.jingshenLab.frame = CGRectMake(CGRectGetMaxX(jingshenImg.frame), CGRectGetMinY(jingshenImg.frame), expectSize2.width, expectSize2.height);
         [cell.contentView addSubview:self.jingshenLab];
         
         CGFloat sliderW = WIDTH/2;
@@ -176,7 +181,7 @@
         [slider setThumbImage:[UIImage imageNamed:@"1"] forState:UIControlStateHighlighted];
         [slider setThumbImage:[UIImage imageNamed:@"1"] forState:UIControlStateNormal];
         
-        slider.minimumValue = 1;
+        slider.minimumValue = 0;
         slider.maximumValue = 100;
         slider.value = 50;
         
@@ -189,17 +194,10 @@
         [cell.contentView addSubview:slider];
         
         
-        self.wuzhiLab = [[UILabel alloc] init];
+        self.wuzhiLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(slider.frame) - 50, CGRectGetMinY(self.jingshenLab.frame), 50, 20)];
         self.wuzhiLab.text = @"物质50%";
         self.wuzhiLab.textColor = [UIColor blackColor];
         self.wuzhiLab.font = [UIFont systemFontOfSize:11];
-        self.wuzhiLab.numberOfLines = 0;//根据最大行数需求来设置
-        self.wuzhiLab.lineBreakMode = NSLineBreakByTruncatingTail;
-        CGSize maximumLabelSize3 = CGSizeMake(9999, 20);//labelsize的最大值
-        //关键语句
-        CGSize expectSize3 = [self.wuzhiLab sizeThatFits:maximumLabelSize3];
-        //别忘了把frame给回label，如果用xib加了约束的话可以只改一个约束的值
-        self.wuzhiLab.frame = CGRectMake(CGRectGetMaxX(slider.frame) - 50, CGRectGetMinY(self.jingshenLab.frame), expectSize3.width, expectSize3.height);
         [cell.contentView addSubview:self.wuzhiLab];
         
         
@@ -217,6 +215,18 @@
         [setBtn addTarget:self action:@selector(setBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
         [cell.contentView addSubview:setBtn];
         
+        
+        UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 30, backImgW/2 - 15, 20, 30)];
+        //        img.backgroundColor = MAINCOLOR;
+        img.image = [UIImage imageNamed:@"youjiantou"];
+        [cell.contentView addSubview:img];
+        
+        UILabel *contentLab = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH - 60, backImgW/2 - 10, 30, 20)];
+        contentLab.text = @"资料";
+        contentLab.textColor = [UIColor whiteColor];
+        contentLab.font = [UIFont systemFontOfSize:15];
+        contentLab.textAlignment = NSTextAlignmentRight;
+        [cell.contentView addSubview:contentLab];
         
     }
     
@@ -265,6 +275,253 @@
     
     
     
+    if (indexPath.section == 2) {
+        
+        if (indexPath.row == 0) {
+            
+            UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(9.5, 9.5, 25, 25)];
+            imgV.backgroundColor = MAINCOLOR;
+            [cell.contentView addSubview:imgV];
+            
+            
+            UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imgV.frame) + 5, 12, 100, 20)];
+            titLab.text = @"我的账户";
+            titLab.textColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+            titLab.textAlignment = NSTextAlignmentLeft;
+            titLab.backgroundColor = [UIColor clearColor];
+            titLab.font = [UIFont systemFontOfSize:13];
+            [cell.contentView addSubview:titLab];
+            
+        }
+        
+        
+        if (indexPath.row == 1) {
+            
+            CGFloat btnW = (WIDTH - 1)/3;
+            CGFloat btnH = 50;
+            
+            UIButton * yueBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+            yueBtn.frame = CGRectMake(0, 0, btnW, btnH);
+            yueBtn.backgroundColor = [UIColor clearColor];
+            [yueBtn addTarget:self action:@selector(yueBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
+            [cell.contentView addSubview:yueBtn];
+            
+            
+            ///余额
+            
+            self.yueNumLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, btnW, btnH/2)];
+            self.yueNumLab.text = @"94.05";
+            self.yueNumLab.textColor = MAINCOLOR;
+            self.yueNumLab.font = [UIFont systemFontOfSize:13];
+            self.yueNumLab.textAlignment = NSTextAlignmentCenter;
+            [yueBtn addSubview:self.yueNumLab];
+            
+            UILabel * yueLab = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.yueNumLab.frame), btnW, btnH/2)];
+            yueLab.text = @"余额";
+            yueLab.textColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+            yueLab.font = [UIFont systemFontOfSize:13];
+            yueLab.textAlignment = NSTextAlignmentCenter;
+            [yueBtn addSubview:yueLab];
+            
+            
+            ///情豆
+            
+            UIButton * qingdouBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+            qingdouBtn.frame = CGRectMake(btnW, 0, btnW, btnH);
+            qingdouBtn.backgroundColor = [UIColor clearColor];
+            [qingdouBtn addTarget:self action:@selector(qingdouBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
+            [cell.contentView addSubview:qingdouBtn];
+            
+            
+            self.qingdouNumLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, btnW, btnH/2)];
+            self.qingdouNumLab.text = @"136";
+            self.qingdouNumLab.textColor = MAINCOLOR;
+            self.qingdouNumLab.font = [UIFont systemFontOfSize:13];
+            self.qingdouNumLab.textAlignment = NSTextAlignmentCenter;
+            [qingdouBtn addSubview:self.qingdouNumLab];
+            
+            UILabel * qingdouLab = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.qingdouNumLab.frame), btnW, btnH/2)];
+            qingdouLab.text = @"情豆";
+            qingdouLab.textColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+            qingdouLab.font = [UIFont systemFontOfSize:13];
+            qingdouLab.textAlignment = NSTextAlignmentCenter;
+            [qingdouBtn addSubview:qingdouLab];
+            
+            UIImageView * lineImg1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 0.5, btnH)];
+            lineImg1.backgroundColor = MAINCOLOR;
+            [qingdouBtn addSubview:lineImg1];
+            
+            UIImageView * lineImg2 = [[UIImageView alloc] initWithFrame:CGRectMake(btnW - 0.5, 0, 0.5, btnH)];
+            lineImg2.backgroundColor = MAINCOLOR;
+            [qingdouBtn addSubview:lineImg2];
+            
+            
+            ///花
+            
+            UIButton * flowerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+            flowerBtn.frame = CGRectMake(btnW*2, 0, btnW, btnH);
+            flowerBtn.backgroundColor = [UIColor clearColor];
+            [flowerBtn addTarget:self action:@selector(flowerBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
+            [cell.contentView addSubview:flowerBtn];
+            
+            
+            self.flowerNumLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, btnW, btnH/2)];
+            self.flowerNumLab.text = @"232";
+            self.flowerNumLab.textColor = MAINCOLOR;
+            self.flowerNumLab.font = [UIFont systemFontOfSize:13];
+            self.flowerNumLab.textAlignment = NSTextAlignmentCenter;
+            [flowerBtn addSubview:self.flowerNumLab];
+            
+            UILabel * flowLab = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.qingdouNumLab.frame), btnW, btnH/2)];
+            flowLab.text = @"花";
+            flowLab.textColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+            flowLab.font = [UIFont systemFontOfSize:13];
+            flowLab.textAlignment = NSTextAlignmentCenter;
+            [flowerBtn addSubview:flowLab];
+            
+            
+            
+            
+        }
+        
+        
+    }
+    
+    
+    
+    if (indexPath.section == 3) {
+        
+        if (indexPath.row == 0) {
+            
+            UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(9.5, 9.5, 25, 25)];
+            imgV.backgroundColor = MAINCOLOR;
+            [cell.contentView addSubview:imgV];
+            
+            UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imgV.frame) + 5, 12, 100, 20)];
+            titLab.text = @"我的认证";
+            titLab.textColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+            titLab.textAlignment = NSTextAlignmentLeft;
+            titLab.backgroundColor = [UIColor clearColor];
+            titLab.font = [UIFont systemFontOfSize:13];
+            [cell.contentView addSubview:titLab];
+            
+            
+            UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 30, 7, 20, 30)];
+            //        img.backgroundColor = MAINCOLOR;
+            img.image = [UIImage imageNamed:@"youjiantou"];
+            [cell.contentView addSubview:img];
+            
+            
+            self.emailRZImg = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMinX(img.frame) - 25, 9.5, 25, 25)];
+            self.emailRZImg.backgroundColor = MAINCOLOR;
+            [cell.contentView addSubview:self.emailRZImg];
+            
+            self.nameRZImg = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.emailRZImg.frame) - 30, 9.5, 25, 25)];
+            self.nameRZImg.backgroundColor = MAINCOLOR;
+            [cell.contentView addSubview:self.nameRZImg];
+            
+            self.phoneRZImg = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.nameRZImg.frame) - 30, 9.5, 25, 25)];
+            self.phoneRZImg.backgroundColor = MAINCOLOR;
+            [cell.contentView addSubview:self.phoneRZImg];
+            
+        }
+        
+        
+        if (indexPath.row == 1) {
+            
+            UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(9.5, 9.5, 25, 25)];
+            imgV.backgroundColor = MAINCOLOR;
+            [cell.contentView addSubview:imgV];
+            
+            UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imgV.frame) + 5, 12, 100, 20)];
+            titLab.text = @"我的喜欢";
+            titLab.textColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+            titLab.textAlignment = NSTextAlignmentLeft;
+            titLab.backgroundColor = [UIColor clearColor];
+            titLab.font = [UIFont systemFontOfSize:13];
+            [cell.contentView addSubview:titLab];
+            
+            UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 30, 7, 20, 30)];
+            //        img.backgroundColor = MAINCOLOR;
+            img.image = [UIImage imageNamed:@"youjiantou"];
+            [cell.contentView addSubview:img];
+            
+        }
+        
+        
+        
+    }
+    
+    
+    
+    
+    if (indexPath.section == 4) {
+        
+        if (indexPath.row == 0) {
+            
+            UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(9.5, 9.5, 25, 25)];
+            imgV.backgroundColor = MAINCOLOR;
+            [cell.contentView addSubview:imgV];
+            
+            UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imgV.frame) + 5, 12, 100, 20)];
+            titLab.text = @"邀请好友";
+            titLab.textColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+            titLab.textAlignment = NSTextAlignmentLeft;
+            titLab.backgroundColor = [UIColor clearColor];
+            titLab.font = [UIFont systemFontOfSize:13];
+            [cell.contentView addSubview:titLab];
+            
+            UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 30, 7, 20, 30)];
+            //        img.backgroundColor = MAINCOLOR;
+            img.image = [UIImage imageNamed:@"youjiantou"];
+            [cell.contentView addSubview:img];
+            
+            UILabel *contentLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(img.frame) - 65, 12, 65, 20)];
+            contentLab.text = @"邀请有奖啦!";
+            contentLab.textColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+            contentLab.font = [UIFont systemFontOfSize:10];
+            contentLab.textAlignment = NSTextAlignmentRight;
+            [cell.contentView addSubview:contentLab];
+            
+            UILabel *dian = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(contentLab.frame) - 5, 39/2, 5, 5)];
+            dian.backgroundColor = [UIColor redColor];
+            dian.layer.cornerRadius = 2.5;
+            dian.layer.masksToBounds = YES;
+            [cell.contentView addSubview:dian];
+            
+            
+            
+        }
+        
+        
+        if (indexPath.row == 1) {
+            
+            UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(9.5, 9.5, 25, 25)];
+            imgV.backgroundColor = MAINCOLOR;
+            [cell.contentView addSubview:imgV];
+            
+            UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imgV.frame) + 5, 12, 100, 20)];
+            titLab.text = @"推荐列表";
+            titLab.textColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+            titLab.textAlignment = NSTextAlignmentLeft;
+            titLab.backgroundColor = [UIColor clearColor];
+            titLab.font = [UIFont systemFontOfSize:13];
+            [cell.contentView addSubview:titLab];
+            
+            UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 30, 7, 20, 30)];
+            //        img.backgroundColor = MAINCOLOR;
+            img.image = [UIImage imageNamed:@"youjiantou"];
+            [cell.contentView addSubview:img];
+            
+        }
+        
+        
+        
+    }
+    
+    
+    
+    
     return cell;
 }
 
@@ -290,7 +547,7 @@
         if (indexPath.row == 0) {
             return 44;
         } else {
-            return 70;
+            return 50;
         }
     } else if (indexPath.section == 3) {
         return 44;
@@ -346,6 +603,31 @@
 #pragma mark - 设置方法
 
 - (void)setBtnMethod:(UIButton *)sender
+{
+    SetViewController * setVC = [SetViewController new];
+    [self.navigationController pushViewController:setVC animated:YES];
+}
+
+
+#pragma mark - 余额方法
+
+- (void)yueBtnMethod:(UIButton *)sender
+{
+    
+}
+
+
+#pragma mark - 情豆方法
+
+- (void)qingdouBtnMethod:(UIButton *)sender
+{
+    
+}
+
+
+#pragma makr - 花方法
+
+- (void)flowerBtnMethod:(UIButton *)sender
 {
     
 }

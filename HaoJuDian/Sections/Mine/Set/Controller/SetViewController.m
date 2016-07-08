@@ -1,23 +1,24 @@
 //
-//  SearchViewController.m
+//  SetViewController.m
 //  HaoJuDian
 //
-//  Created by 陈义德 on 16/7/5.
+//  Created by 陈义德 on 16/7/8.
 //  Copyright © 2016年 陈义德. All rights reserved.
 //
 
-#import "SearchViewController.h"
+#import "SetViewController.h"
+#import "ChangePasswordViewController.h"
 
-@interface SearchViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface SetViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView * tableView;
 
 @property (nonatomic, strong) NSArray * titAry;
-@property (nonatomic, strong) UIButton * saveBtn;//保存btn
+@property (nonatomic, strong) UIButton * logoutBtn;//退出登录btn
 
 @end
 
-@implementation SearchViewController
+@implementation SetViewController
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
@@ -42,7 +43,7 @@
     titleLabel.font = [UIFont boldSystemFontOfSize:20];  //设置文本字体与大小
     titleLabel.textColor = [UIColor whiteColor];  //设置文本颜色
     titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.text = @"搜索条件";  //设置标题
+    titleLabel.text = @"设置";  //设置标题
     self.navigationItem.titleView = titleLabel;
     
     self.navigationController.navigationBar.barTintColor = MAINCOLOR;
@@ -71,12 +72,13 @@
 }
 
 
+
 #pragma mark - 懒加载
 
 - (NSArray *)titAry
 {
     if (_titAry == nil) {
-        self.titAry = [NSArray arrayWithObjects:@"恋爱观", @"年龄", @"身高", @"婚姻状况", @"居住地", @"月收入", @"购房状况", @"购车状况", nil];
+        self.titAry = [NSArray arrayWithObjects:@"显示设置", @"修改密码", @"设置支付密码", @"意见反馈", @"我要举报", @"帮助中心", @"关于我们", nil];
     }
     return _titAry;
 }
@@ -111,12 +113,12 @@
         img.backgroundColor = MAINCOLOR;
         [cell.contentView addSubview:img];
         
-        UILabel *contentLab = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH - 94, 11, 50, 20)];
-        contentLab.text = @"不限";
-        contentLab.textColor = [UIColor colorWithWhite:0.773 alpha:1.000];
-        contentLab.font = [UIFont systemFontOfSize:15];
-        contentLab.textAlignment = NSTextAlignmentRight;
-        [cell.contentView addSubview:contentLab];
+//        UILabel *contentLab = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH - 94, 11, 50, 20)];
+//        contentLab.text = @"不限";
+//        contentLab.textColor = [UIColor colorWithWhite:0.773 alpha:1.000];
+//        contentLab.font = [UIFont systemFontOfSize:15];
+//        contentLab.textAlignment = NSTextAlignmentRight;
+//        [cell.contentView addSubview:contentLab];
         
         UILabel *lineLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 43.5, WIDTH, 0.5)];
         lineLab.backgroundColor = BACKGROUNDCOLOR;
@@ -125,16 +127,16 @@
     } else {
         
         cell.backgroundColor = BACKGROUNDCOLOR;
-        self.saveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.saveBtn.frame = CGRectMake(10, 20, WIDTH - 20, 34);
-        self.saveBtn.backgroundColor = MAINCOLOR;
-        self.saveBtn.layer.cornerRadius = 6;
-        [self.saveBtn setTitle:@"保存" forState:UIControlStateNormal];
-        self.saveBtn.titleLabel.font = [UIFont systemFontOfSize:17];
-        [self.saveBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [self.saveBtn addTarget:self action:@selector(saveBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
-        [cell.contentView addSubview:self.saveBtn];
-
+        self.logoutBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.logoutBtn.frame = CGRectMake(10, 20, WIDTH - 20, 34);
+        self.logoutBtn.backgroundColor = MAINCOLOR;
+        self.logoutBtn.layer.cornerRadius = 6;
+        [self.logoutBtn setTitle:@"退出登录" forState:UIControlStateNormal];
+        self.logoutBtn.titleLabel.font = [UIFont systemFontOfSize:17];
+        [self.logoutBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.logoutBtn addTarget:self action:@selector(logoutBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.contentView addSubview:self.logoutBtn];
+        
     }
     
     
@@ -155,12 +157,26 @@
 }
 
 
-#pragma mark - 保存方法
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 1) {
+        ChangePasswordViewController * changePasswordVC = [ChangePasswordViewController new];
+        [self.navigationController pushViewController:changePasswordVC animated:YES];
+    }
+}
 
-- (void)saveBtnMethod:(UIButton *)sender
+
+
+#pragma mark - 退出登录方法
+
+- (void)logoutBtnMethod:(UIButton *)sender
 {
     
 }
+
+
+
+
 
 
 - (void)didReceiveMemoryWarning {

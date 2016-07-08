@@ -34,6 +34,8 @@
 		05BF1ADC1D2BEC9D0095E18A /* NoticeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1AB91D2BEC9D0095E18A /* NoticeCell.m */; };
 		05BF1ADD1D2BEC9D0095E18A /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1ABD1D2BEC9D0095E18A /* MineViewController.m */; };
 		05BF1ADE1D2BEC9D0095E18A /* NearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1AC31D2BEC9D0095E18A /* NearbyViewController.m */; };
+		05F77DC21D2F55E60023ECE4 /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F77DC11D2F55E60023ECE4 /* SetViewController.m */; };
+		05F77DC51D2F5AAE0023ECE4 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F77DC41D2F5AAE0023ECE4 /* ChangePasswordViewController.m */; };
 		05F78ECC1D2DF02400AB61F5 /* GiftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F78ECB1D2DF02400AB61F5 /* GiftCell.m */; };
 		05F78ECF1D2E028300AB61F5 /* BeanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F78ECE1D2E028300AB61F5 /* BeanCell.m */; };
 		05F78ED11D2E600500AB61F5 /* youjiantou.png in Resources */ = {isa = PBXBuildFile; fileRef = 05F78ED01D2E600500AB61F5 /* youjiantou.png */; };
@@ -107,6 +109,10 @@
 		05BF1AC21D2BEC9D0095E18A /* NearbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyViewController.h; sourceTree = "<group>"; };
 		05BF1AC31D2BEC9D0095E18A /* NearbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyViewController.m; sourceTree = "<group>"; };
 		05BF1AE01D2BECC20095E18A /* HaoJuDian.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaoJuDian.pch; sourceTree = "<group>"; };
+		05F77DC01D2F55E60023ECE4 /* SetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetViewController.h; sourceTree = "<group>"; };
+		05F77DC11D2F55E60023ECE4 /* SetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetViewController.m; sourceTree = "<group>"; };
+		05F77DC31D2F5AAE0023ECE4 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
+		05F77DC41D2F5AAE0023ECE4 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
 		05F78ECA1D2DF02400AB61F5 /* GiftCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftCell.h; sourceTree = "<group>"; };
 		05F78ECB1D2DF02400AB61F5 /* GiftCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftCell.m; sourceTree = "<group>"; };
 		05F78ECD1D2E028300AB61F5 /* BeanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeanCell.h; sourceTree = "<group>"; };
@@ -413,6 +419,7 @@
 		05BF1ABA1D2BEC9D0095E18A /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				05F77DBC1D2F55AB0023ECE4 /* Set */,
 				05BF1ABB1D2BEC9D0095E18A /* Controller */,
 				05BF1ABE1D2BEC9D0095E18A /* Model */,
 				05BF1ABF1D2BEC9D0095E18A /* View */,
@@ -484,6 +491,41 @@
 			children = (
 			);
 			path = Vendors;
+			sourceTree = "<group>";
+		};
+		05F77DBC1D2F55AB0023ECE4 /* Set */ = {
+			isa = PBXGroup;
+			children = (
+				05F77DBD1D2F55AB0023ECE4 /* Controller */,
+				05F77DBE1D2F55AB0023ECE4 /* Model */,
+				05F77DBF1D2F55AB0023ECE4 /* View */,
+			);
+			path = Set;
+			sourceTree = "<group>";
+		};
+		05F77DBD1D2F55AB0023ECE4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				05F77DC01D2F55E60023ECE4 /* SetViewController.h */,
+				05F77DC11D2F55E60023ECE4 /* SetViewController.m */,
+				05F77DC31D2F5AAE0023ECE4 /* ChangePasswordViewController.h */,
+				05F77DC41D2F5AAE0023ECE4 /* ChangePasswordViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		05F77DBE1D2F55AB0023ECE4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		05F77DBF1D2F55AB0023ECE4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		05FD68121D2C9CBA00D6C609 /* MyViews */ = {
@@ -651,7 +693,9 @@
 				05BF1AD61D2BEC9D0095E18A /* FlowerViewController.m in Sources */,
 				05BF1AD81D2BEC9D0095E18A /* MessageViewController.m in Sources */,
 				05FD685D1D2CB67200D6C609 /* CYDSlider.m in Sources */,
+				05F77DC51D2F5AAE0023ECE4 /* ChangePasswordViewController.m in Sources */,
 				05BF1AD11D2BEC9D0095E18A /* UIColor+RandomColor.m in Sources */,
+				05F77DC21D2F55E60023ECE4 /* SetViewController.m in Sources */,
 				05FD68111D2C986000D6C609 /* NearbyCell.m in Sources */,
 				05BF1ADC1D2BEC9D0095E18A /* NoticeCell.m in Sources */,
 				05F78ECC1D2DF02400AB61F5 /* GiftCell.m in Sources */,
