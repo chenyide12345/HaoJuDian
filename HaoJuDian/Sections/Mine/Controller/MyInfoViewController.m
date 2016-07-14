@@ -14,7 +14,7 @@
 @property (nonatomic, strong) UITableView * tableView;
 
 @property (nonatomic, strong) UIImageView * iconImg;
-@property (nonatomic, strong) UIButton * onlineBtn; //在线btn
+@property (nonatomic, strong) UIButton * onlineBtn; //在线button
 @property (nonatomic, strong) UILabel * jingshenLab;
 @property (nonatomic, strong) UILabel * wuzhiLab;
 
