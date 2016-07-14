@@ -10,6 +10,7 @@
 #import "CYDBaseNavigationController.h"
 #import "CYDNavigationController.h"
 #import "MainViewController.h"
+#import "LoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,15 +22,29 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[CYDBaseNavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];
+    [self.window makeKeyAndVisible];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
     
     [CYDBaseNavigationController shareNavgationController].fullScreenPopGestureEnable = YES; //开启全屏返回手势
     
     [CYDBaseNavigationController shareNavgationController].backButtonImage = [UIImage imageNamed:@"backImage"]; //设置返回按钮图片
     
-    [self.window makeKeyAndVisible];
+    self.window.rootViewController = [[CYDBaseNavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];
     
-    self.window.backgroundColor = [UIColor whiteColor];
+    
+//    self.loginNav = [[UINavigationController alloc] initWithRootViewController:[LoginViewController new]];
+//    self.loginNav.navigationBar.barTintColor = MAINCOLOR;
+//    self.loginNav.navigationBar.translucent = YES;
+//    self.loginNav.navigationBar.tintColor = [UIColor whiteColor];
+//    self.loginNav.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+    
+//    CYDNavigationController *loginNav = [[CYDNavigationController alloc] initWithRootViewController:[LoginViewController new]];
+//    self.loginRootNav = [[CYDBaseNavigationController alloc] initWithRootViewController:loginNav];
+//    self.window.rootViewController = self.loginRootNav;
+
+    
+    
     return YES;
 }
 

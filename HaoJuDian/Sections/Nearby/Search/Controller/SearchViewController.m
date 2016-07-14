@@ -39,8 +39,8 @@
 {
     UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0 , 100, 44)];
     titleLabel.backgroundColor = [UIColor clearColor];  //设置Label背景透明
-    titleLabel.font = [UIFont boldSystemFontOfSize:20];  //设置文本字体与大小
-    titleLabel.textColor = [UIColor whiteColor];  //设置文本颜色
+    titleLabel.font = [UIFont systemFontOfSize:17];  //设置文本字体与大小
+    titleLabel.textColor = ZITIWHITECOLOR;  //设置文本颜色
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.text = @"搜索条件";  //设置标题
     self.navigationItem.titleView = titleLabel;
@@ -100,38 +100,40 @@
     
     if (indexPath.row < self.titAry.count) {
         
-        UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(10, 11, 100, 20)];
+        CGFloat H = 49;
+        
+        UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(10, H/2 - 10, 100, 20)];
         titLab.text = [NSString stringWithFormat:@"%@", self.titAry[indexPath.row]];
-        titLab.textColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+        titLab.textColor = ZITIBLACKCOLOR;
         titLab.font = [UIFont systemFontOfSize:15];
         [cell.contentView addSubview:titLab];
         
         
-        UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 44, 0, 44, 44)];
+        UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 20, H/2 - 7, 8, 14)];
         img.backgroundColor = MAINCOLOR;
         [cell.contentView addSubview:img];
         
-        UILabel *contentLab = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH - 94, 11, 50, 20)];
+        UILabel *contentLab = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH - 82, H/2 - 10, 50, 20)];
         contentLab.text = @"不限";
-        contentLab.textColor = [UIColor colorWithWhite:0.773 alpha:1.000];
+        contentLab.textColor = ZITIGRAYCOLOR;
         contentLab.font = [UIFont systemFontOfSize:15];
         contentLab.textAlignment = NSTextAlignmentRight;
         [cell.contentView addSubview:contentLab];
         
-        UILabel *lineLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 43.5, WIDTH, 0.5)];
-        lineLab.backgroundColor = BACKGROUNDCOLOR;
+        UILabel *lineLab = [[UILabel alloc] initWithFrame:CGRectMake(0, H - 0.5, WIDTH, 0.5)];
+        lineLab.backgroundColor = XIANCOLOR;
         [cell.contentView addSubview:lineLab];
         
     } else {
         
         cell.backgroundColor = BACKGROUNDCOLOR;
         self.saveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.saveBtn.frame = CGRectMake(10, 20, WIDTH - 20, 34);
+        self.saveBtn.frame = CGRectMake(10, 30, WIDTH - 20, 40);
         self.saveBtn.backgroundColor = MAINCOLOR;
-        self.saveBtn.layer.cornerRadius = 6;
+        self.saveBtn.layer.cornerRadius = 3;
         [self.saveBtn setTitle:@"保存" forState:UIControlStateNormal];
-        self.saveBtn.titleLabel.font = [UIFont systemFontOfSize:17];
-        [self.saveBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        self.saveBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+        [self.saveBtn setTitleColor:ZITIWHITECOLOR forState:UIControlStateNormal];
         [self.saveBtn addTarget:self action:@selector(saveBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
         [cell.contentView addSubview:self.saveBtn];
 
@@ -147,9 +149,9 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row < self.titAry.count) {
-        return 44;
+        return 49;
     } else {
-        return 54;
+        return 80;
     }
     
 }

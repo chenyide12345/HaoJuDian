@@ -10,12 +10,14 @@
 #import "MineViewController.h"
 #import "CYDSlider.h"
 #import "SetViewController.h"
+#import "MyInfoViewController.h"
 
 @interface MineViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView * tableView;
 
 @property (nonatomic, strong) UIImageView * iconImg;
+@property (nonatomic, strong) UIButton * onlineBtn; //在线btn
 @property (nonatomic, strong) UILabel * jingshenLab;
 @property (nonatomic, strong) UILabel * wuzhiLab;
 
@@ -119,15 +121,31 @@
         backImgView.backgroundColor = [UIColor cyanColor];
         [cell.contentView addSubview:backImgView];
         
-        self.iconImg = [[UIImageView alloc] initWithFrame:CGRectMake(30, 20, 80, 80)];
+        CGFloat imgX;
+        CGFloat imgY;
+        
+        if (HEIGHT == 480) {
+            imgX = 15;
+            imgY = 20;
+        } else if (HEIGHT == 568) {
+            imgX = 20;
+            imgY = 20;
+        } else {
+            imgX = 30;
+            imgY = 20;
+        }
+        
+        self.iconImg = [[UIImageView alloc] initWithFrame:CGRectMake(imgX, imgY, 73, 73)];
         self.iconImg.backgroundColor = MAINCOLOR;
         self.iconImg.layer.masksToBounds = YES;
-        self.iconImg.layer.cornerRadius = 40;
+        self.iconImg.layer.cornerRadius = 73/2;
+        self.iconImg.layer.borderColor = BACKGROUNDCOLOR.CGColor;
+        self.iconImg.layer.borderWidth = 3;
         [cell.contentView addSubview:self.iconImg];
         
         UILabel *nameLab = [[UILabel alloc] init];
         nameLab.text = @"好聚点";
-        nameLab.textColor = [UIColor whiteColor];
+        nameLab.textColor = ZITIWHITECOLOR;
         nameLab.textAlignment = NSTextAlignmentLeft;
         nameLab.font = [UIFont systemFontOfSize:18];
         nameLab.numberOfLines = 0;//根据最大行数需求来设置
@@ -140,11 +158,23 @@
         [cell.contentView addSubview:nameLab];
 
         
+        self.onlineBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.onlineBtn.frame = CGRectMake(CGRectGetMaxX(nameLab.frame) + 10, CGRectGetMidY(nameLab.frame) - 7, 40, 14);
+        self.onlineBtn.backgroundColor = ZITIWHITECOLOR;
+        self.onlineBtn.layer.masksToBounds = YES;
+        self.onlineBtn.layer.cornerRadius = 7;
+        [self.onlineBtn setTitle:@"√在线" forState:UIControlStateNormal];
+        [self.onlineBtn setTitleColor:MAINCOLOR forState:UIControlStateNormal];
+        self.onlineBtn.titleLabel.font = [UIFont systemFontOfSize:10];
+        [self.onlineBtn addTarget:self action:@selector(onlineBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.contentView addSubview:self.onlineBtn];
+        
+        
         UILabel *wanzhengduLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.iconImg.frame) + 10, CGRectGetMaxY(nameLab.frame) + 10, 120, 20)];
         wanzhengduLab.text = @"资料完整度21%";
-        wanzhengduLab.textColor = [UIColor whiteColor];
+        wanzhengduLab.textColor = ZITIWHITECOLOR;
         wanzhengduLab.textAlignment = NSTextAlignmentLeft;
-        wanzhengduLab.font = [UIFont systemFontOfSize:16];
+        wanzhengduLab.font = [UIFont systemFontOfSize:14];
         [cell.contentView addSubview:wanzhengduLab];
         
         
@@ -162,14 +192,14 @@
         
         self.jingshenLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(jingshenImg.frame), CGRectGetMinY(jingshenImg.frame), 50, 20)];
         self.jingshenLab.text = @"精神50%";
-        self.jingshenLab.textColor = [UIColor blackColor];
-        self.jingshenLab.font = [UIFont systemFontOfSize:11];
+        self.jingshenLab.textColor = ZITIWHITECOLOR;
+        self.jingshenLab.font = [UIFont systemFontOfSize:10];
         [cell.contentView addSubview:self.jingshenLab];
         
-        CGFloat sliderW = WIDTH/2;
+        CGFloat sliderW = 193;
         CGFloat sliderH = 30;
         
-        CYDSlider * slider = [[CYDSlider alloc] initWithFrame:CGRectMake(CGRectGetMaxX(lianaiguanLab.frame) + 10, CGRectGetMaxY(self.jingshenLab.frame), sliderW, sliderH)];
+        CYDSlider * slider = [[CYDSlider alloc] initWithFrame:CGRectMake(CGRectGetMaxX(lianaiguanLab.frame) + 10, CGRectGetMaxY(self.jingshenLab.frame) - 5, sliderW, sliderH)];
         slider.backgroundColor = [UIColor clearColor];
         //裁剪
         slider.clipsToBounds = YES;
@@ -196,22 +226,22 @@
         
         self.wuzhiLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(slider.frame) - 50, CGRectGetMinY(self.jingshenLab.frame), 50, 20)];
         self.wuzhiLab.text = @"物质50%";
-        self.wuzhiLab.textColor = [UIColor blackColor];
-        self.wuzhiLab.font = [UIFont systemFontOfSize:11];
+        self.wuzhiLab.textColor = ZITIWHITECOLOR;
+        self.wuzhiLab.font = [UIFont systemFontOfSize:10];
         [cell.contentView addSubview:self.wuzhiLab];
         
         
         UIImageView * wuzhiImg = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.wuzhiLab.frame) - 20, CGRectGetMinY(jingshenImg.frame), 15, 15)];
         wuzhiImg.backgroundColor = [UIColor colorWithRed:0.224 green:0.737 blue:0.616 alpha:1.000];
-        [cell addSubview:wuzhiImg];
+        [cell.contentView addSubview:wuzhiImg];
         
         
         UIButton * setBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         setBtn.frame = CGRectMake(WIDTH - 50, 5, 50, 34);
         setBtn.backgroundColor = [UIColor clearColor];
         [setBtn setTitle:@"设置" forState:UIControlStateNormal];
-        setBtn.titleLabel.font = [UIFont systemFontOfSize:16];
-        [setBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        setBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+        [setBtn setTitleColor:ZITIWHITECOLOR forState:UIControlStateNormal];
         [setBtn addTarget:self action:@selector(setBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
         [cell.contentView addSubview:setBtn];
         
@@ -223,8 +253,8 @@
         
         UILabel *contentLab = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH - 60, backImgW/2 - 10, 30, 20)];
         contentLab.text = @"资料";
-        contentLab.textColor = [UIColor whiteColor];
-        contentLab.font = [UIFont systemFontOfSize:15];
+        contentLab.textColor = ZITIWHITECOLOR;
+        contentLab.font = [UIFont systemFontOfSize:14];
         contentLab.textAlignment = NSTextAlignmentRight;
         [cell.contentView addSubview:contentLab];
         
@@ -235,7 +265,7 @@
     if (indexPath.section == 1) {
         
         CGFloat imgW;
-        CGFloat imgJG = 5;
+        CGFloat imgJG = 2.5;
         
         if (HEIGHT == 480) {
             imgW = 50;
@@ -244,12 +274,12 @@
         } else if (HEIGHT == 667) {
             imgW = 60;
         } else {
-            imgW = 70;
+            imgW = 65;
         }
         
         for (int i = 0; i < 4; i++) {
             
-            UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(10 + (imgW+imgJG)*i, 10, imgW, imgW)];
+            UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(10 + (imgW+imgJG)*i, 7.5, imgW, imgW)];
             img.backgroundColor = MAINCOLOR;
             img.layer.masksToBounds = YES;
             img.layer.cornerRadius = 6;
@@ -265,7 +295,7 @@
         
         UILabel *contentLab = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH - 60, 10+imgW/2 - 10, 30, 20)];
         contentLab.text = @"相册";
-        contentLab.textColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+        contentLab.textColor = ZITIGRAYCOLOR;
         contentLab.font = [UIFont systemFontOfSize:13];
         contentLab.textAlignment = NSTextAlignmentRight;
         [cell.contentView addSubview:contentLab];
@@ -279,17 +309,29 @@
         
         if (indexPath.row == 0) {
             
-            UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(9.5, 9.5, 25, 25)];
+            CGFloat imgW;
+            
+            if (HEIGHT == 480) {
+                imgW = 25;
+            } else if (HEIGHT == 568) {
+                imgW = 25;
+            } else if (HEIGHT == 667) {
+                imgW = 25;
+            } else {
+                imgW = 25;
+            }
+            
+            UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(17.5, 12, imgW, imgW)];
             imgV.backgroundColor = MAINCOLOR;
             [cell.contentView addSubview:imgV];
             
             
-            UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imgV.frame) + 5, 12, 100, 20)];
+            UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imgV.frame) + 5, 14.5, 100, 20)];
             titLab.text = @"我的账户";
-            titLab.textColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+            titLab.textColor = ZITIBLACKCOLOR;
             titLab.textAlignment = NSTextAlignmentLeft;
             titLab.backgroundColor = [UIColor clearColor];
-            titLab.font = [UIFont systemFontOfSize:13];
+            titLab.font = [UIFont systemFontOfSize:15];
             [cell.contentView addSubview:titLab];
             
         }
@@ -298,7 +340,7 @@
         if (indexPath.row == 1) {
             
             CGFloat btnW = (WIDTH - 1)/3;
-            CGFloat btnH = 50;
+            CGFloat btnH = 60;
             
             UIButton * yueBtn = [UIButton buttonWithType:UIButtonTypeCustom];
             yueBtn.frame = CGRectMake(0, 0, btnW, btnH);
@@ -312,15 +354,17 @@
             self.yueNumLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, btnW, btnH/2)];
             self.yueNumLab.text = @"94.05";
             self.yueNumLab.textColor = MAINCOLOR;
-            self.yueNumLab.font = [UIFont systemFontOfSize:13];
+            self.yueNumLab.font = [UIFont systemFontOfSize:15];
             self.yueNumLab.textAlignment = NSTextAlignmentCenter;
+//            self.yueNumLab.backgroundColor = [UIColor blackColor];
             [yueBtn addSubview:self.yueNumLab];
             
             UILabel * yueLab = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.yueNumLab.frame), btnW, btnH/2)];
             yueLab.text = @"余额";
-            yueLab.textColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+            yueLab.textColor = ZITIBLACKCOLOR;
             yueLab.font = [UIFont systemFontOfSize:13];
             yueLab.textAlignment = NSTextAlignmentCenter;
+//            yueLab.backgroundColor = [UIColor cyanColor];
             [yueBtn addSubview:yueLab];
             
             
@@ -336,13 +380,13 @@
             self.qingdouNumLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, btnW, btnH/2)];
             self.qingdouNumLab.text = @"136";
             self.qingdouNumLab.textColor = MAINCOLOR;
-            self.qingdouNumLab.font = [UIFont systemFontOfSize:13];
+            self.qingdouNumLab.font = [UIFont systemFontOfSize:15];
             self.qingdouNumLab.textAlignment = NSTextAlignmentCenter;
             [qingdouBtn addSubview:self.qingdouNumLab];
             
             UILabel * qingdouLab = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.qingdouNumLab.frame), btnW, btnH/2)];
             qingdouLab.text = @"情豆";
-            qingdouLab.textColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+            qingdouLab.textColor = ZITIBLACKCOLOR;
             qingdouLab.font = [UIFont systemFontOfSize:13];
             qingdouLab.textAlignment = NSTextAlignmentCenter;
             [qingdouBtn addSubview:qingdouLab];
@@ -368,13 +412,13 @@
             self.flowerNumLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, btnW, btnH/2)];
             self.flowerNumLab.text = @"232";
             self.flowerNumLab.textColor = MAINCOLOR;
-            self.flowerNumLab.font = [UIFont systemFontOfSize:13];
+            self.flowerNumLab.font = [UIFont systemFontOfSize:15];
             self.flowerNumLab.textAlignment = NSTextAlignmentCenter;
             [flowerBtn addSubview:self.flowerNumLab];
             
             UILabel * flowLab = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.qingdouNumLab.frame), btnW, btnH/2)];
             flowLab.text = @"花";
-            flowLab.textColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+            flowLab.textColor = ZITIBLACKCOLOR;
             flowLab.font = [UIFont systemFontOfSize:13];
             flowLab.textAlignment = NSTextAlignmentCenter;
             [flowerBtn addSubview:flowLab];
@@ -391,18 +435,31 @@
     
     if (indexPath.section == 3) {
         
+        CGFloat imgW;
+        
+        if (HEIGHT == 480) {
+            imgW = 25;
+        } else if (HEIGHT == 568) {
+            imgW = 25;
+        } else if (HEIGHT == 667) {
+            imgW = 25;
+        } else {
+            imgW = 25;
+        }
+        
         if (indexPath.row == 0) {
             
-            UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(9.5, 9.5, 25, 25)];
+            UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(17.5, 12, imgW, imgW)];
             imgV.backgroundColor = MAINCOLOR;
             [cell.contentView addSubview:imgV];
             
-            UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imgV.frame) + 5, 12, 100, 20)];
+            
+            UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imgV.frame) + 5, 14.5, 100, 20)];
             titLab.text = @"我的认证";
-            titLab.textColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+            titLab.textColor = ZITIBLACKCOLOR;
             titLab.textAlignment = NSTextAlignmentLeft;
             titLab.backgroundColor = [UIColor clearColor];
-            titLab.font = [UIFont systemFontOfSize:13];
+            titLab.font = [UIFont systemFontOfSize:15];
             [cell.contentView addSubview:titLab];
             
             
@@ -429,16 +486,17 @@
         
         if (indexPath.row == 1) {
             
-            UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(9.5, 9.5, 25, 25)];
+            UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(17.5, 12, imgW, imgW)];
             imgV.backgroundColor = MAINCOLOR;
             [cell.contentView addSubview:imgV];
             
-            UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imgV.frame) + 5, 12, 100, 20)];
+            
+            UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imgV.frame) + 5, 14.5, 100, 20)];
             titLab.text = @"我的喜欢";
-            titLab.textColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+            titLab.textColor = ZITIBLACKCOLOR;
             titLab.textAlignment = NSTextAlignmentLeft;
             titLab.backgroundColor = [UIColor clearColor];
-            titLab.font = [UIFont systemFontOfSize:13];
+            titLab.font = [UIFont systemFontOfSize:15];
             [cell.contentView addSubview:titLab];
             
             UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 30, 7, 20, 30)];
@@ -457,18 +515,31 @@
     
     if (indexPath.section == 4) {
         
+        CGFloat imgW;
+        
+        if (HEIGHT == 480) {
+            imgW = 25;
+        } else if (HEIGHT == 568) {
+            imgW = 25;
+        } else if (HEIGHT == 667) {
+            imgW = 25;
+        } else {
+            imgW = 25;
+        }
+        
         if (indexPath.row == 0) {
             
-            UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(9.5, 9.5, 25, 25)];
+            UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(17.5, 12, imgW, imgW)];
             imgV.backgroundColor = MAINCOLOR;
             [cell.contentView addSubview:imgV];
             
-            UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imgV.frame) + 5, 12, 100, 20)];
+            
+            UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imgV.frame) + 5, 14.5, 100, 20)];
             titLab.text = @"邀请好友";
-            titLab.textColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+            titLab.textColor = ZITIBLACKCOLOR;
             titLab.textAlignment = NSTextAlignmentLeft;
             titLab.backgroundColor = [UIColor clearColor];
-            titLab.font = [UIFont systemFontOfSize:13];
+            titLab.font = [UIFont systemFontOfSize:15];
             [cell.contentView addSubview:titLab];
             
             UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 30, 7, 20, 30)];
@@ -478,14 +549,14 @@
             
             UILabel *contentLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(img.frame) - 65, 12, 65, 20)];
             contentLab.text = @"邀请有奖啦!";
-            contentLab.textColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+            contentLab.textColor = ZITIBLACKCOLOR;
             contentLab.font = [UIFont systemFontOfSize:10];
             contentLab.textAlignment = NSTextAlignmentRight;
             [cell.contentView addSubview:contentLab];
             
-            UILabel *dian = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(contentLab.frame) - 5, 39/2, 5, 5)];
+            UILabel *dian = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(contentLab.frame) - 6, 39/2, 6, 6)];
             dian.backgroundColor = [UIColor redColor];
-            dian.layer.cornerRadius = 2.5;
+            dian.layer.cornerRadius = 3;
             dian.layer.masksToBounds = YES;
             [cell.contentView addSubview:dian];
             
@@ -496,16 +567,16 @@
         
         if (indexPath.row == 1) {
             
-            UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(9.5, 9.5, 25, 25)];
+            UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(17.5, 12, imgW, imgW)];
             imgV.backgroundColor = MAINCOLOR;
             [cell.contentView addSubview:imgV];
             
-            UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imgV.frame) + 5, 12, 100, 20)];
+            UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imgV.frame) + 5, 14.5, 100, 20)];
             titLab.text = @"推荐列表";
-            titLab.textColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+            titLab.textColor = ZITIBLACKCOLOR;
             titLab.textAlignment = NSTextAlignmentLeft;
             titLab.backgroundColor = [UIColor clearColor];
-            titLab.font = [UIFont systemFontOfSize:13];
+            titLab.font = [UIFont systemFontOfSize:15];
             [cell.contentView addSubview:titLab];
             
             UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 30, 7, 20, 30)];
@@ -534,25 +605,25 @@
     } else if (indexPath.section == 1) {
         
         if (HEIGHT == 480) {
-            return 70;
+            return 65;
         } else if (HEIGHT == 568) {
-            return 70;
+            return 65;
         } else if (HEIGHT == 667) {
-            return 80;
+            return 75;
         } else {
-            return 90;
+            return 80;
         }
         
     } else if (indexPath.section == 2) {
         if (indexPath.row == 0) {
-            return 44;
+            return 49;
         } else {
-            return 50;
+            return 60;
         }
     } else if (indexPath.section == 3) {
-        return 44;
+        return 49;
     } else {
-        return 44;
+        return 49;
     }
 
 }
@@ -580,6 +651,14 @@
 {
     UITableViewCell * cell =  [tableView cellForRowAtIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    
+    
+    if (indexPath.section == 0) {
+        MyInfoViewController * myInfoVC = [MyInfoViewController new];
+        [self.navigationController pushViewController:myInfoVC animated:YES];
+    }
+    
+    
 }
 
 #pragma mark - slider值改变
@@ -631,6 +710,16 @@
 {
     
 }
+
+
+#pragma mark - 在线方法
+
+- (void)onlineBtnMethod:(UIButton *)sender
+{
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

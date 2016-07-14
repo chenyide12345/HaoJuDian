@@ -36,29 +36,37 @@
 
 - (void)setupNav
 {
+    self.navigationController.navigationBar.barTintColor = MAINCOLOR;
+    self.view.backgroundColor = BACKGROUNDCOLOR;
+    
     UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0 , 100, 44)];
     titleLabel.backgroundColor = [UIColor clearColor];  //设置Label背景透明
-    titleLabel.font = [UIFont boldSystemFontOfSize:20];  //设置文本字体与大小
-    titleLabel.textColor = [UIColor whiteColor];  //设置文本颜色
+    titleLabel.font = [UIFont systemFontOfSize:17];  //设置文本字体与大小
+    titleLabel.textColor = ZITIWHITECOLOR;  //设置文本颜色
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.text = @"附近";  //设置标题
     self.navigationItem.titleView = titleLabel;
     
-    self.navigationController.navigationBar.barTintColor = MAINCOLOR;
-    self.view.backgroundColor = BACKGROUNDCOLOR;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"筛选" style:UIBarButtonItemStylePlain target:self action:@selector(shaixuanBtnMethod:)];
-    [self.navigationItem.rightBarButtonItem setTintColor:[UIColor whiteColor]];
+    UIButton * shaixuanBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    shaixuanBtn.frame = CGRectMake(0, 0, 30, 20);
+    shaixuanBtn.backgroundColor = [UIColor clearColor];
+    [shaixuanBtn setTitle:@"筛选" forState:UIControlStateNormal];
+    [shaixuanBtn setTitleColor:ZITIWHITECOLOR forState:UIControlStateNormal];
+    shaixuanBtn.titleLabel.font = [UIFont systemFontOfSize:13];
+    [shaixuanBtn addTarget:self action:@selector(shaixuanBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem * rightBar = [[UIBarButtonItem alloc] initWithCustomView:shaixuanBtn];
+    self.navigationItem.rightBarButtonItem = rightBar;
     
     
     self.zhongdouBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.zhongdouBtn.frame = CGRectMake(0, 0, 50, 25);
-    self.zhongdouBtn.backgroundColor = MAINCOLOR;
+    self.zhongdouBtn.backgroundColor = [UIColor clearColor];
     self.zhongdouBtn.layer.masksToBounds = YES;
     self.zhongdouBtn.layer.borderWidth = 1;
-    self.zhongdouBtn.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.zhongdouBtn.layer.borderColor = ZITIWHITECOLOR.CGColor;
     self.zhongdouBtn.layer.cornerRadius = 12.5;
     [self.zhongdouBtn setTitle:@"种豆" forState:UIControlStateNormal];
-    self.zhongdouBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    self.zhongdouBtn.titleLabel.font = [UIFont systemFontOfSize:13];
     [self.zhongdouBtn addTarget:self action:@selector(zhongdouBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem * bar = [[UIBarButtonItem alloc] initWithCustomView:self.zhongdouBtn];
     self.navigationItem.leftBarButtonItem = bar;
@@ -115,7 +123,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 150.5;
+    return 145.5;
 }
 
 

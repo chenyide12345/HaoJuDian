@@ -70,7 +70,7 @@
     self.xiaoXiBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.xiaoXiBtn.frame = CGRectMake(backViewWidth/2, 0, backViewWidth/2, 34);
     [self.xiaoXiBtn setTitle:@"消息" forState:UIControlStateNormal];
-    [self.xiaoXiBtn setBackgroundColor:MAINCOLOR];
+    [self.xiaoXiBtn setBackgroundColor:[UIColor clearColor]];
     [self.xiaoXiBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     //    xiaoXiBtn.layer.borderWidth = 1;
     //    xiaoXiBtn.layer.borderColor = [UIColor whiteColor].CGColor;
@@ -114,7 +114,7 @@
     [self.tongZhiBtn setBackgroundColor:[UIColor whiteColor]];
     [self.tongZhiBtn setTitleColor:MAINCOLOR forState:UIControlStateNormal];
     
-    [self.xiaoXiBtn setBackgroundColor:MAINCOLOR];
+    [self.xiaoXiBtn setBackgroundColor:[UIColor clearColor]];
     [self.xiaoXiBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
 //    [self.newsVC.view removeFromSuperview];
@@ -132,7 +132,7 @@
     self.selectNum = 1001;
     [self.tableView reloadData];
     
-    [self.tongZhiBtn setBackgroundColor:MAINCOLOR];
+    [self.tongZhiBtn setBackgroundColor:[UIColor clearColor]];
     [self.tongZhiBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     [self.xiaoXiBtn setBackgroundColor:[UIColor whiteColor]];

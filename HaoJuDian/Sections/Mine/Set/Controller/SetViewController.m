@@ -8,6 +8,8 @@
 
 #import "SetViewController.h"
 #import "ChangePasswordViewController.h"
+#import "PayPasswordViewController.h"
+#import "ShowViewController.h"
 
 @interface SetViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -40,8 +42,8 @@
 {
     UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0 , 100, 44)];
     titleLabel.backgroundColor = [UIColor clearColor];  //设置Label背景透明
-    titleLabel.font = [UIFont boldSystemFontOfSize:20];  //设置文本字体与大小
-    titleLabel.textColor = [UIColor whiteColor];  //设置文本颜色
+    titleLabel.font = [UIFont systemFontOfSize:17];  //设置文本字体与大小
+    titleLabel.textColor = ZITIWHITECOLOR;  //设置文本颜色
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.text = @"设置";  //设置标题
     self.navigationItem.titleView = titleLabel;
@@ -102,14 +104,14 @@
     
     if (indexPath.row < self.titAry.count) {
         
-        UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(10, 11, 100, 20)];
+        UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(10, 49/2 - 10, 100, 20)];
         titLab.text = [NSString stringWithFormat:@"%@", self.titAry[indexPath.row]];
-        titLab.textColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+        titLab.textColor = ZITIBLACKCOLOR;
         titLab.font = [UIFont systemFontOfSize:15];
         [cell.contentView addSubview:titLab];
         
         
-        UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 44, 0, 44, 44)];
+        UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 17, 49/2-6, 7, 12)];
         img.backgroundColor = MAINCOLOR;
         [cell.contentView addSubview:img];
         
@@ -120,20 +122,20 @@
 //        contentLab.textAlignment = NSTextAlignmentRight;
 //        [cell.contentView addSubview:contentLab];
         
-        UILabel *lineLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 43.5, WIDTH, 0.5)];
-        lineLab.backgroundColor = BACKGROUNDCOLOR;
+        UILabel *lineLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 48.5, WIDTH, 0.5)];
+        lineLab.backgroundColor = XIANCOLOR;
         [cell.contentView addSubview:lineLab];
         
     } else {
         
         cell.backgroundColor = BACKGROUNDCOLOR;
         self.logoutBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.logoutBtn.frame = CGRectMake(10, 20, WIDTH - 20, 34);
+        self.logoutBtn.frame = CGRectMake(10, 20, WIDTH - 20, 40);
         self.logoutBtn.backgroundColor = MAINCOLOR;
-        self.logoutBtn.layer.cornerRadius = 6;
+        self.logoutBtn.layer.cornerRadius = 3;
         [self.logoutBtn setTitle:@"退出登录" forState:UIControlStateNormal];
-        self.logoutBtn.titleLabel.font = [UIFont systemFontOfSize:17];
-        [self.logoutBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        self.logoutBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+        [self.logoutBtn setTitleColor:ZITIWHITECOLOR forState:UIControlStateNormal];
         [self.logoutBtn addTarget:self action:@selector(logoutBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
         [cell.contentView addSubview:self.logoutBtn];
         
@@ -149,9 +151,9 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row < self.titAry.count) {
-        return 44;
+        return 49;
     } else {
-        return 54;
+        return 60;
     }
     
 }
@@ -159,9 +161,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row == 0) {
+        ShowViewController * showVC = [ShowViewController new];
+        [self.navigationController pushViewController:showVC animated:YES];
+    }
+    
     if (indexPath.row == 1) {
         ChangePasswordViewController * changePasswordVC = [ChangePasswordViewController new];
         [self.navigationController pushViewController:changePasswordVC animated:YES];
+    }
+    
+    if (indexPath.row == 2) {
+        PayPasswordViewController * payPasswordVC = [PayPasswordViewController new];
+        [self.navigationController pushViewController:payPasswordVC animated:YES];
     }
 }
 

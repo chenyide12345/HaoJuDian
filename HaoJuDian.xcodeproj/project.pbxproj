@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050055E91D361D270064415B /* MyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 050055E81D361D270064415B /* MyInfoViewController.m */; };
 		055115FD1D2CFB11003255C7 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055115FA1D2CFB11003255C7 /* SearchViewController.m */; };
 		055116001D2D0E1F003255C7 /* backImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 055115FE1D2D0E1F003255C7 /* backImage@2x.png */; };
 		055116011D2D0E1F003255C7 /* backImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 055115FF1D2D0E1F003255C7 /* backImage@3x.png */; };
@@ -23,10 +24,6 @@
 		05BF1ACF1D2BEC9D0095E18A /* CYDBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1A951D2BEC9D0095E18A /* CYDBaseNavigationController.m */; };
 		05BF1AD01D2BEC9D0095E18A /* CYDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1A971D2BEC9D0095E18A /* CYDNavigationController.m */; };
 		05BF1AD11D2BEC9D0095E18A /* UIColor+RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1A991D2BEC9D0095E18A /* UIColor+RandomColor.m */; };
-		05BF1AD21D2BEC9D0095E18A /* tabbar_contacts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05BF1A9B1D2BEC9D0095E18A /* tabbar_contacts@2x.png */; };
-		05BF1AD31D2BEC9D0095E18A /* tabbar_discover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05BF1A9C1D2BEC9D0095E18A /* tabbar_discover@2x.png */; };
-		05BF1AD41D2BEC9D0095E18A /* tabbar_mainframe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05BF1A9D1D2BEC9D0095E18A /* tabbar_mainframe@2x.png */; };
-		05BF1AD51D2BEC9D0095E18A /* tabbar_me@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05BF1A9E1D2BEC9D0095E18A /* tabbar_me@2x.png */; };
 		05BF1AD61D2BEC9D0095E18A /* FlowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1AA31D2BEC9D0095E18A /* FlowerViewController.m */; };
 		05BF1AD71D2BEC9D0095E18A /* MeetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1AA91D2BEC9D0095E18A /* MeetViewController.m */; };
 		05BF1AD81D2BEC9D0095E18A /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1AAF1D2BEC9D0095E18A /* MessageViewController.m */; };
@@ -34,11 +31,43 @@
 		05BF1ADC1D2BEC9D0095E18A /* NoticeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1AB91D2BEC9D0095E18A /* NoticeCell.m */; };
 		05BF1ADD1D2BEC9D0095E18A /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1ABD1D2BEC9D0095E18A /* MineViewController.m */; };
 		05BF1ADE1D2BEC9D0095E18A /* NearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1AC31D2BEC9D0095E18A /* NearbyViewController.m */; };
+		05F77A561D35D3FB002D928E /* nvdatu.png in Resources */ = {isa = PBXBuildFile; fileRef = 05F77A551D35D3FB002D928E /* nvdatu.png */; };
 		05F77DC21D2F55E60023ECE4 /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F77DC11D2F55E60023ECE4 /* SetViewController.m */; };
 		05F77DC51D2F5AAE0023ECE4 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F77DC41D2F5AAE0023ECE4 /* ChangePasswordViewController.m */; };
+		05F77DC81D2F7D470023ECE4 /* PayPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F77DC71D2F7D470023ECE4 /* PayPasswordViewController.m */; };
+		05F77DCC1D2F87000023ECE4 /* JKCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F77DCB1D2F87000023ECE4 /* JKCountDownButton.m */; };
+		05F77DCF1D2F8EB10023ECE4 /* ShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F77DCE1D2F8EB10023ECE4 /* ShowViewController.m */; };
 		05F78ECC1D2DF02400AB61F5 /* GiftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F78ECB1D2DF02400AB61F5 /* GiftCell.m */; };
 		05F78ECF1D2E028300AB61F5 /* BeanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F78ECE1D2E028300AB61F5 /* BeanCell.m */; };
 		05F78ED11D2E600500AB61F5 /* youjiantou.png in Resources */ = {isa = PBXBuildFile; fileRef = 05F78ED01D2E600500AB61F5 /* youjiantou.png */; };
+		05FA74BD1D333737006437AC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA74BC1D333737006437AC /* LoginViewController.m */; };
+		05FA74C01D335186006437AC /* FindPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA74BF1D335186006437AC /* FindPasswordViewController.m */; };
+		05FA74C31D336F5E006437AC /* RegisterFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA74C21D336F5E006437AC /* RegisterFirstViewController.m */; };
+		05FA74C61D3372B8006437AC /* RegisterSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA74C51D3372B8006437AC /* RegisterSecondViewController.m */; };
+		05FA75471D338C8B006437AC /* CardContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05FA752F1D338C8B006437AC /* CardContentView.xib */; };
+		05FA75481D338C8B006437AC /* UIColor+FlatColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA75311D338C8B006437AC /* UIColor+FlatColors.m */; };
+		05FA75491D338C8B006437AC /* DefaultDirectionInterpretor.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA75341D338C8B006437AC /* DefaultDirectionInterpretor.m */; };
+		05FA754A1D338C8B006437AC /* DefaultShouldSwipeDeterminator.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA75361D338C8B006437AC /* DefaultShouldSwipeDeterminator.m */; };
+		05FA754B1D338C8B006437AC /* DefaultViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA75381D338C8B006437AC /* DefaultViewAnimator.m */; };
+		05FA754C1D338C8B006437AC /* PanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA753A1D338C8B006437AC /* PanGestureRecognizer.m */; };
+		05FA754D1D338C8B006437AC /* Scheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA753C1D338C8B006437AC /* Scheduler.m */; };
+		05FA754E1D338C8B006437AC /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA753E1D338C8B006437AC /* Utils.m */; };
+		05FA754F1D338C8B006437AC /* ViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA75401D338C8B006437AC /* ViewManager.m */; };
+		05FA75501D338C8B006437AC /* ZLSwipeableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA75421D338C8B006437AC /* ZLSwipeableView.m */; };
+		05FA75511D338C8B006437AC /* ZLSwipeableViewMovement.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA75441D338C8B006437AC /* ZLSwipeableViewMovement.m */; };
+		05FA75521D338C8B006437AC /* ZLSwipeableViewSwipeOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA75461D338C8B006437AC /* ZLSwipeableViewSwipeOptions.m */; };
+		05FA75551D338F76006437AC /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA75531D338F76006437AC /* CardView.m */; };
+		05FA75711D33A393006437AC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05FA75571D33A393006437AC /* Info.plist */; };
+		05FA75721D33A393006437AC /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA75591D33A393006437AC /* MASCompositeConstraint.m */; };
+		05FA75731D33A393006437AC /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA755C1D33A393006437AC /* MASConstraint.m */; };
+		05FA75741D33A393006437AC /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA755E1D33A393006437AC /* MASConstraintMaker.m */; };
+		05FA75751D33A393006437AC /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA75601D33A393006437AC /* MASLayoutConstraint.m */; };
+		05FA75761D33A393006437AC /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA75641D33A393006437AC /* MASViewAttribute.m */; };
+		05FA75771D33A393006437AC /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA75661D33A393006437AC /* MASViewConstraint.m */; };
+		05FA75781D33A393006437AC /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA75681D33A393006437AC /* NSArray+MASAdditions.m */; };
+		05FA75791D33A393006437AC /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA756B1D33A393006437AC /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		05FA757A1D33A393006437AC /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA756D1D33A393006437AC /* View+MASAdditions.m */; };
+		05FA757B1D33A393006437AC /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FA75701D33A393006437AC /* ViewController+MASAdditions.m */; };
 		05FD68111D2C986000D6C609 /* NearbyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FD68101D2C986000D6C609 /* NearbyCell.m */; };
 		05FD685D1D2CB67200D6C609 /* CYDSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FD685C1D2CB67200D6C609 /* CYDSlider.m */; };
 		05FD68611D2CDFC600D6C609 /* 1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05FD68601D2CDFC600D6C609 /* 1@2x.png */; };
@@ -62,6 +91,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		050055E71D361D270064415B /* MyInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoViewController.h; sourceTree = "<group>"; };
+		050055E81D361D270064415B /* MyInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoViewController.m; sourceTree = "<group>"; };
 		055115F91D2CFB11003255C7 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		055115FA1D2CFB11003255C7 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		055115FE1D2D0E1F003255C7 /* backImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backImage@2x.png"; sourceTree = "<group>"; };
@@ -90,10 +121,6 @@
 		05BF1A971D2BEC9D0095E18A /* CYDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDNavigationController.m; sourceTree = "<group>"; };
 		05BF1A981D2BEC9D0095E18A /* UIColor+RandomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RandomColor.h"; sourceTree = "<group>"; };
 		05BF1A991D2BEC9D0095E18A /* UIColor+RandomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RandomColor.m"; sourceTree = "<group>"; };
-		05BF1A9B1D2BEC9D0095E18A /* tabbar_contacts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_contacts@2x.png"; sourceTree = "<group>"; };
-		05BF1A9C1D2BEC9D0095E18A /* tabbar_discover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_discover@2x.png"; sourceTree = "<group>"; };
-		05BF1A9D1D2BEC9D0095E18A /* tabbar_mainframe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_mainframe@2x.png"; sourceTree = "<group>"; };
-		05BF1A9E1D2BEC9D0095E18A /* tabbar_me@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_me@2x.png"; sourceTree = "<group>"; };
 		05BF1AA21D2BEC9D0095E18A /* FlowerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowerViewController.h; sourceTree = "<group>"; };
 		05BF1AA31D2BEC9D0095E18A /* FlowerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowerViewController.m; sourceTree = "<group>"; };
 		05BF1AA81D2BEC9D0095E18A /* MeetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetViewController.h; sourceTree = "<group>"; };
@@ -109,15 +136,81 @@
 		05BF1AC21D2BEC9D0095E18A /* NearbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyViewController.h; sourceTree = "<group>"; };
 		05BF1AC31D2BEC9D0095E18A /* NearbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyViewController.m; sourceTree = "<group>"; };
 		05BF1AE01D2BECC20095E18A /* HaoJuDian.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaoJuDian.pch; sourceTree = "<group>"; };
+		05F77A551D35D3FB002D928E /* nvdatu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nvdatu.png; sourceTree = "<group>"; };
 		05F77DC01D2F55E60023ECE4 /* SetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetViewController.h; sourceTree = "<group>"; };
 		05F77DC11D2F55E60023ECE4 /* SetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetViewController.m; sourceTree = "<group>"; };
 		05F77DC31D2F5AAE0023ECE4 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
 		05F77DC41D2F5AAE0023ECE4 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
+		05F77DC61D2F7D470023ECE4 /* PayPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPasswordViewController.h; sourceTree = "<group>"; };
+		05F77DC71D2F7D470023ECE4 /* PayPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayPasswordViewController.m; sourceTree = "<group>"; };
+		05F77DCA1D2F87000023ECE4 /* JKCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCountDownButton.h; sourceTree = "<group>"; };
+		05F77DCB1D2F87000023ECE4 /* JKCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCountDownButton.m; sourceTree = "<group>"; };
+		05F77DCD1D2F8EB10023ECE4 /* ShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowViewController.h; sourceTree = "<group>"; };
+		05F77DCE1D2F8EB10023ECE4 /* ShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowViewController.m; sourceTree = "<group>"; };
 		05F78ECA1D2DF02400AB61F5 /* GiftCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftCell.h; sourceTree = "<group>"; };
 		05F78ECB1D2DF02400AB61F5 /* GiftCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftCell.m; sourceTree = "<group>"; };
 		05F78ECD1D2E028300AB61F5 /* BeanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeanCell.h; sourceTree = "<group>"; };
 		05F78ECE1D2E028300AB61F5 /* BeanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeanCell.m; sourceTree = "<group>"; };
 		05F78ED01D2E600500AB61F5 /* youjiantou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youjiantou.png; sourceTree = "<group>"; };
+		05FA74BB1D333737006437AC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		05FA74BC1D333737006437AC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		05FA74BE1D335186006437AC /* FindPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindPasswordViewController.h; sourceTree = "<group>"; };
+		05FA74BF1D335186006437AC /* FindPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindPasswordViewController.m; sourceTree = "<group>"; };
+		05FA74C11D336F5E006437AC /* RegisterFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterFirstViewController.h; sourceTree = "<group>"; };
+		05FA74C21D336F5E006437AC /* RegisterFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterFirstViewController.m; sourceTree = "<group>"; };
+		05FA74C41D3372B8006437AC /* RegisterSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterSecondViewController.h; sourceTree = "<group>"; };
+		05FA74C51D3372B8006437AC /* RegisterSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterSecondViewController.m; sourceTree = "<group>"; };
+		05FA752F1D338C8B006437AC /* CardContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardContentView.xib; sourceTree = "<group>"; };
+		05FA75301D338C8B006437AC /* UIColor+FlatColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatColors.h"; sourceTree = "<group>"; };
+		05FA75311D338C8B006437AC /* UIColor+FlatColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatColors.m"; sourceTree = "<group>"; };
+		05FA75331D338C8B006437AC /* DefaultDirectionInterpretor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultDirectionInterpretor.h; sourceTree = "<group>"; };
+		05FA75341D338C8B006437AC /* DefaultDirectionInterpretor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultDirectionInterpretor.m; sourceTree = "<group>"; };
+		05FA75351D338C8B006437AC /* DefaultShouldSwipeDeterminator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultShouldSwipeDeterminator.h; sourceTree = "<group>"; };
+		05FA75361D338C8B006437AC /* DefaultShouldSwipeDeterminator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultShouldSwipeDeterminator.m; sourceTree = "<group>"; };
+		05FA75371D338C8B006437AC /* DefaultViewAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultViewAnimator.h; sourceTree = "<group>"; };
+		05FA75381D338C8B006437AC /* DefaultViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultViewAnimator.m; sourceTree = "<group>"; };
+		05FA75391D338C8B006437AC /* PanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanGestureRecognizer.h; sourceTree = "<group>"; };
+		05FA753A1D338C8B006437AC /* PanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanGestureRecognizer.m; sourceTree = "<group>"; };
+		05FA753B1D338C8B006437AC /* Scheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scheduler.h; sourceTree = "<group>"; };
+		05FA753C1D338C8B006437AC /* Scheduler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scheduler.m; sourceTree = "<group>"; };
+		05FA753D1D338C8B006437AC /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		05FA753E1D338C8B006437AC /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		05FA753F1D338C8B006437AC /* ViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewManager.h; sourceTree = "<group>"; };
+		05FA75401D338C8B006437AC /* ViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewManager.m; sourceTree = "<group>"; };
+		05FA75411D338C8B006437AC /* ZLSwipeableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLSwipeableView.h; sourceTree = "<group>"; };
+		05FA75421D338C8B006437AC /* ZLSwipeableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLSwipeableView.m; sourceTree = "<group>"; };
+		05FA75431D338C8B006437AC /* ZLSwipeableViewMovement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLSwipeableViewMovement.h; sourceTree = "<group>"; };
+		05FA75441D338C8B006437AC /* ZLSwipeableViewMovement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLSwipeableViewMovement.m; sourceTree = "<group>"; };
+		05FA75451D338C8B006437AC /* ZLSwipeableViewSwipeOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLSwipeableViewSwipeOptions.h; sourceTree = "<group>"; };
+		05FA75461D338C8B006437AC /* ZLSwipeableViewSwipeOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLSwipeableViewSwipeOptions.m; sourceTree = "<group>"; };
+		05FA75531D338F76006437AC /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
+		05FA75541D338F76006437AC /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
+		05FA75571D33A393006437AC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05FA75581D33A393006437AC /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		05FA75591D33A393006437AC /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		05FA755A1D33A393006437AC /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		05FA755B1D33A393006437AC /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		05FA755C1D33A393006437AC /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		05FA755D1D33A393006437AC /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		05FA755E1D33A393006437AC /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		05FA755F1D33A393006437AC /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		05FA75601D33A393006437AC /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		05FA75611D33A393006437AC /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		05FA75621D33A393006437AC /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		05FA75631D33A393006437AC /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		05FA75641D33A393006437AC /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		05FA75651D33A393006437AC /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		05FA75661D33A393006437AC /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		05FA75671D33A393006437AC /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		05FA75681D33A393006437AC /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		05FA75691D33A393006437AC /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		05FA756A1D33A393006437AC /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		05FA756B1D33A393006437AC /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		05FA756C1D33A393006437AC /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		05FA756D1D33A393006437AC /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		05FA756E1D33A393006437AC /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		05FA756F1D33A393006437AC /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		05FA75701D33A393006437AC /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		05FD680F1D2C986000D6C609 /* NearbyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyCell.h; sourceTree = "<group>"; };
 		05FD68101D2C986000D6C609 /* NearbyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyCell.m; sourceTree = "<group>"; };
 		05FD685B1D2CB67200D6C609 /* CYDSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDSlider.h; sourceTree = "<group>"; };
@@ -285,14 +378,11 @@
 		05BF1A9A1D2BEC9D0095E18A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				05F77A551D35D3FB002D928E /* nvdatu.png */,
 				05F78ED01D2E600500AB61F5 /* youjiantou.png */,
 				055115FE1D2D0E1F003255C7 /* backImage@2x.png */,
 				055115FF1D2D0E1F003255C7 /* backImage@3x.png */,
 				05FD68601D2CDFC600D6C609 /* 1@2x.png */,
-				05BF1A9B1D2BEC9D0095E18A /* tabbar_contacts@2x.png */,
-				05BF1A9C1D2BEC9D0095E18A /* tabbar_discover@2x.png */,
-				05BF1A9D1D2BEC9D0095E18A /* tabbar_mainframe@2x.png */,
-				05BF1A9E1D2BEC9D0095E18A /* tabbar_me@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -375,6 +465,8 @@
 		05BF1AAB1D2BEC9D0095E18A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				05FA75541D338F76006437AC /* CardView.h */,
+				05FA75531D338F76006437AC /* CardView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -419,6 +511,7 @@
 		05BF1ABA1D2BEC9D0095E18A /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				05FA74B71D333729006437AC /* LoginAndRegister */,
 				05F77DBC1D2F55AB0023ECE4 /* Set */,
 				05BF1ABB1D2BEC9D0095E18A /* Controller */,
 				05BF1ABE1D2BEC9D0095E18A /* Model */,
@@ -432,6 +525,8 @@
 			children = (
 				05BF1ABC1D2BEC9D0095E18A /* MineViewController.h */,
 				05BF1ABD1D2BEC9D0095E18A /* MineViewController.m */,
+				050055E71D361D270064415B /* MyInfoViewController.h */,
+				050055E81D361D270064415B /* MyInfoViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -489,6 +584,10 @@
 		05BF1ACC1D2BEC9D0095E18A /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				05FA75561D33A393006437AC /* Masonry */,
+				05FA752E1D338C8B006437AC /* UIColor+FlatColors */,
+				05FA75321D338C8B006437AC /* ZLSwipeableView */,
+				05F77DC91D2F87000023ECE4 /* JKCountDownButton */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -510,6 +609,10 @@
 				05F77DC11D2F55E60023ECE4 /* SetViewController.m */,
 				05F77DC31D2F5AAE0023ECE4 /* ChangePasswordViewController.h */,
 				05F77DC41D2F5AAE0023ECE4 /* ChangePasswordViewController.m */,
+				05F77DC61D2F7D470023ECE4 /* PayPasswordViewController.h */,
+				05F77DC71D2F7D470023ECE4 /* PayPasswordViewController.m */,
+				05F77DCD1D2F8EB10023ECE4 /* ShowViewController.h */,
+				05F77DCE1D2F8EB10023ECE4 /* ShowViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -526,6 +629,124 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		05F77DC91D2F87000023ECE4 /* JKCountDownButton */ = {
+			isa = PBXGroup;
+			children = (
+				05F77DCA1D2F87000023ECE4 /* JKCountDownButton.h */,
+				05F77DCB1D2F87000023ECE4 /* JKCountDownButton.m */,
+			);
+			path = JKCountDownButton;
+			sourceTree = "<group>";
+		};
+		05FA74B71D333729006437AC /* LoginAndRegister */ = {
+			isa = PBXGroup;
+			children = (
+				05FA74B81D333729006437AC /* Controller */,
+				05FA74B91D333729006437AC /* Model */,
+				05FA74BA1D333729006437AC /* View */,
+			);
+			path = LoginAndRegister;
+			sourceTree = "<group>";
+		};
+		05FA74B81D333729006437AC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				05FA74BB1D333737006437AC /* LoginViewController.h */,
+				05FA74BC1D333737006437AC /* LoginViewController.m */,
+				05FA74BE1D335186006437AC /* FindPasswordViewController.h */,
+				05FA74BF1D335186006437AC /* FindPasswordViewController.m */,
+				05FA74C11D336F5E006437AC /* RegisterFirstViewController.h */,
+				05FA74C21D336F5E006437AC /* RegisterFirstViewController.m */,
+				05FA74C41D3372B8006437AC /* RegisterSecondViewController.h */,
+				05FA74C51D3372B8006437AC /* RegisterSecondViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		05FA74B91D333729006437AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		05FA74BA1D333729006437AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		05FA752E1D338C8B006437AC /* UIColor+FlatColors */ = {
+			isa = PBXGroup;
+			children = (
+				05FA752F1D338C8B006437AC /* CardContentView.xib */,
+				05FA75301D338C8B006437AC /* UIColor+FlatColors.h */,
+				05FA75311D338C8B006437AC /* UIColor+FlatColors.m */,
+			);
+			path = "UIColor+FlatColors";
+			sourceTree = "<group>";
+		};
+		05FA75321D338C8B006437AC /* ZLSwipeableView */ = {
+			isa = PBXGroup;
+			children = (
+				05FA75331D338C8B006437AC /* DefaultDirectionInterpretor.h */,
+				05FA75341D338C8B006437AC /* DefaultDirectionInterpretor.m */,
+				05FA75351D338C8B006437AC /* DefaultShouldSwipeDeterminator.h */,
+				05FA75361D338C8B006437AC /* DefaultShouldSwipeDeterminator.m */,
+				05FA75371D338C8B006437AC /* DefaultViewAnimator.h */,
+				05FA75381D338C8B006437AC /* DefaultViewAnimator.m */,
+				05FA75391D338C8B006437AC /* PanGestureRecognizer.h */,
+				05FA753A1D338C8B006437AC /* PanGestureRecognizer.m */,
+				05FA753B1D338C8B006437AC /* Scheduler.h */,
+				05FA753C1D338C8B006437AC /* Scheduler.m */,
+				05FA753D1D338C8B006437AC /* Utils.h */,
+				05FA753E1D338C8B006437AC /* Utils.m */,
+				05FA753F1D338C8B006437AC /* ViewManager.h */,
+				05FA75401D338C8B006437AC /* ViewManager.m */,
+				05FA75411D338C8B006437AC /* ZLSwipeableView.h */,
+				05FA75421D338C8B006437AC /* ZLSwipeableView.m */,
+				05FA75431D338C8B006437AC /* ZLSwipeableViewMovement.h */,
+				05FA75441D338C8B006437AC /* ZLSwipeableViewMovement.m */,
+				05FA75451D338C8B006437AC /* ZLSwipeableViewSwipeOptions.h */,
+				05FA75461D338C8B006437AC /* ZLSwipeableViewSwipeOptions.m */,
+			);
+			path = ZLSwipeableView;
+			sourceTree = "<group>";
+		};
+		05FA75561D33A393006437AC /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				05FA75571D33A393006437AC /* Info.plist */,
+				05FA75581D33A393006437AC /* MASCompositeConstraint.h */,
+				05FA75591D33A393006437AC /* MASCompositeConstraint.m */,
+				05FA755A1D33A393006437AC /* MASConstraint+Private.h */,
+				05FA755B1D33A393006437AC /* MASConstraint.h */,
+				05FA755C1D33A393006437AC /* MASConstraint.m */,
+				05FA755D1D33A393006437AC /* MASConstraintMaker.h */,
+				05FA755E1D33A393006437AC /* MASConstraintMaker.m */,
+				05FA755F1D33A393006437AC /* MASLayoutConstraint.h */,
+				05FA75601D33A393006437AC /* MASLayoutConstraint.m */,
+				05FA75611D33A393006437AC /* Masonry.h */,
+				05FA75621D33A393006437AC /* MASUtilities.h */,
+				05FA75631D33A393006437AC /* MASViewAttribute.h */,
+				05FA75641D33A393006437AC /* MASViewAttribute.m */,
+				05FA75651D33A393006437AC /* MASViewConstraint.h */,
+				05FA75661D33A393006437AC /* MASViewConstraint.m */,
+				05FA75671D33A393006437AC /* NSArray+MASAdditions.h */,
+				05FA75681D33A393006437AC /* NSArray+MASAdditions.m */,
+				05FA75691D33A393006437AC /* NSArray+MASShorthandAdditions.h */,
+				05FA756A1D33A393006437AC /* NSLayoutConstraint+MASDebugAdditions.h */,
+				05FA756B1D33A393006437AC /* NSLayoutConstraint+MASDebugAdditions.m */,
+				05FA756C1D33A393006437AC /* View+MASAdditions.h */,
+				05FA756D1D33A393006437AC /* View+MASAdditions.m */,
+				05FA756E1D33A393006437AC /* View+MASShorthandAdditions.h */,
+				05FA756F1D33A393006437AC /* ViewController+MASAdditions.h */,
+				05FA75701D33A393006437AC /* ViewController+MASAdditions.m */,
+			);
+			path = Masonry;
 			sourceTree = "<group>";
 		};
 		05FD68121D2C9CBA00D6C609 /* MyViews */ = {
@@ -645,17 +866,16 @@
 			files = (
 				05BF1A8A1D2BEC3A0095E18A /* Default-414w-736h@3x.png in Resources */,
 				05BF1A8B1D2BEC3A0095E18A /* Default-375w-667h@2x.png in Resources */,
+				05FA75471D338C8B006437AC /* CardContentView.xib in Resources */,
 				055116011D2D0E1F003255C7 /* backImage@3x.png in Resources */,
 				05FD68611D2CDFC600D6C609 /* 1@2x.png in Resources */,
-				05BF1AD51D2BEC9D0095E18A /* tabbar_me@2x.png in Resources */,
 				05BF1A8C1D2BEC3A0095E18A /* Default@2x.png in Resources */,
 				05BF1A5F1D2BEBB60095E18A /* Assets.xcassets in Resources */,
+				05FA75711D33A393006437AC /* Info.plist in Resources */,
 				05F78ED11D2E600500AB61F5 /* youjiantou.png in Resources */,
-				05BF1AD31D2BEC9D0095E18A /* tabbar_discover@2x.png in Resources */,
 				055116001D2D0E1F003255C7 /* backImage@2x.png in Resources */,
 				05BF1A861D2BEBEC0095E18A /* Default-568h@2x.png in Resources */,
-				05BF1AD21D2BEC9D0095E18A /* tabbar_contacts@2x.png in Resources */,
-				05BF1AD41D2BEC9D0095E18A /* tabbar_mainframe@2x.png in Resources */,
+				05F77A561D35D3FB002D928E /* nvdatu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,26 +900,56 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05FA75771D33A393006437AC /* MASViewConstraint.m in Sources */,
 				05BF1ACD1D2BEC9D0095E18A /* AppDelegate.m in Sources */,
+				05FA75761D33A393006437AC /* MASViewAttribute.m in Sources */,
+				05FA754D1D338C8B006437AC /* Scheduler.m in Sources */,
 				05BF1ADD1D2BEC9D0095E18A /* MineViewController.m in Sources */,
+				05FA75521D338C8B006437AC /* ZLSwipeableViewSwipeOptions.m in Sources */,
+				05FA75721D33A393006437AC /* MASCompositeConstraint.m in Sources */,
+				05FA75791D33A393006437AC /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				05BF1AD71D2BEC9D0095E18A /* MeetViewController.m in Sources */,
 				05BF1ADB1D2BEC9D0095E18A /* NewsCell.m in Sources */,
+				05F77DCC1D2F87000023ECE4 /* JKCountDownButton.m in Sources */,
+				05FA757B1D33A393006437AC /* ViewController+MASAdditions.m in Sources */,
 				05BF1ACE1D2BEC9D0095E18A /* MainViewController.m in Sources */,
 				055115FD1D2CFB11003255C7 /* SearchViewController.m in Sources */,
+				05FA754C1D338C8B006437AC /* PanGestureRecognizer.m in Sources */,
 				05BF1A541D2BEBB60095E18A /* main.m in Sources */,
+				05FA74BD1D333737006437AC /* LoginViewController.m in Sources */,
+				05FA754F1D338C8B006437AC /* ViewManager.m in Sources */,
+				05FA74C31D336F5E006437AC /* RegisterFirstViewController.m in Sources */,
+				05FA75511D338C8B006437AC /* ZLSwipeableViewMovement.m in Sources */,
+				05FA75781D33A393006437AC /* NSArray+MASAdditions.m in Sources */,
+				05FA757A1D33A393006437AC /* View+MASAdditions.m in Sources */,
+				050055E91D361D270064415B /* MyInfoViewController.m in Sources */,
 				05F78ECF1D2E028300AB61F5 /* BeanCell.m in Sources */,
 				05BF1ADE1D2BEC9D0095E18A /* NearbyViewController.m in Sources */,
 				05BF1ACF1D2BEC9D0095E18A /* CYDBaseNavigationController.m in Sources */,
+				05FA75551D338F76006437AC /* CardView.m in Sources */,
 				05BF1AD61D2BEC9D0095E18A /* FlowerViewController.m in Sources */,
+				05FA74C61D3372B8006437AC /* RegisterSecondViewController.m in Sources */,
 				05BF1AD81D2BEC9D0095E18A /* MessageViewController.m in Sources */,
+				05FA754A1D338C8B006437AC /* DefaultShouldSwipeDeterminator.m in Sources */,
+				05FA75731D33A393006437AC /* MASConstraint.m in Sources */,
+				05FA754B1D338C8B006437AC /* DefaultViewAnimator.m in Sources */,
+				05FA75501D338C8B006437AC /* ZLSwipeableView.m in Sources */,
 				05FD685D1D2CB67200D6C609 /* CYDSlider.m in Sources */,
 				05F77DC51D2F5AAE0023ECE4 /* ChangePasswordViewController.m in Sources */,
 				05BF1AD11D2BEC9D0095E18A /* UIColor+RandomColor.m in Sources */,
+				05F77DCF1D2F8EB10023ECE4 /* ShowViewController.m in Sources */,
+				05F77DC81D2F7D470023ECE4 /* PayPasswordViewController.m in Sources */,
 				05F77DC21D2F55E60023ECE4 /* SetViewController.m in Sources */,
 				05FD68111D2C986000D6C609 /* NearbyCell.m in Sources */,
+				05FA74C01D335186006437AC /* FindPasswordViewController.m in Sources */,
+				05FA75741D33A393006437AC /* MASConstraintMaker.m in Sources */,
+				05FA75751D33A393006437AC /* MASLayoutConstraint.m in Sources */,
+				05FA75491D338C8B006437AC /* DefaultDirectionInterpretor.m in Sources */,
+				05FA75481D338C8B006437AC /* UIColor+FlatColors.m in Sources */,
 				05BF1ADC1D2BEC9D0095E18A /* NoticeCell.m in Sources */,
 				05F78ECC1D2DF02400AB61F5 /* GiftCell.m in Sources */,
 				05BF1AD01D2BEC9D0095E18A /* CYDNavigationController.m in Sources */,
+				05FA754E1D338C8B006437AC /* Utils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

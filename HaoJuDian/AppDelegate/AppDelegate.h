@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (nonatomic, strong) UINavigationController * mainRootNav;
+@property (nonatomic, strong) UINavigationController * loginRootNav;
 
 @end
 

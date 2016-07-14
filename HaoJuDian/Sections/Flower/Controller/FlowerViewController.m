@@ -75,7 +75,7 @@
     self.liwuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.liwuBtn.frame = CGRectMake(backViewWidth/2, 0, backViewWidth/2, 34);
     [self.liwuBtn setTitle:@"我的礼物" forState:UIControlStateNormal];
-    [self.liwuBtn setBackgroundColor:MAINCOLOR];
+    [self.liwuBtn setBackgroundColor:[UIColor clearColor]];
     [self.liwuBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     self.liwuBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     //    xiaoXiBtn.layer.borderWidth = 1;
@@ -150,7 +150,7 @@
     [self.qingdouBtn setBackgroundColor:[UIColor whiteColor]];
     [self.qingdouBtn setTitleColor:MAINCOLOR forState:UIControlStateNormal];
     
-    [self.liwuBtn setBackgroundColor:MAINCOLOR];
+    [self.liwuBtn setBackgroundColor:[UIColor clearColor]];
     [self.liwuBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     NSArray * titAry = [NSArray arrayWithObjects:@"TA为我种的情豆(6)", @"我为TA种的情豆(6)", nil];
@@ -169,7 +169,7 @@
     self.selectNum = 10001;
     [self.tableView reloadData];
     
-    [self.qingdouBtn setBackgroundColor:MAINCOLOR];
+    [self.qingdouBtn setBackgroundColor:[UIColor clearColor]];
     [self.qingdouBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     [self.liwuBtn setBackgroundColor:[UIColor whiteColor]];
