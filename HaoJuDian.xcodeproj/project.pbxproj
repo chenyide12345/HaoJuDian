@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		050055E91D361D270064415B /* MyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 050055E81D361D270064415B /* MyInfoViewController.m */; };
+		054B33CC1D3879D00053F0DA /* OtherInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B33CB1D3879D00053F0DA /* OtherInfoViewController.m */; };
 		055115FD1D2CFB11003255C7 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055115FA1D2CFB11003255C7 /* SearchViewController.m */; };
 		055116001D2D0E1F003255C7 /* backImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 055115FE1D2D0E1F003255C7 /* backImage@2x.png */; };
 		055116011D2D0E1F003255C7 /* backImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 055115FF1D2D0E1F003255C7 /* backImage@3x.png */; };
@@ -94,6 +95,8 @@
 /* Begin PBXFileReference section */
 		050055E71D361D270064415B /* MyInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoViewController.h; sourceTree = "<group>"; };
 		050055E81D361D270064415B /* MyInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoViewController.m; sourceTree = "<group>"; };
+		054B33CA1D3879D00053F0DA /* OtherInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherInfoViewController.h; sourceTree = "<group>"; };
+		054B33CB1D3879D00053F0DA /* OtherInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherInfoViewController.m; sourceTree = "<group>"; };
 		055115F91D2CFB11003255C7 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		055115FA1D2CFB11003255C7 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		055115FE1D2D0E1F003255C7 /* backImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backImage@2x.png"; sourceTree = "<group>"; };
@@ -532,6 +535,8 @@
 				050055E81D361D270064415B /* MyInfoViewController.m */,
 				05B6150B1D379326001B261F /* MyHobbyViewController.h */,
 				05B6150C1D379326001B261F /* MyHobbyViewController.m */,
+				054B33CA1D3879D00053F0DA /* OtherInfoViewController.h */,
+				054B33CB1D3879D00053F0DA /* OtherInfoViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -950,6 +955,7 @@
 				05FA75741D33A393006437AC /* MASConstraintMaker.m in Sources */,
 				05FA75751D33A393006437AC /* MASLayoutConstraint.m in Sources */,
 				05FA75491D338C8B006437AC /* DefaultDirectionInterpretor.m in Sources */,
+				054B33CC1D3879D00053F0DA /* OtherInfoViewController.m in Sources */,
 				05FA75481D338C8B006437AC /* UIColor+FlatColors.m in Sources */,
 				05B6150D1D379326001B261F /* MyHobbyViewController.m in Sources */,
 				05BF1ADC1D2BEC9D0095E18A /* NoticeCell.m in Sources */,

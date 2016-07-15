@@ -8,6 +8,8 @@
 
 #ifndef HaoJuDian_pch
 #define HaoJuDian_pch
+#import <Accelerate/Accelerate.h>
+#import <QuartzCore/QuartzCore.h>
 #import "JKCountDownButton.h"
 #import "CYDBaseNavigationController.h"
 #import "CYDNavigationController.h"

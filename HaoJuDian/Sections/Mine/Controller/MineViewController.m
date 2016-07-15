@@ -11,6 +11,7 @@
 #import "CYDSlider.h"
 #import "SetViewController.h"
 #import "MyInfoViewController.h"
+#import "OtherInfoViewController.h"
 
 @interface MineViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -221,6 +222,7 @@
         [slider addTarget:self action:@selector(sliderFinish:) forControlEvents:UIControlEventTouchUpInside];
         //是否持续发送值的更新, 默认为YES
         slider.continuous = YES;
+        slider.userInteractionEnabled = NO;
         [cell.contentView addSubview:slider];
         
         
@@ -654,7 +656,8 @@
     
     
     if (indexPath.section == 0) {
-        MyInfoViewController * myInfoVC = [MyInfoViewController new];
+        OtherInfoViewController * myInfoVC = [OtherInfoViewController new];
+//        MyInfoViewController * myInfoVC = [MyInfoViewController new];
         [self.navigationController pushViewController:myInfoVC animated:YES];
     }
     

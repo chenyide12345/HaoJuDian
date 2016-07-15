@@ -1,17 +1,15 @@
 //
-//  MyInfoViewController.m
+//  OtherInfoViewController.m
 //  HaoJuDian
 //
-//  Created by 陈义德 on 16/7/13.
+//  Created by 陈义徳 on 16/7/15.
 //  Copyright © 2016年 陈义德. All rights reserved.
 //
 
-#import "MyInfoViewController.h"
+#import "OtherInfoViewController.h"
 #import "CYDSlider.h"
-#import "MyHobbyViewController.h"
 
-
-@interface MyInfoViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface OtherInfoViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView * tableView;
 
@@ -23,9 +21,16 @@
 @property (nonatomic, strong) NSArray * baseInfoTitAry; //基本资料tit
 @property (nonatomic, strong) NSArray * chooseTitAry; //择偶意向tit
 
+@property (nonatomic, strong) UIImageView * loveImg;
+
+@property (nonatomic, strong) UIButton * shareBtn;
+@property (nonatomic, strong) UIButton * liwuBtn;
+@property (nonatomic, strong) UIButton * beanBtn;
+@property (nonatomic, strong) UIButton * chatBtn;
+
 @end
 
-@implementation MyInfoViewController
+@implementation OtherInfoViewController
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleDefault;
@@ -71,6 +76,98 @@
     [self.view addSubview:self.tableView];
     
     
+    CGFloat scale1 = 0.14;
+    CGFloat wid1 = WIDTH * scale1;
+    CGFloat scale2 = 0.2;
+    CGFloat wid2 = WIDTH * scale2;
+    CGFloat jiange = 0.06*WIDTH;
+    
+    self.shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.shareBtn.backgroundColor = [UIColor clearColor];
+    self.shareBtn.layer.cornerRadius = wid1/2;
+    self.shareBtn.tag = 1001;
+    [self.shareBtn setImage:[UIImage imageNamed:@"fenxianghui"] forState:UIControlStateNormal];
+    [self.shareBtn addTarget:self action:@selector(shareBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.shareBtn];
+    
+    self.liwuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.liwuBtn.backgroundColor = [UIColor clearColor];
+    self.liwuBtn.layer.cornerRadius = wid2/2;
+    self.liwuBtn.tag = 1002;
+    [self.liwuBtn setImage:[UIImage imageNamed:@"liwuhui"] forState:UIControlStateNormal];
+    [self.liwuBtn addTarget:self action:@selector(liwuBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.liwuBtn];
+    
+    self.beanBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.beanBtn.backgroundColor = [UIColor clearColor];
+    self.beanBtn.layer.cornerRadius = wid2/2;
+    self.beanBtn.tag = 1003;
+    [self.beanBtn setImage:[UIImage imageNamed:@"qingdouhui"] forState:UIControlStateNormal];
+    [self.beanBtn addTarget:self action:@selector(beanBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.beanBtn];
+    
+    self.chatBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.chatBtn.backgroundColor = [UIColor clearColor];
+    self.chatBtn.layer.cornerRadius = wid1/2;
+    self.chatBtn.tag = 1004;
+    [self.chatBtn setImage:[UIImage imageNamed:@"liaotianhui"] forState:UIControlStateNormal];
+    [self.chatBtn addTarget:self action:@selector(chatBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.chatBtn];
+    
+    [self.shareBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        //        make.top.equalTo(self.swipeableView.mas_bottom).offset(13);
+        make.left.equalTo(self.view.mas_left).offset(25);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-17.5);
+        //        make.right.equalTo(button2.mas_left).offset(-22.5);
+        
+        make.width.equalTo([NSNumber numberWithFloat:wid1]);
+        make.height.equalTo([NSNumber numberWithFloat:wid1]);
+        
+        make.width.equalTo(self.chatBtn.mas_width);
+        make.height.equalTo(self.chatBtn.mas_height);
+        
+        
+    }];
+    
+    [self.liwuBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        //        make.top.equalTo(self.swipeableView.mas_bottom).offset(27.5);
+        make.left.equalTo(self.shareBtn.mas_right).offset(jiange);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-55);
+        //        make.right.equalTo(button3.mas_left).offset(-11);
+        
+        make.width.equalTo([NSNumber numberWithFloat:wid2]);
+        make.height.equalTo([NSNumber numberWithFloat:wid2]);
+        
+        make.width.equalTo(self.beanBtn.mas_width);
+        make.height.equalTo(self.beanBtn.mas_height);
+        
+    }];
+    
+    [self.beanBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        //        make.top.equalTo(self.swipeableView.mas_bottom).offset(27.5);
+        //        make.left.equalTo(button2.mas_right).offset(11);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-55);
+        make.right.equalTo(self.chatBtn.mas_left).offset(-jiange);
+        
+        make.width.equalTo(self.liwuBtn.mas_width);
+        make.height.equalTo(self.liwuBtn.mas_height);
+        
+    }];
+    
+    [self.chatBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        //        make.top.equalTo(self.swipeableView.mas_bottom).offset(13);
+        //        make.left.equalTo(button3.mas_right).offset(22.5);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-17.5);
+        make.right.equalTo(self.view.mas_right).offset(-25);
+        
+        make.width.equalTo(self.shareBtn.mas_width);
+        make.height.equalTo(self.shareBtn.mas_height);
+        
+    }];
     
 }
 
@@ -121,7 +218,8 @@
     if (indexPath.row == 0) {
         
         UIImageView * backImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, backImgW)];
-        backImgView.backgroundColor = [UIColor cyanColor];
+        backImgView.backgroundColor = [UIColor clearColor];
+        backImgView.image = [self blurryImage:[UIImage imageNamed:@"nvdatu"] withBlurLevel:1];
         [cell.contentView addSubview:backImgView];
         
         CGFloat imgX;
@@ -148,7 +246,8 @@
         
         
         self.iconImg = [[UIImageView alloc] initWithFrame:CGRectMake(imgX, imgY, 73, 73)];
-        self.iconImg.backgroundColor = MAINCOLOR;
+        self.iconImg.backgroundColor = [UIColor clearColor];
+        self.iconImg.image = [UIImage imageNamed:@"nvdatu"];
         self.iconImg.layer.masksToBounds = YES;
         self.iconImg.layer.cornerRadius = 73/2;
         self.iconImg.layer.borderColor = BACKGROUNDCOLOR.CGColor;
@@ -156,7 +255,7 @@
         [cell.contentView addSubview:self.iconImg];
         
         UILabel *nameLab = [[UILabel alloc] init];
-        nameLab.text = @"好聚点";
+        nameLab.text = @"好聚点(ID:23015264)";
         nameLab.textColor = ZITIWHITECOLOR;
         nameLab.textAlignment = NSTextAlignmentLeft;
         nameLab.font = [UIFont systemFontOfSize:18];
@@ -170,19 +269,20 @@
         [cell.contentView addSubview:nameLab];
         
         
+        
         self.onlineBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.onlineBtn.frame = CGRectMake(CGRectGetMaxX(nameLab.frame) + 10, CGRectGetMidY(nameLab.frame) - 7, 40, 14);
+        self.onlineBtn.frame = CGRectMake(CGRectGetMidX(self.iconImg.frame) + 10, CGRectGetMidY(self.iconImg.frame) + 15, 30, 14);
         self.onlineBtn.backgroundColor = ZITIWHITECOLOR;
         self.onlineBtn.layer.masksToBounds = YES;
         self.onlineBtn.layer.cornerRadius = 7;
-        [self.onlineBtn setTitle:@"√在线" forState:UIControlStateNormal];
+        [self.onlineBtn setTitle:@"在线" forState:UIControlStateNormal];
         [self.onlineBtn setTitleColor:MAINCOLOR forState:UIControlStateNormal];
         self.onlineBtn.titleLabel.font = [UIFont systemFontOfSize:10];
-        [self.onlineBtn addTarget:self action:@selector(onlineBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
         [cell.contentView addSubview:self.onlineBtn];
         
         
-        UILabel *wanzhengduLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.iconImg.frame) + 10, CGRectGetMaxY(nameLab.frame) + 10, 120, 20)];
+        
+        UILabel *wanzhengduLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.iconImg.frame) + 10, CGRectGetMaxY(nameLab.frame) + 5, 120, 20)];
         wanzhengduLab.text = @"资料完整度21%";
         wanzhengduLab.textColor = ZITIWHITECOLOR;
         wanzhengduLab.textAlignment = NSTextAlignmentLeft;
@@ -190,7 +290,7 @@
         [cell.contentView addSubview:wanzhengduLab];
         
         
-        UILabel *lianaiguanLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.iconImg.frame) + 10, CGRectGetMaxY(self.iconImg.frame) + 20, 50, 20)];
+        UILabel *lianaiguanLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.iconImg.frame) + 10, CGRectGetMaxY(self.iconImg.frame) + 25, 50, 20)];
         lianaiguanLab.text = @"恋爱观";
         lianaiguanLab.textColor = [UIColor whiteColor];
         lianaiguanLab.textAlignment = NSTextAlignmentLeft;
@@ -198,7 +298,7 @@
         [cell.contentView addSubview:lianaiguanLab];
         
         
-        UIImageView * jingshenImg = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(lianaiguanLab.frame) + 10, CGRectGetMaxY(self.iconImg.frame), 15, 15)];
+        UIImageView * jingshenImg = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(lianaiguanLab.frame) + 10, CGRectGetMaxY(self.iconImg.frame) + 5, 15, 15)];
         //    jingshenImg.backgroundColor = MAINCOLOR;
         jingshenImg.image = [UIImage imageNamed:@"jingshen"];
         [cell.contentView addSubview:jingshenImg];
@@ -227,13 +327,7 @@
         slider.minimumValue = 0;
         slider.maximumValue = 100;
         slider.value = 50;
-        
-        [slider addTarget:self
-                   action:@selector(sliderChange:)
-         forControlEvents:UIControlEventValueChanged];
-        [slider addTarget:self action:@selector(sliderFinish:) forControlEvents:UIControlEventTouchUpInside];
-        //是否持续发送值的更新, 默认为YES
-        slider.continuous = YES;
+        slider.userInteractionEnabled = NO;
         [cell.contentView addSubview:slider];
         
         
@@ -249,6 +343,36 @@
         wuzhiImg.image = [UIImage imageNamed:@"wuzhi"];
         [cell.contentView addSubview:wuzhiImg];
         
+        
+        CGFloat btnW = 69;
+        CGFloat btnH = 25;
+        
+        UIButton * loveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        loveBtn.frame = CGRectMake(WIDTH - 80, CGRectGetMinY(wanzhengduLab.frame), btnW, btnH);
+        loveBtn.backgroundColor = [UIColor clearColor];
+//        [loveBtn setBackgroundImage:[UIImage imageNamed:@"zuocebian"] forState:UIControlStateNormal];
+        loveBtn.layer.borderWidth = 0.5;
+        loveBtn.layer.borderColor = ZITIWHITECOLOR.CGColor;
+        loveBtn.layer.cornerRadius = btnH/2;
+        loveBtn.layer.masksToBounds = YES;
+        [loveBtn addTarget:self action:@selector(loveBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.contentView addSubview:loveBtn];
+        
+        self.loveImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"xihuan"]];
+        self.loveImg.frame = CGRectMake(10, btnH/2-btnH/4, btnH/2+3, btnH/2);
+        [loveBtn addSubview:self.loveImg];
+        
+        UILabel *loveLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.loveImg.frame) + 10, btnH/2-10, 30, 20)];
+        loveLab.text = @"喜欢";
+        loveLab.textColor = ZITIWHITECOLOR;
+        loveLab.font = [UIFont systemFontOfSize:12];
+        [loveBtn addSubview:loveLab];
+        
+        
+        
+        
+        
+        
     }
     
     
@@ -259,16 +383,16 @@
     if (indexPath.row == 1) {
         
         UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 40, 40)];
-//        imgV.backgroundColor = MAINCOLOR;
+        //        imgV.backgroundColor = MAINCOLOR;
         imgV.image = [UIImage imageNamed:@"xiangce"];
         imgV.layer.cornerRadius = 20;
         imgV.layer.masksToBounds = YES;
         [cell.contentView addSubview:imgV];
         
-        UILabel *lineLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMidX(imgV.frame) -1, CGRectGetMaxY(imgV.frame) + 10, 2, 100)];
+        UILabel *lineLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMidX(imgV.frame) -1, CGRectGetMaxY(imgV.frame) + 10, 2, WIDTH*0.504/1.35 - 60)];
         lineLab.backgroundColor = XIANCOLOR;
         [cell.contentView addSubview:lineLab];
-
+        
         
         UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imgV.frame) + 10, CGRectGetMidY(imgV.frame) - 10, 60, 20)];
         titLab.text = @"相册";
@@ -280,10 +404,48 @@
         CGFloat imgW = WIDTH*0.504;
         CGFloat imgH = imgW/1.35;
         
-        UIImageView * photoImg = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(titLab.frame) + 10, 10, imgW, imgH)];
-//        photoImg.backgroundColor = MAINCOLOR;
-        photoImg.image = [UIImage imageNamed:@"shangchuanzhaopian"];
-        [cell.contentView addSubview:photoImg];
+        
+        for (int i = 0; i < 3; i++) {
+            UIImageView * photoImg = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(titLab.frame) + 10, 20, imgW, imgH)];
+            photoImg.image = [UIImage imageNamed:@"shangchuanzhaopian"];
+            [cell.contentView addSubview:photoImg];
+            
+            if (i == 0) {
+                photoImg.transform = CGAffineTransformMakeRotation(5*M_PI/180);
+            }
+            
+            if (i == 1) {
+                photoImg.transform = CGAffineTransformMakeRotation(-5*M_PI/180);
+            }
+            
+            if (i == 2) {
+                UILabel *numLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMidX(photoImg.frame) - 50, CGRectGetMidY(photoImg.frame) - 10, 100, 20)];
+                numLab.text = @"16张照片";
+                numLab.textColor = ZITIWHITECOLOR;
+                numLab.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.603];
+                numLab.textAlignment = NSTextAlignmentCenter;
+                numLab.layer.cornerRadius = 10;
+                numLab.layer.masksToBounds = YES;
+                numLab.font = [UIFont systemFontOfSize:bigTitFont];
+                [cell.contentView addSubview:numLab];
+            }
+        }
+        
+        
+//        //旋转动画
+//        CABasicAnimation* rotationAnimation =
+//        [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];//"z"还可以是“x”“y”，表示沿z轴旋转
+//        rotationAnimation.toValue = [NSNumber numberWithFloat:(2 * M_PI) * 2/360];
+//        // 3 is the number of 360 degree rotations
+//        // Make the rotation animation duration slightly less than the other animations to give it the feel
+//        // that it pauses at its largest scale value
+//        rotationAnimation.duration = 1.0f;
+//        rotationAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault]; //缓入缓出
+//        rotationAnimation.autoreverses = NO;   //是否重播，原动画的倒播
+//        rotationAnimation.repeatCount = 1.0;//HUGE_VALF;
+//        rotationAnimation.removedOnCompletion = YES;
+//        
+//        [photoImg.layer addAnimation:rotationAnimation forKey:nil];
         
     }
     
@@ -292,7 +454,7 @@
     if (indexPath.row == 2) {
         
         UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(20, 10, 40, 40)];
-//        imgV.backgroundColor = MAINCOLOR;
+        //        imgV.backgroundColor = MAINCOLOR;
         imgV.image = [UIImage imageNamed:@"gerenjieshao"];
         imgV.layer.cornerRadius = 20;
         imgV.layer.masksToBounds = YES;
@@ -309,27 +471,9 @@
         titLab.font = [UIFont systemFontOfSize:bigTitFont];
         [cell.contentView addSubview:titLab];
         
-        UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake(WIDTH - 80, CGRectGetMinY(imgV.frame), 80, 40);
-//        btn.backgroundColor = MAINCOLOR;
-        btn.tag = 1000 + indexPath.row;
-        [btn addTarget:self action:@selector(btnMethod:) forControlEvents:UIControlEventTouchUpInside];
-        [cell.contentView addSubview:btn];
-        
-        UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(20, 13, 14, 14)];
-//        img.backgroundColor = [UIColor blueColor];
-        img.image = [UIImage imageNamed:@"bianji"];
-        [btn addSubview:img];
-        
-        UILabel *editLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(img.frame), 10, 40, 20)];
-        editLab.text = @"编辑";
-        editLab.textColor = ZITIGRAYCOLOR;
-        editLab.textAlignment = NSTextAlignmentLeft;
-        editLab.font = [UIFont systemFontOfSize:bigTitFont];
-        [btn addSubview:editLab];
         
         UILabel *contentLab = [[UILabel alloc] init];
-        contentLab.text = @"您还没有填写自我介绍, 点击编辑完善资料, 让更多的有缘人认识你吧!";
+        contentLab.text = @"我性格活泼开朗, 希望能找到一位坦诚相待, 相伴一生的伴侣. 在这里会碰到有缘的你!";
         contentLab.textColor = ZITIGRAYCOLOR;
         contentLab.textAlignment = NSTextAlignmentLeft;
         contentLab.numberOfLines = 0;
@@ -350,7 +494,7 @@
     if (indexPath.row == 3) {
         
         UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(20, 10, 40, 40)];
-//        imgV.backgroundColor = MAINCOLOR;
+        //        imgV.backgroundColor = MAINCOLOR;
         imgV.image = [UIImage imageNamed:@"jibenziliao"];
         imgV.layer.cornerRadius = 20;
         imgV.layer.masksToBounds = YES;
@@ -367,24 +511,6 @@
         titLab.font = [UIFont systemFontOfSize:bigTitFont];
         [cell.contentView addSubview:titLab];
         
-        UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake(WIDTH - 80, CGRectGetMinY(imgV.frame), 80, 40);
-//        btn.backgroundColor = MAINCOLOR;
-        btn.tag = 1000 + indexPath.row;
-        [btn addTarget:self action:@selector(btnMethod:) forControlEvents:UIControlEventTouchUpInside];
-        [cell.contentView addSubview:btn];
-        
-        UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(20, 13, 14, 14)];
-//        img.backgroundColor = [UIColor blueColor];
-        img.image = [UIImage imageNamed:@"bianji"];
-        [btn addSubview:img];
-        
-        UILabel *editLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(img.frame), 10, 40, 20)];
-        editLab.text = @"编辑";
-        editLab.textColor = ZITIGRAYCOLOR;
-        editLab.textAlignment = NSTextAlignmentLeft;
-        editLab.font = [UIFont systemFontOfSize:bigTitFont];
-        [btn addSubview:editLab];
         
         
         for (int i = 0; i < self.baseInfoTitAry.count; i++) {
@@ -396,7 +522,7 @@
             titLab.font = [UIFont systemFontOfSize:smallTitFont];
             [cell.contentView addSubview:titLab];
             
-            UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(btn.frame) - 60, CGRectGetMaxY(imgV.frame) + 30*i, 60, 20)];
+            UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH-80 - 60, CGRectGetMaxY(imgV.frame) + 30*i, 100, 20)];
             lab.text = @"未选择";
             lab.textColor = ZITIBLACKCOLOR;
             lab.textAlignment = NSTextAlignmentLeft;
@@ -432,24 +558,6 @@
         titLab.font = [UIFont systemFontOfSize:bigTitFont];
         [cell.contentView addSubview:titLab];
         
-        UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake(WIDTH - 80, CGRectGetMinY(imgV.frame), 80, 40);
-        //        btn.backgroundColor = MAINCOLOR;
-        btn.tag = 1000 + indexPath.row;
-        [btn addTarget:self action:@selector(btnMethod:) forControlEvents:UIControlEventTouchUpInside];
-        [cell.contentView addSubview:btn];
-        
-        UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(20, 13, 14, 14)];
-        //        img.backgroundColor = [UIColor blueColor];
-        img.image = [UIImage imageNamed:@"bianji"];
-        [btn addSubview:img];
-        
-        UILabel *editLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(img.frame), 10, 40, 20)];
-        editLab.text = @"编辑";
-        editLab.textColor = ZITIGRAYCOLOR;
-        editLab.textAlignment = NSTextAlignmentLeft;
-        editLab.font = [UIFont systemFontOfSize:bigTitFont];
-        [btn addSubview:editLab];
         
         
         for (int i = 0; i < self.chooseTitAry.count; i++) {
@@ -461,7 +569,7 @@
             titLab.font = [UIFont systemFontOfSize:smallTitFont];
             [cell.contentView addSubview:titLab];
             
-            UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(btn.frame) - 60, CGRectGetMaxY(imgV.frame) + 30*i, 60, 20)];
+            UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH-80 - 60, CGRectGetMaxY(imgV.frame) + 30*i, 100, 20)];
             lab.text = @"未选择";
             lab.textColor = ZITIBLACKCOLOR;
             lab.textAlignment = NSTextAlignmentLeft;
@@ -498,24 +606,6 @@
         titLab.font = [UIFont systemFontOfSize:bigTitFont];
         [cell.contentView addSubview:titLab];
         
-        UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake(WIDTH - 80, CGRectGetMinY(imgV.frame), 80, 40);
-        //        btn.backgroundColor = MAINCOLOR;
-        btn.tag = 1000 + indexPath.row;
-        [btn addTarget:self action:@selector(btnMethod:) forControlEvents:UIControlEventTouchUpInside];
-        [cell.contentView addSubview:btn];
-        
-        UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(20, 13, 14, 14)];
-        //        img.backgroundColor = [UIColor blueColor];
-        img.image = [UIImage imageNamed:@"bianji"];
-        [btn addSubview:img];
-        
-        UILabel *editLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(img.frame), 10, 40, 20)];
-        editLab.text = @"编辑";
-        editLab.textColor = ZITIGRAYCOLOR;
-        editLab.textAlignment = NSTextAlignmentLeft;
-        editLab.font = [UIFont systemFontOfSize:bigTitFont];
-        [btn addSubview:editLab];
         
         
         UILabel *contentLab = [[UILabel alloc] init];
@@ -573,64 +663,31 @@
 
 
 
-
-
-
-#pragma mark - slider值改变
-
-- (void)sliderChange:(UISlider *)sender
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-    self.jingshenLab.text = [NSString stringWithFormat:@"精神%d%%", (int)sender.value];
-    self.wuzhiLab.text = [NSString stringWithFormat:@"物质%d%%", 100 - (int)sender.value];
+//    [self.shareBtn removeFromSuperview];
+//    [self.liwuBtn removeFromSuperview];
+//    [self.beanBtn removeFromSuperview];
+//    [self.chatBtn removeFromSuperview];
+    self.shareBtn.hidden = YES;
+    self.liwuBtn.hidden = YES;
+    self.beanBtn.hidden = YES;
+    self.chatBtn.hidden = YES;
 }
 
 
-#pragma mark - slider滑动结束
-
-- (void)sliderFinish:(UISlider *)sender
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    NSLog(@"%d", (int)sender.value);
+//    [WINDOW addSubview:self.shareBtn];
+//    [WINDOW addSubview:self.liwuBtn];
+//    [WINDOW addSubview:self.beanBtn];
+//    [WINDOW addSubview:self.chatBtn];
+    self.shareBtn.hidden = NO;
+    self.liwuBtn.hidden = NO;
+    self.beanBtn.hidden = NO;
+    self.chatBtn.hidden = NO;
 }
 
-
-
-#pragma mark - 编辑方法
-
-- (void)btnMethod:(UIButton *)sender
-{
-    NSInteger num = sender.tag;
-    
-    switch (num) {
-            //个人介绍
-        case 1002:
-        {
-            
-        }
-            break;
-            //基本资料
-        case 1003:
-        {
-            
-        }
-            break;
-            //择偶意向
-        case 1004:
-        {
-            
-        }
-            break;
-            //个人爱好
-        case 1005:
-        {
-            MyHobbyViewController * myHobbyVC = [MyHobbyViewController new];
-            [self.navigationController pushViewController:myHobbyVC animated:YES];
-        }
-            break;
-            
-        default:
-            break;
-    }
-}
 
 
 
@@ -640,6 +697,112 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
+
+#pragma mark - 喜欢方法
+
+- (void)loveBtnMethod:(UIButton *)sender
+{
+    
+}
+
+
+#pragma mark - 加模糊效果，image是图片，blur是模糊度
+
+- (UIImage *)blurryImage:(UIImage *)image withBlurLevel:(CGFloat)blur {
+    //模糊度,
+    if ((blur < 0.1f) || (blur > 2.0f)) {
+        blur = 0.5f;
+    }
+    
+    //boxSize必须大于0
+    int boxSize = (int)(blur * 100);
+    boxSize -= (boxSize % 2) + 1;
+    NSLog(@"boxSize:%i",boxSize);
+    //图像处理
+    CGImageRef img = image.CGImage;
+    //需要引入#import <Accelerate/Accelerate.h>
+    /*
+     This document describes the Accelerate Framework, which contains C APIs for vector and matrix math, digital signal processing, large number handling, and image processing.
+     本文档介绍了Accelerate Framework，其中包含C语言应用程序接口（API）的向量和矩阵数学，数字信号处理，大量处理和图像处理。
+     */
+    
+    //图像缓存,输入缓存，输出缓存
+    vImage_Buffer inBuffer, outBuffer;
+    vImage_Error error;
+    //像素缓存
+    void *pixelBuffer;
+    
+    //数据源提供者，Defines an opaque type that supplies Quartz with data.
+    CGDataProviderRef inProvider = CGImageGetDataProvider(img);
+    // provider’s data.
+    CFDataRef inBitmapData = CGDataProviderCopyData(inProvider);
+    
+    //宽，高，字节/行，data
+    inBuffer.width = CGImageGetWidth(img);
+    inBuffer.height = CGImageGetHeight(img);
+    inBuffer.rowBytes = CGImageGetBytesPerRow(img);
+    inBuffer.data = (void*)CFDataGetBytePtr(inBitmapData);
+    
+    //像数缓存，字节行*图片高
+    pixelBuffer = malloc(CGImageGetBytesPerRow(img) * CGImageGetHeight(img));
+    
+    outBuffer.data = pixelBuffer;
+    outBuffer.width = CGImageGetWidth(img);
+    outBuffer.height = CGImageGetHeight(img);
+    outBuffer.rowBytes = CGImageGetBytesPerRow(img);
+    
+    
+    // 第三个中间的缓存区,抗锯齿的效果
+    void *pixelBuffer2 = malloc(CGImageGetBytesPerRow(img) * CGImageGetHeight(img));
+    vImage_Buffer outBuffer2;
+    outBuffer2.data = pixelBuffer2;
+    outBuffer2.width = CGImageGetWidth(img);
+    outBuffer2.height = CGImageGetHeight(img);
+    outBuffer2.rowBytes = CGImageGetBytesPerRow(img);
+    
+    //Convolves a region of interest within an ARGB8888 source image by an implicit M x N kernel that has the effect of a box filter.
+    error = vImageBoxConvolve_ARGB8888(&inBuffer, &outBuffer2, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
+    error = vImageBoxConvolve_ARGB8888(&outBuffer2, &inBuffer, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
+    error = vImageBoxConvolve_ARGB8888(&inBuffer, &outBuffer, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
+    
+    
+    if (error) {
+        NSLog(@"error from convolution %ld", error);
+    }
+    
+    //    NSLog(@"字节组成部分：%zu",CGImageGetBitsPerComponent(img));
+    //颜色空间DeviceRGB
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    //用图片创建上下文,CGImageGetBitsPerComponent(img),7,8
+    CGContextRef ctx = CGBitmapContextCreate(
+                                             outBuffer.data,
+                                             outBuffer.width,
+                                             outBuffer.height,
+                                             8,
+                                             outBuffer.rowBytes,
+                                             colorSpace,
+                                             CGImageGetBitmapInfo(image.CGImage));
+    
+    //根据上下文，处理过的图片，重新组件
+    CGImageRef imageRef = CGBitmapContextCreateImage (ctx);
+    UIImage *returnImage = [UIImage imageWithCGImage:imageRef];
+    
+    //clean up
+    CGContextRelease(ctx);
+    CGColorSpaceRelease(colorSpace);
+    
+    free(pixelBuffer);
+    free(pixelBuffer2);
+    CFRelease(inBitmapData);
+    CGImageRelease(imageRef);
+    
+    return returnImage;
+}
+
+
+
 
 
 - (void)didReceiveMemoryWarning {
