@@ -73,6 +73,7 @@
 		05FD68111D2C986000D6C609 /* NearbyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FD68101D2C986000D6C609 /* NearbyCell.m */; };
 		05FD685D1D2CB67200D6C609 /* CYDSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FD685C1D2CB67200D6C609 /* CYDSlider.m */; };
 		05FD68611D2CDFC600D6C609 /* 1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05FD68601D2CDFC600D6C609 /* 1@2x.png */; };
+		3192A4681A65D875A4FF8614 /* libPods-HaoJuDian.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3FB6C3A249C579A968B687 /* libPods-HaoJuDian.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,6 +223,9 @@
 		05FD685B1D2CB67200D6C609 /* CYDSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDSlider.h; sourceTree = "<group>"; };
 		05FD685C1D2CB67200D6C609 /* CYDSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDSlider.m; sourceTree = "<group>"; };
 		05FD68601D2CDFC600D6C609 /* 1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1@2x.png"; sourceTree = "<group>"; };
+		1A3FB6C3A249C579A968B687 /* libPods-HaoJuDian.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HaoJuDian.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48629B2E65DF7D958F9B7C92 /* Pods-HaoJuDian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaoJuDian.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HaoJuDian/Pods-HaoJuDian.debug.xcconfig"; sourceTree = "<group>"; };
+		8016B84D71263C43D92802DA /* Pods-HaoJuDian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaoJuDian.release.xcconfig"; path = "Pods/Target Support Files/Pods-HaoJuDian/Pods-HaoJuDian.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +233,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3192A4681A65D875A4FF8614 /* libPods-HaoJuDian.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +298,8 @@
 				05BF1A6B1D2BEBB60095E18A /* HaoJuDianTests */,
 				05BF1A761D2BEBB60095E18A /* HaoJuDianUITests */,
 				05BF1A501D2BEBB60095E18A /* Products */,
+				07EB8F3D7DE10E62EF986E53 /* Pods */,
+				E49E5493583DB70A75D1F6FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -768,6 +775,23 @@
 			path = MyViews;
 			sourceTree = "<group>";
 		};
+		07EB8F3D7DE10E62EF986E53 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48629B2E65DF7D958F9B7C92 /* Pods-HaoJuDian.debug.xcconfig */,
+				8016B84D71263C43D92802DA /* Pods-HaoJuDian.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E49E5493583DB70A75D1F6FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A3FB6C3A249C579A968B687 /* libPods-HaoJuDian.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -775,9 +799,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 05BF1A7C1D2BEBB60095E18A /* Build configuration list for PBXNativeTarget "HaoJuDian" */;
 			buildPhases = (
+				E6C00DF90BE2A4AFFCA08514 /* [CP] Check Pods Manifest.lock */,
 				05BF1A4B1D2BEBB60095E18A /* Sources */,
 				05BF1A4C1D2BEBB60095E18A /* Frameworks */,
 				05BF1A4D1D2BEBB60095E18A /* Resources */,
+				13CF146129E95F22D6D8800F /* [CP] Embed Pods Frameworks */,
+				D0E17D956C429D3F7CB0CDCB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -904,6 +931,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13CF146129E95F22D6D8800F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HaoJuDian/Pods-HaoJuDian-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0E17D956C429D3F7CB0CDCB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HaoJuDian/Pods-HaoJuDian-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6C00DF90BE2A4AFFCA08514 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		05BF1A4B1D2BEBB60095E18A /* Sources */ = {
@@ -1081,6 +1156,7 @@
 		};
 		05BF1A7D1D2BEBB60095E18A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48629B2E65DF7D958F9B7C92 /* Pods-HaoJuDian.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1096,6 +1172,7 @@
 		};
 		05BF1A7E1D2BEBB60095E18A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8016B84D71263C43D92802DA /* Pods-HaoJuDian.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
