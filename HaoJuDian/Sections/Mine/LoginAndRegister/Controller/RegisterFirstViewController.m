@@ -104,9 +104,9 @@
             //发送验证码
             self.sendCode = [JKCountDownButton buttonWithType:UIButtonTypeCustom];
             self.sendCode.frame = CGRectMake(view1.frame.size.width - 99, 7, 89, 35);
-            self.sendCode.backgroundColor = ANNIUGRAYCOLOR;
+            self.sendCode.backgroundColor = MAINCOLOR;
             [self.sendCode setTitle:@"获取验证码" forState:UIControlStateNormal];
-            [self.sendCode setTitleColor:ZITIGRAYCOLOR forState:UIControlStateNormal];
+            [self.sendCode setTitleColor:ZITIWHITECOLOR forState:UIControlStateNormal];
             self.sendCode.titleLabel.font = [UIFont systemFontOfSize:15];
             self.sendCode.layer.masksToBounds = YES;
             self.sendCode.layer.cornerRadius = 3;
@@ -124,19 +124,20 @@
                 
                 if (isMN) {
                     
-                    //                    [weakSelf sendSMS];
-                    [sender startWithSecond:120];
-                    [sender setBackgroundColor:ANNIUGRAYCOLOR];
-                    [sender setTitleColor:MAINCOLOR forState:UIControlStateNormal];
+                    [weakSelf sendSMS];
+                    [sender startWithSecond:60];
                     
                     [sender didChange:^NSString *(JKCountDownButton *countDownButton,int second) {
+                        [sender setBackgroundColor:ANNIUGRAYCOLOR];
+                        [sender setTitleColor:ZITIWHITECOLOR forState:UIControlStateNormal];
                         NSString *title = [NSString stringWithFormat:@"%d秒",second];
                         return title;
                     }];
                     [sender didFinished:^NSString *(JKCountDownButton *countDownButton, int second) {
                         countDownButton.enabled = YES;
-                        [sender setBackgroundColor:ANNIUGRAYCOLOR];
-                        return @"点击重新获取";
+                        sender.backgroundColor = MAINCOLOR;
+                        [sender setTitleColor:ZITIWHITECOLOR forState:UIControlStateNormal];
+                        return @"获取验证码";
                         
                     }];
                     
@@ -216,6 +217,49 @@
 
 
 
+#pragma mark - 发短信方法
+
+- (void)sendSMS
+{
+    
+    UITextField * tf = (UITextField *)[self.view viewWithTag:1000];
+    
+    NSMutableDictionary * parameter = [NSMutableDictionary dictionary];
+    [parameter setObject:[NSString stringWithFormat:@"%@", tf.text] forKey:@"username"];
+    [parameter setObject:@"true" forKey:@"isregister"];
+    
+    NSString * urlStr = [NSString stringWithFormat:@"%@/api/AppAccount/GetCheckCode", BaseURL];
+    
+    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/plain",nil];
+
+    [manager POST:urlStr parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSDictionary * dataDic = responseObject[@"Data"];
+        
+        if ([[dataDic objectForKey:@"status"] intValue] == 0) {
+            
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@", dataDic[@"Message"]]];
+        }
+        
+        if ([[dataDic objectForKey:@"status"] intValue] == 1) {
+            
+            UITextField * tf1 = (UITextField *)[self.view viewWithTag:1001];
+            tf1.text = [NSString stringWithFormat:@"%@", dataDic[@"value"]];
+            
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        
+    }];
+    
+}
+
+
+
+
+
 #pragma mark -
 #pragma mark - 正则表达式
 
@@ -261,6 +305,8 @@
         || ([regextestct evaluateWithObject:mobileNum] == YES)
         || ([regextestcu evaluateWithObject:mobileNum] == YES))
     {
+//        self.sendCode.backgroundColor = MAINCOLOR;
+//        [self.sendCode setTitleColor:ZITIWHITECOLOR forState:UIControlStateNormal];
         return YES;
     }
     else

@@ -30,7 +30,7 @@
     
     [CYDBaseNavigationController shareNavgationController].backButtonImage = [UIImage imageNamed:@"backImage"]; //设置返回按钮图片
     
-    self.window.rootViewController = [[CYDBaseNavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];
+//    self.window.rootViewController = [[CYDBaseNavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];
     
     
 //    self.loginNav = [[UINavigationController alloc] initWithRootViewController:[LoginViewController new]];
@@ -39,9 +39,9 @@
 //    self.loginNav.navigationBar.tintColor = [UIColor whiteColor];
 //    self.loginNav.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
     
-//    CYDNavigationController *loginNav = [[CYDNavigationController alloc] initWithRootViewController:[LoginViewController new]];
-//    self.loginRootNav = [[CYDBaseNavigationController alloc] initWithRootViewController:loginNav];
-//    self.window.rootViewController = self.loginRootNav;
+    CYDNavigationController *loginNav = [[CYDNavigationController alloc] initWithRootViewController:[LoginViewController new]];
+    self.loginRootNav = [[CYDBaseNavigationController alloc] initWithRootViewController:loginNav];
+    self.window.rootViewController = self.loginRootNav;
 
     
     

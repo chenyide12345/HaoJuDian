@@ -12,6 +12,7 @@
 		055115FD1D2CFB11003255C7 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055115FA1D2CFB11003255C7 /* SearchViewController.m */; };
 		055116001D2D0E1F003255C7 /* backImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 055115FE1D2D0E1F003255C7 /* backImage@2x.png */; };
 		055116011D2D0E1F003255C7 /* backImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 055115FF1D2D0E1F003255C7 /* backImage@3x.png */; };
+		05513E811D3C7E1C00987134 /* NetWorkCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 05513E801D3C7E1C00987134 /* NetWorkCommon.m */; };
 		05B6150D1D379326001B261F /* MyHobbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B6150C1D379326001B261F /* MyHobbyViewController.m */; };
 		05BF1A541D2BEBB60095E18A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1A531D2BEBB60095E18A /* main.m */; };
 		05BF1A5F1D2BEBB60095E18A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05BF1A5E1D2BEBB60095E18A /* Assets.xcassets */; };
@@ -102,6 +103,8 @@
 		055115FA1D2CFB11003255C7 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		055115FE1D2D0E1F003255C7 /* backImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backImage@2x.png"; sourceTree = "<group>"; };
 		055115FF1D2D0E1F003255C7 /* backImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backImage@3x.png"; sourceTree = "<group>"; };
+		05513E7F1D3C7E1C00987134 /* NetWorkCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkCommon.h; sourceTree = "<group>"; };
+		05513E801D3C7E1C00987134 /* NetWorkCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkCommon.m; sourceTree = "<group>"; };
 		05B6150B1D379326001B261F /* MyHobbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHobbyViewController.h; sourceTree = "<group>"; };
 		05B6150C1D379326001B261F /* MyHobbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHobbyViewController.m; sourceTree = "<group>"; };
 		05BF1A4F1D2BEBB60095E18A /* HaoJuDian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaoJuDian.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -287,6 +290,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		05513E7B1D3C781B00987134 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				05513E7F1D3C7E1C00987134 /* NetWorkCommon.h */,
+				05513E801D3C7E1C00987134 /* NetWorkCommon.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		05BF1A461D2BEBB60095E18A = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +381,7 @@
 		05BF1A921D2BEC9D0095E18A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				05513E7B1D3C781B00987134 /* Tools */,
 				05FD68121D2C9CBA00D6C609 /* MyViews */,
 				05BF1A931D2BEC9D0095E18A /* CYDNavigationController */,
 			);
@@ -994,6 +1007,7 @@
 				05FA75721D33A393006437AC /* MASCompositeConstraint.m in Sources */,
 				05FA75791D33A393006437AC /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				05BF1AD71D2BEC9D0095E18A /* MeetViewController.m in Sources */,
+				05513E811D3C7E1C00987134 /* NetWorkCommon.m in Sources */,
 				05BF1ADB1D2BEC9D0095E18A /* NewsCell.m in Sources */,
 				05F77DCC1D2F87000023ECE4 /* JKCountDownButton.m in Sources */,
 				05FA757B1D33A393006437AC /* ViewController+MASAdditions.m in Sources */,

@@ -17,6 +17,8 @@
 #import "AFNetworking.h"
 #import "MJRefresh.h"
 #import "SVProgressHUD.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "NetWorkCommon.h"
 
 #define IS_IOS7 (([[[UIDevice currentDevice] systemVersion] floatValue] > 6.9) ? YES : NO)
 #define IOS9 [[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0
@@ -35,6 +37,7 @@
 #define WINDOW [[UIApplication sharedApplication] keyWindow]
 #define DEFAULTS [NSUserDefaults standardUserDefaults]
 
+#define BaseURL @"http://m.hjd521.com"
 //#ifdef DEBUG
 //#define LRLog(...) NSLog(@"%s 第%d行 \n %@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
 //#else
