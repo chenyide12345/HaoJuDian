@@ -18,5 +18,15 @@
 
 
 
+//登录
+#define JDLogin  @"/api/AppAccount/login"
+
+//注册
+#define JDRegister  @"/api/AppAccount/register"
+
+
+//用户银行卡
+#define JDUserBankInfo  @"/api/AppUserInfo/GeTUserBankInfo"
+
 
 #endif /* URL_h */

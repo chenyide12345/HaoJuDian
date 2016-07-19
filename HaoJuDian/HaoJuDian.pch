@@ -8,6 +8,7 @@
 
 #ifndef HaoJuDian_pch
 #define HaoJuDian_pch
+
 #import <Accelerate/Accelerate.h>
 #import <QuartzCore/QuartzCore.h>
 #import "JKCountDownButton.h"
@@ -19,6 +20,8 @@
 #import "SVProgressHUD.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "NetWorkCommon.h"
+
+
 
 #import "URL.h"
 #import "ToolDefine.h"

@@ -74,13 +74,12 @@
 #define DEFAULTS [NSUserDefaults standardUserDefaults]
 
 
-
-#ifdef DEBUG
-#define JDLog(...) NSLog(__VA_ARGS__)
+//********自定义日志输出宏*******/
+#if (DEBUG || TESTCASE)
+#define JDLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 #else
 #define JDLog(...)
 #endif
-
 
 
 //获取temp
