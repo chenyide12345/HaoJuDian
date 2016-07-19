@@ -227,6 +227,8 @@
 		05FD685C1D2CB67200D6C609 /* CYDSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDSlider.m; sourceTree = "<group>"; };
 		05FD68601D2CDFC600D6C609 /* 1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1@2x.png"; sourceTree = "<group>"; };
 		1A3FB6C3A249C579A968B687 /* libPods-HaoJuDian.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HaoJuDian.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AC9389A1D3DBC4300B2CA58 /* URL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URL.h; sourceTree = "<group>"; };
+		3AC9389B1D3DBC5700B2CA58 /* ToolDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolDefine.h; sourceTree = "<group>"; };
 		48629B2E65DF7D958F9B7C92 /* Pods-HaoJuDian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaoJuDian.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HaoJuDian/Pods-HaoJuDian.debug.xcconfig"; sourceTree = "<group>"; };
 		8016B84D71263C43D92802DA /* Pods-HaoJuDian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaoJuDian.release.xcconfig"; path = "Pods/Target Support Files/Pods-HaoJuDian/Pods-HaoJuDian.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -345,6 +347,8 @@
 				05BF1A631D2BEBB60095E18A /* Info.plist */,
 				05BF1A531D2BEBB60095E18A /* main.m */,
 				05BF1AE01D2BECC20095E18A /* HaoJuDian.pch */,
+				3AC9389B1D3DBC5700B2CA58 /* ToolDefine.h */,
+				3AC9389A1D3DBC4300B2CA58 /* URL.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
