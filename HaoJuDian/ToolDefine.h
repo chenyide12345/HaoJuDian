@@ -48,8 +48,19 @@
 //********************系统字体对应字号******//
 #define systemFont(x) [UIFont systemFontOfSize:x]
 
+/***********************************  设备类型判断  ***************************************************************/
+#define IsiPad          (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IsiPhone        (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IsRetain        ([[UIScreen mainScreen] scale] >= 2.0)
 
-//********************weakSelf**************//
+#define IsiPhone4       (IsiPhone && ScreenMaxLength < 568.0)
+#define IsiPhone5       (IsiPhone && ScreenMaxLength == 568.0)
+#define IsiPhone6       (IsiPhone && ScreenMaxLength == 667.0)
+#define IsiPhone6P      (IsiPhone && ScreenMaxLength == 736.0)
+/******************************************************************
+
+
+/ ******************** weakSelf **************/
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self
 
 
