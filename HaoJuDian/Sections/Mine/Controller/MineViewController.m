@@ -232,7 +232,7 @@
         self.wuzhiLab.font = [UIFont systemFontOfSize:10];
         [cell.contentView addSubview:self.wuzhiLab];
         
-        
+
         UIImageView * wuzhiImg = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.wuzhiLab.frame) - 20, CGRectGetMinY(jingshenImg.frame), 15, 15)];
         wuzhiImg.backgroundColor = [UIColor colorWithRed:0.224 green:0.737 blue:0.616 alpha:1.000];
         [cell.contentView addSubview:wuzhiImg];
