@@ -12,6 +12,50 @@
 #ifndef ToolDefine_h
 #define ToolDefine_h
 
+/***********************************  屏幕尺寸、视图坐标 ***************************************************************/
+//屏幕相关
+#define AppWindow ([UIApplication sharedApplication].keyWindow)
+#define WindowContent  ([[UIScreen mainScreen] bounds])
+#define ScreenSize      [UIScreen mainScreen].bounds.size
+#define ScreenWidth     ([[UIScreen mainScreen] bounds].size.width)
+#define ScreenHeight    ([[UIScreen mainScreen] bounds].size.height)
+#define ScreenMaxLength (MAX(ScreenWidth,ScreenHeight))
+#define ScreenMinLength (MIN(ScreenWidth,ScrrenHeight))
+#define NavHeight (self.navigationController.navigationBar.frame.size.height+20)
+
+//各屏幕尺寸比例
+#define autoSizeScaleX  (([[UIScreen mainScreen] bounds].size.height)>480 ? ([[UIScreen mainScreen] bounds].size.width)/320 : 1.0)
+#define autoSizeScaleY  (([[UIScreen mainScreen] bounds].size.height)>480 ? ([[UIScreen mainScreen] bounds].size.height)/568 : 1.0)
+
+#define AUTO_IPHONE6_HEIGHT_667 ScreenHeight/667
+#define AUTO_IPHONE6_WIDTH_375  ScreenWidth/375
+
+
+//坐标相关
+#define ViewWidth(v)                        v.frame.size.width
+#define ViewHeight(v)                       v.frame.size.height
+#define ViewX(v)                            v.frame.origin.x
+#define ViewY(v)                            v.frame.origin.y
+#define SelfViewWidth                       self.view.bounds.size.width
+#define SelfViewHeight                      self.view.bounds.size.height
+
+#define ViewBelow(v)                        (v.frame.size.height + v.frame.origin.y)
+#define ViewRight(v)                        (v.frame.size.width + v.frame.origin.x)
+//颜色
+#define kColor(r,g,b) [UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:1.0]
+
+
+//********************系统字体对应字号******//
+#define systemFont(x) [UIFont systemFontOfSize:x]
+
+
+//********************weakSelf**************//
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self
+
+
+
+
+//版本号
 #define IS_IOS7 (([[[UIDevice currentDevice] systemVersion] floatValue] > 6.9) ? YES : NO)
 #define IOS9 [[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0
 #define HEIGHT ((IS_IOS7)?([UIScreen mainScreen].bounds.size.height):([UIScreen mainScreen].bounds.size.height - 20))
@@ -29,12 +73,14 @@
 #define WINDOW [[UIApplication sharedApplication] keyWindow]
 #define DEFAULTS [NSUserDefaults standardUserDefaults]
 
-#define BaseURL @"http://m.hjd521.com"
-//#ifdef DEBUG
-//#define LRLog(...) NSLog(@"%s 第%d行 \n %@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
-//#else
-//#define LRLog(...)
-//#endif
+
+
+#ifdef DEBUG
+#define JDLog(...) NSLog(__VA_ARGS__)
+#else
+#define JDLog(...)
+#endif
+
 
 
 //获取temp
@@ -43,6 +89,9 @@
 #define kPathDocument [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]
 //获取沙盒 Cache
 #define kPathCache [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
+
+
+
 
 
 

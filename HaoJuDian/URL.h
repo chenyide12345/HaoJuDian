@@ -14,4 +14,9 @@
 #define URL_h
 
 
+#define BaseURL @"http://m.hjd521.com"
+
+
+
+
 #endif /* URL_h */
