@@ -99,7 +99,7 @@
     cacelBtn.frame = CGRectMake(10, 0, PICKER_Tit_H, PICKER_Tit_H);
     [cacelBtn setTitle:@"取消" forState:UIControlStateNormal];
     [cacelBtn setTitleColor:ZITIWHITECOLOR forState:UIControlStateNormal];
-    cacelBtn.titleLabel.font = systemFont(15);
+    cacelBtn.titleLabel.font = JDFont(15);
     [cacelBtn addTarget:self action:@selector(dismissBackView) forControlEvents:UIControlEventTouchUpInside];
     [self.pickerTitView addSubview:cacelBtn];
     
@@ -107,7 +107,7 @@
     sureBtn.frame = CGRectMake(WIDTH - PICKER_Tit_H - 10, 0, PICKER_Tit_H, PICKER_Tit_H);
     [sureBtn setTitle:@"确定" forState:UIControlStateNormal];
     [sureBtn setTitleColor:ZITIWHITECOLOR forState:UIControlStateNormal];
-    sureBtn.titleLabel.font = systemFont(15);
+    sureBtn.titleLabel.font = JDFont(15);
     [sureBtn addTarget:self action:@selector(sureBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
     [self.pickerTitView addSubview:sureBtn];
     
@@ -428,7 +428,7 @@
         myView = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 78, 30)];
         myView.textAlignment = NSTextAlignmentCenter;
         myView.text = [self.sexAry objectAtIndex:row];
-        myView.font = systemFont(15);
+        myView.font = JDFont(15);
         myView.backgroundColor = BACKGROUNDCOLOR;
         myView.textColor = ZITIBLACKCOLOR;
         
@@ -439,7 +439,7 @@
         myView = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 78, 30)];
         myView.textAlignment = NSTextAlignmentCenter;
         myView.text = [self.marryAry objectAtIndex:row];
-        myView.font = systemFont(15);
+        myView.font = JDFont(15);
         myView.backgroundColor = BACKGROUNDCOLOR;
         myView.textColor = ZITIBLACKCOLOR;
         
@@ -451,7 +451,7 @@
         myView = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 78, 30)];
         myView.textAlignment = NSTextAlignmentCenter;
         myView.text = [self.heightAry objectAtIndex:row];
-        myView.font = systemFont(15);
+        myView.font = JDFont(15);
         myView.backgroundColor = BACKGROUNDCOLOR;
         myView.textColor = ZITIBLACKCOLOR;
         
