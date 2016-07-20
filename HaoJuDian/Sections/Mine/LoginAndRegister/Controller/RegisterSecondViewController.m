@@ -6,14 +6,21 @@
 //  Copyright © 2016年 陈义德. All rights reserved.
 //
 
+#define PICKER_H 240
 #import "RegisterSecondViewController.h"
 
-@interface RegisterSecondViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface RegisterSecondViewController ()<UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (nonatomic, strong) UITableView * tableView;
+@property (nonatomic, strong) UIPickerView * pickerView;
+@property (nonatomic, strong) UIView * backView; //灰色背景
 
 @property (nonatomic, strong) NSArray * titAry;
 @property (nonatomic, strong) UIButton * finishBtn;//完成btn
+
+@property (nonatomic, assign) NSInteger selectRow; //选择的tab row
+
+@property (nonatomic, strong) NSMutableArray * heightAry;
 
 @end
 
@@ -71,6 +78,18 @@
     //    self.tableView.scrollEnabled = NO;
     [self.view addSubview:self.tableView];
     
+    self.backView = [[UIView alloc] initWithFrame:self.view.bounds];
+    self.backView.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.397];
+    
+    self.pickerView = [[UIPickerView alloc] initWithFrame: CGRectMake(0, HEIGHT, WIDTH, PICKER_H)];
+    self.pickerView.dataSource = self;
+    self.pickerView.delegate = self;
+    self.pickerView.showsSelectionIndicator = YES;
+    self.pickerView.backgroundColor = BACKGROUNDCOLOR;
+//    [self.pickerView selectRow: 0 inComponent: 0 animated: YES];
+    
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissBackView:)];
+    [self.backView addGestureRecognizer:tap];
     
 }
 
@@ -81,9 +100,42 @@
 - (NSArray *)titAry
 {
     if (_titAry == nil) {
-        self.titAry = [NSArray arrayWithObjects:@"昵称", @"性别", @"婚姻状态", @"生日", nil];
+        self.titAry = [NSArray arrayWithObjects:@"昵称", @"性别", @"婚姻状态", @"身高", @"生日", nil];
     }
     return _titAry;
+}
+
+
+- (NSMutableArray *)heightAry
+{
+    if (_heightAry == nil) {
+        self.heightAry = [NSMutableArray array];
+        for (int i = 0; i < 62; i++) {
+            NSInteger num1 = 150;
+            NSInteger num2 = 210;
+            NSString * str = [NSString string];
+            
+            if (i == 0) {
+                str = [NSString stringWithFormat:@"%ldcm以下", (long)num1];
+                [self.heightAry addObject:str];
+            }
+            
+            if (i > 0 && i < 61) {
+                num1 = num1 + i;
+                str = [NSString stringWithFormat:@"%ldcm", (long)num1];
+                [self.heightAry addObject:str];
+            }
+            
+            if (i == 61) {
+                str = [NSString stringWithFormat:@"%ldcm以上", (long)num2];
+                [self.heightAry addObject:str];
+            }
+            
+            
+        }
+    }
+    
+    return _heightAry;
 }
 
 
@@ -152,6 +204,25 @@
 }
 
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectRow = indexPath.row;
+    [UIView animateWithDuration:0.3 animations:^{
+        
+        [WINDOW addSubview:self.backView];
+        [WINDOW addSubview:self.pickerView];
+        
+        self.pickerView.frame = CGRectMake(0, HEIGHT - PICKER_H, WIDTH, PICKER_H);
+        CGFloat alpha = 1-(HEIGHT - self.pickerView.frame.origin.y)/PICKER_H + 0.5;
+        self.backView.backgroundColor = [UIColor colorWithWhite:0.000 alpha:alpha];
+    } completion:^(BOOL finished) {
+        
+        
+    }];
+}
+
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row < self.titAry.count) {
@@ -163,11 +234,184 @@
 }
 
 
+
+#pragma mark- Picker Data Source Methods
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    NSInteger num = 0;
+    /**性别**/
+    if (self.selectRow == 1) {
+        num = 1;
+    }
+    
+    /**婚姻状态**/
+    if (self.selectRow == 2) {
+        num = 1;
+    }
+    
+    /**身高**/
+    if (self.selectRow == 3) {
+        num = 1;
+    }
+    
+    /**生日**/
+    if (self.selectRow == 4) {
+        num = 3;
+    }
+    
+    return num;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    NSInteger num = 0;
+    /**性别**/
+    if (self.selectRow == 1) {
+        num = 2;
+    }
+    
+    /**婚姻状态**/
+    if (self.selectRow == 2) {
+        num = 3;
+    }
+    
+    /**身高**/
+    if (self.selectRow == 3) {
+        num = self.heightAry.count;
+    }
+    
+    /**生日**/
+    if (self.selectRow == 4) {
+        num = 3;
+    }
+    
+    return num;
+}
+
+
+#pragma mark - Picker Delegate Methods
+
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    
+    
+}
+
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
+{
+    NSInteger num = 0;
+    /**性别**/
+    if (self.selectRow == 1) {
+        num = WIDTH;
+    }
+    
+    /**婚姻状态**/
+    if (self.selectRow == 2) {
+        num = WIDTH;
+    }
+    
+    /**身高**/
+    if (self.selectRow == 3) {
+        num = WIDTH;
+    }
+    
+    /**生日**/
+    if (self.selectRow == 4) {
+        num = WIDTH/3;
+    }
+    
+    return num;
+}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+{
+    UILabel *myView = nil;
+    
+    /**性别**/
+    if (self.selectRow == 1) {
+        myView = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 78, 30)];
+        myView.textAlignment = NSTextAlignmentCenter;
+//        myView.text = [province objectAtIndex:row];
+        myView.font = systemFont(15);
+        myView.backgroundColor = BACKGROUNDCOLOR;
+        myView.textColor = ZITIBLACKCOLOR;
+        
+        if (row == 0) {
+            myView.text = @"男";
+        } else {
+            myView.text = @"女";
+        }
+        
+    }
+    
+    /**婚姻状态**/
+    if (self.selectRow == 2) {
+        myView = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 78, 30)];
+        myView.textAlignment = NSTextAlignmentCenter;
+        //        myView.text = [province objectAtIndex:row];
+        myView.font = systemFont(15);
+        myView.backgroundColor = BACKGROUNDCOLOR;
+        myView.textColor = ZITIBLACKCOLOR;
+        
+        if (row == 0) {
+            myView.text = @"未婚";
+        } else if (row == 1) {
+            myView.text = @"离异";
+        } else {
+            myView.text = @"丧偶";
+        }
+        
+    }
+    
+    /**身高**/
+    if (self.selectRow == 3) {
+        myView = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 78, 30)];
+        myView.textAlignment = NSTextAlignmentCenter;
+        myView.text = [self.heightAry objectAtIndex:row];
+        myView.font = systemFont(15);
+        myView.backgroundColor = BACKGROUNDCOLOR;
+        myView.textColor = ZITIBLACKCOLOR;
+        
+        
+    }
+    
+    /**生日**/
+    if (self.selectRow == 4) {
+        
+    }
+    
+    return myView;
+}
+
+
+
+
 #pragma mark - 完成方法
 
 - (void)finishBtnMethod:(UIButton *)sender
 {
     
+}
+
+
+
+#pragma mark - 点击背景消失方法
+
+- (void)dismissBackView:(UITapGestureRecognizer *)sender
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        
+        self.pickerView.frame = CGRectMake(0, HEIGHT, WIDTH, PICKER_H);
+        CGFloat alpha =(HEIGHT - self.pickerView.frame.origin.y)/PICKER_H-0.5;
+        self.backView.backgroundColor = [UIColor colorWithWhite:0.000 alpha:alpha];
+    } completion:^(BOOL finished) {
+        
+        [self.backView removeFromSuperview];
+        [self.pickerView removeFromSuperview];
+    }];
 }
 
 

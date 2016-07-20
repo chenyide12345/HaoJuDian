@@ -246,6 +246,8 @@
             [DEFAULTS setObject:dataDic[@"HuanXinPassword"] forKey:@"HuanXinPassword"];
             [DEFAULTS setObject:dataDic[@"HuanXinID"] forKey:@"HuanXinID"];
             
+            [[JDAlertView sharedAlert] createTip:@"登陆成功"];
+            
             WINDOW.rootViewController = [[CYDBaseNavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];
             
         }

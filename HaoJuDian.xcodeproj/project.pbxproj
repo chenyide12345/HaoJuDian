@@ -1260,7 +1260,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 460069238@qq.com (M9Q7K9UP99)";
 				GCC_PREFIX_HEADER = $SRCROOT/HaoJuDian/HaoJuDian.pch;
 				INFOPLIST_FILE = HaoJuDian/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1276,7 +1276,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 460069238@qq.com (M9Q7K9UP99)";
 				GCC_PREFIX_HEADER = $SRCROOT/HaoJuDian/HaoJuDian.pch;
 				INFOPLIST_FILE = HaoJuDian/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
