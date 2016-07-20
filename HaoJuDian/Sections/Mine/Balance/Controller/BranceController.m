@@ -67,20 +67,20 @@
     
     UILabel * leftLabel =[[UILabel alloc]init];
     NSString *leftStr = @"余额 ( 元 )";
-    NSDictionary *leftDict = @{NSFontAttributeName:systemFont(12)};
+    NSDictionary *leftDict = @{NSFontAttributeName:JDFont(12)};
     CGRect  leftRect = [leftStr  boundingRectWithSize:CGSizeMake(100*AUTO_IPHONE6_WIDTH_375, 15) options:NSStringDrawingUsesLineFragmentOrigin attributes:leftDict context:nil];
     leftLabel.textColor = [JDTools stringToColor:@"#ffffff"];
-    leftLabel.font = systemFont(12);
+    leftLabel.font = JDFont(12);
     leftLabel.text = leftStr;
     leftLabel.frame = CGRectMake(60*AUTO_IPHONE6_WIDTH_375, ViewBelow(leftImgView)+15/2*AUTO_IPHONE6_HEIGHT_667, leftRect.size.width, leftRect.size.height);
     [_bankView addSubview:leftLabel];
     
     _moneyLabel = [[UILabel alloc]init];
     NSString *money = @"100.00";
-    NSDictionary *moneyDict = @{NSFontAttributeName:systemFont(36)};
+    NSDictionary *moneyDict = @{NSFontAttributeName:JDFont(36)};
     CGRect  monsyRect = [money  boundingRectWithSize:CGSizeMake(1000, 40) options:NSStringDrawingUsesLineFragmentOrigin attributes:moneyDict context:nil];
     _moneyLabel.textColor = [JDTools stringToColor:@"#ffffff"];
-    _moneyLabel.font = systemFont(36);
+    _moneyLabel.font = JDFont(36);
     _moneyLabel.frame = CGRectMake(55*AUTO_IPHONE6_WIDTH_375, ViewBelow(leftLabel)+15*AUTO_IPHONE6_HEIGHT_667, monsyRect.size.width, monsyRect.size.height);
     _moneyLabel.textAlignment = NSTextAlignmentLeft;
     _moneyLabel.text = @"0.00";
@@ -103,19 +103,19 @@
     
     UILabel *rithtLabel  =[[UILabel alloc]init];
     NSString *rithStr = @"银行卡(张)";
-    NSDictionary *rightDict = @{NSFontAttributeName:systemFont(12)};
+    NSDictionary *rightDict = @{NSFontAttributeName:JDFont(12)};
     CGRect  rigthRect =  [rithStr boundingRectWithSize:CGSizeMake(1000, 15) options:NSStringDrawingUsesLineFragmentOrigin attributes:rightDict context:nil];
     rithtLabel.frame = CGRectMake(ViewRight(_lineView)+55*AUTO_IPHONE6_WIDTH_375, ViewY(leftLabel), rigthRect.size.width, rigthRect.size.height);
     rithtLabel.text = rithStr;
     rithtLabel.textColor = [JDTools stringToColor:@"#ffffff"];
-    rithtLabel.font = systemFont(12);
+    rithtLabel.font = JDFont(12);
     [_bankView addSubview:rithtLabel];
     
     
     _caredNumber = [[UILabel alloc]init];
     _caredNumber.frame =CGRectMake(ViewRight(_lineView)+55*AUTO_IPHONE6_WIDTH_375, ViewBelow(rithtLabel)+15*AUTO_IPHONE6_HEIGHT_667, 150*AUTO_IPHONE6_WIDTH_375, 36*AUTO_IPHONE6_HEIGHT_667);
     _caredNumber.textColor=[JDTools stringToColor:@"#ffffff"];
-    _caredNumber.font = systemFont(36);
+    _caredNumber.font = JDFont(36);
     _caredNumber.text = @"100";
     [_bankView addSubview:_caredNumber];
     
@@ -135,7 +135,7 @@
         btn.frame = CGRectMake(37/2*AUTO_IPHONE6_WIDTH_375, ViewBelow(_bankView)+25*AUTO_IPHONE6_HEIGHT_667 +i*(44+10)*AUTO_IPHONE6_HEIGHT_667,  323*AUTO_IPHONE6_WIDTH_375, 44*AUTO_IPHONE6_HEIGHT_667);
         [btn setTitle: titleArr[i] forState:UIControlStateNormal];
         
-        btn.titleLabel.font = systemFont(15);
+        btn.titleLabel.font = JDFont(15);
         btn.tag = 101+i;
         btn.layer.cornerRadius = 44/2*AUTO_IPHONE6_HEIGHT_667;
         btn.layer.masksToBounds = YES;

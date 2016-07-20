@@ -31,7 +31,7 @@
     
     _moneyLabel.frame =CGRectMake(100*AUTO_IPHONE6_WIDTH_375, 8*AUTO_IPHONE6_HEIGHT_667, ScreenWidth-60-100, 25*AUTO_IPHONE6_HEIGHT_667);
 
-    _moneyLabel.font = systemFont(16);
+    _moneyLabel.font = JDFont(16);
     _moneyLabel.textColor =MAINCOLOR;
     [self.contentView addSubview:_moneyLabel];
     
@@ -41,7 +41,7 @@
     _changeField.contentVerticalAlignment=UIControlContentVerticalAlignmentCenter;
     _changeField.contentHorizontalAlignment=UIControlContentHorizontalAlignmentCenter;
     _changeField.clearButtonMode=UITextFieldViewModeAlways;
-    _changeField.font =systemFont(14);
+    _changeField.font =JDFont(14);
     _changeField.returnKeyType =UIReturnKeyDone;
     
     [self.contentView addSubview:_changeField];

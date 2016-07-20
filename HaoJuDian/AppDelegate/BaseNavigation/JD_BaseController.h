@@ -14,7 +14,7 @@
 
 @interface JD_BaseController : UIViewController
 
-
+@property (nonatomic,strong)MBProgressHUD *progressHud;
 /**
  *  设置导航栏
  */
@@ -55,6 +55,23 @@
 -(void)NavigationLeftEvent;
 
 
+/**
+ * 显示菊花
+ */
+
+- (void)showHud;
+
+/**
+ * 隐藏菊花
+ */
+
+- (void)hidHud;
+
+/**
+ * 定制菊花下方显示字体
+ */
+
+- (void)showHudWithString:(NSString *)loadingText;
 
 @end
 

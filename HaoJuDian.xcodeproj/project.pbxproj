@@ -88,6 +88,7 @@
 		3AA845981D3F26E700AA9392 /* JDBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA845971D3F26E700AA9392 /* JDBaseModel.m */; };
 		3AA8459B1D3F280400AA9392 /* BranceBankModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA8459A1D3F280400AA9392 /* BranceBankModel.m */; };
 		3AA8459E1D3F2E2300AA9392 /* JDHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA8459C1D3F2E2300AA9392 /* JDHttpManager.m */; };
+		3AA845A11D3F50BD00AA9392 /* AddBankeNumberController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA845A01D3F50BD00AA9392 /* AddBankeNumberController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -266,6 +267,8 @@
 		3AA8459A1D3F280400AA9392 /* BranceBankModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranceBankModel.m; sourceTree = "<group>"; };
 		3AA8459C1D3F2E2300AA9392 /* JDHttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDHttpManager.m; sourceTree = "<group>"; };
 		3AA8459D1D3F2E2300AA9392 /* JDHttpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDHttpManager.h; sourceTree = "<group>"; };
+		3AA8459F1D3F50BD00AA9392 /* AddBankeNumberController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBankeNumberController.h; sourceTree = "<group>"; };
+		3AA845A01D3F50BD00AA9392 /* AddBankeNumberController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBankeNumberController.m; sourceTree = "<group>"; };
 		3AC9389A1D3DBC4300B2CA58 /* URL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URL.h; sourceTree = "<group>"; };
 		3AC9389B1D3DBC5700B2CA58 /* ToolDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolDefine.h; sourceTree = "<group>"; };
 		48629B2E65DF7D958F9B7C92 /* Pods-HaoJuDian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaoJuDian.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HaoJuDian/Pods-HaoJuDian.debug.xcconfig"; sourceTree = "<group>"; };
@@ -873,6 +876,8 @@
 				3A955F431D3E1FEA00BF2A5E /* BranceRechargeController.m */,
 				3AA845901D3F234600AA9392 /* BranceBundingController.h */,
 				3AA845911D3F234600AA9392 /* BranceBundingController.m */,
+				3AA8459F1D3F50BD00AA9392 /* AddBankeNumberController.h */,
+				3AA845A01D3F50BD00AA9392 /* AddBankeNumberController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1115,6 +1120,7 @@
 				05FA75521D338C8B006437AC /* ZLSwipeableViewSwipeOptions.m in Sources */,
 				05FA75721D33A393006437AC /* MASCompositeConstraint.m in Sources */,
 				05FA75791D33A393006437AC /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				3AA845A11D3F50BD00AA9392 /* AddBankeNumberController.m in Sources */,
 				05BF1AD71D2BEC9D0095E18A /* MeetViewController.m in Sources */,
 				3A955F3E1D3E1E0F00BF2A5E /* JDAlertView.m in Sources */,
 				05513E811D3C7E1C00987134 /* NetWorkCommon.m in Sources */,

@@ -44,19 +44,19 @@
     [self.circleView addSubview:self.logoImage];
     
     self.bankNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(ViewRight(self.circleView)+8, ViewY(self.circleView)+10, 200, 16)];
-    self.bankNameLabel.font=systemFont(16);
+    self.bankNameLabel.font=JDFont(16);
     self.bankNameLabel.text=@"中国银行";
     self.bankNameLabel.textColor =[UIColor whiteColor];
     [self.bgView addSubview:self.bankNameLabel];
     
     self.bankType =[[UILabel alloc]initWithFrame:CGRectMake(ViewX(self.bankNameLabel)+2, ViewBelow(self.bankNameLabel)+10, 100, 14)];
-    self.bankType.font=systemFont(13);
+    self.bankType.font=JDFont(13);
     self.bankType.text=@"储蓄卡";
     self.bankType.textColor =[UIColor whiteColor];
     [self.bgView addSubview:self.bankType];
     
     self.bankNum =[[UILabel alloc]initWithFrame:CGRectMake(ViewX(self.bankNameLabel)+2, ViewBelow(self.bankType)+10, 200, 13)];
-    self.bankNum.font=systemFont(13);
+    self.bankNum.font=JDFont(13);
     self.bankNum.text=@"456498461321321465456465";
     self.bankNum.textColor =[UIColor whiteColor];
     [self.bgView addSubview:self.bankNum];
@@ -65,7 +65,7 @@
     self.unbindBtn=[[UIButton alloc]initWithFrame:CGRectMake(ViewWidth(self.bgView)-80, 105, 70, 20)];
     
     [self.unbindBtn setTitle:@"解绑银行卡" forState:UIControlStateNormal];
-    self.unbindBtn.titleLabel.font=systemFont(14);
+    self.unbindBtn.titleLabel.font=JDFont(14);
     [self.unbindBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.bgView addSubview:self.unbindBtn];
     
@@ -116,18 +116,18 @@
     //    {
     //        self.bgView.image =[UIImage imageNamed:@"WLpurpleColorBkCards"];
     //    }
-//    self.bgView.backgroundColor =[JDTools stringToColor:model.color];
-//    
-//    NSString *str=[NSString stringWithFormat:@"%@%@",WLHTTP,model.img];
-//    
-//    
-//    [self.logoImage sd_setImageWithURL:[NSURL URLWithString:str] placeholderImage:[UIImage imageNamed:@"placeHolderLogo"]];
-//    
-//    
-//    self.bankNameLabel.text=[NSString stringWithFormat:@"%@",model.bank];
-//    
-//    self.bankNum.text=[NSString stringWithFormat:@"%@",model.account];
-//    self.bankType.text=[NSString stringWithFormat:@"%@",@"储蓄卡"];
+    self.bgView.backgroundColor =[JDTools stringToColor:model.color];
+    
+    NSString *str=[NSString stringWithFormat:@"%@%@",BaseURL,model.BankImgSrc];
+    
+    
+    [self.logoImage sd_setImageWithURL:[NSURL URLWithString:str] placeholderImage:[UIImage imageNamed:@"placeHolderLogo"]];
+    
+    
+    self.bankNameLabel.text=[NSString stringWithFormat:@"%@",model.BankName];
+    
+    self.bankNum.text=[NSString stringWithFormat:@"%@",model.CartId];
+    self.bankType.text=[NSString stringWithFormat:@"%@",@"储蓄卡"];
 }
 
 
