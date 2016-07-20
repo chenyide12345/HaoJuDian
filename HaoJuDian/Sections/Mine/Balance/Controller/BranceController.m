@@ -7,7 +7,8 @@
 //
 
 #import "BranceController.h"
-
+#import "BranceRechargeController.h"
+#import "BranceBundingController.h"
 
 @interface BranceController ()
 {
@@ -91,14 +92,17 @@
     _lineView.backgroundColor = [JDTools stringToColor:@"#ffffff"];
     [_bankView addSubview:_lineView];
     
-    UIImageView *rithtImgView = [[UIImageView alloc]init];
-    UIImage *rightImg = [UIImage imageNamed:@"bankCard"];
-    rithtImgView.frame = CGRectMake(ViewRight(_lineView)+55*AUTO_IPHONE6_WIDTH_375, 105/2*AUTO_IPHONE6_HEIGHT_667, rightImg.size.width, rightImg.size.height);
-    rithtImgView.image = rightImg;
-    [_bankView addSubview:rithtImgView];
+    
+    UIButton *caredButton  =[UIButton buttonWithType:UIButtonTypeCustom];
+     UIImage *rightImg = [UIImage imageNamed:@"bankCard"];
+    caredButton.frame = CGRectMake(ViewRight(_lineView)+55*AUTO_IPHONE6_WIDTH_375, 105/2*AUTO_IPHONE6_HEIGHT_667, rightImg.size.width, rightImg.size.height);
+    [caredButton setImage:rightImg forState:UIControlStateNormal];
+    [caredButton addTarget:self action:@selector(caredClick:) forControlEvents:UIControlEventTouchUpInside];
+    [_bankView addSubview:caredButton];
+
     
     UILabel *rithtLabel  =[[UILabel alloc]init];
-    NSString *rithStr = @"银行卡";
+    NSString *rithStr = @"银行卡(张)";
     NSDictionary *rightDict = @{NSFontAttributeName:systemFont(12)};
     CGRect  rigthRect =  [rithStr boundingRectWithSize:CGSizeMake(1000, 15) options:NSStringDrawingUsesLineFragmentOrigin attributes:rightDict context:nil];
     rithtLabel.frame = CGRectMake(ViewRight(_lineView)+55*AUTO_IPHONE6_WIDTH_375, ViewY(leftLabel), rigthRect.size.width, rigthRect.size.height);
@@ -116,9 +120,8 @@
     [_bankView addSubview:_caredNumber];
     
 }
-/*
-  充值按钮
- */
+
+#pragma mark - 充值按钮
 -(void)setupButtonView
 {
     _rechargeButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -138,9 +141,7 @@
         btn.layer.masksToBounds = YES;
         [btn addTarget:self action:@selector(branceClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:btn];
-        _isSelected=YES;
      
-        
     }
      _rechargeButton = (UIButton *)[self.view viewWithTag:101];
      _withdrawalsButton = (UIButton *)[self.view viewWithTag:102];
@@ -163,15 +164,23 @@
     
 }
 
+#pragma mark =============== 绑定银行卡 ===============
+-(void)caredClick:(UIButton *)button
+{
+        
+    BranceBundingController *bundVc = [[BranceBundingController alloc]init];
+    [self.navigationController pushViewController:bundVc animated:YES];
+    
+}
 #pragma  mark  - 充值 提现 --点击事件
 -(void)branceClick:(UIButton *)btn
 {
     switch (btn.tag) {
         case 101:
         {
-          
-            
-            
+         
+            BranceRechargeController *recharVc = [[BranceRechargeController alloc]init];
+            [self.navigationController pushViewController:recharVc animated:YES];
         }
             break;
         case 102:
@@ -189,7 +198,6 @@
             break;
     }
     
-
 
 }
 

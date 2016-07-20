@@ -21,11 +21,14 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "NetWorkCommon.h"
 
-#import "JDTools.h"  //字体 颜色转换
+
+#import "JDHttpManager.h"   //请求类
+#import "JDTools.h"         //字体 颜色转换
 #import "JD_BaseController.h"//导航基类
-#import "JDAlertView.h"  // 自定义提示框
+#import "JDAlertView.h"     // 自定义提示框
 #import "UIImage+Extension.h"
 #import "UIView+Extension.h"
+#import "JDBaseModel.h"
 
 
 
