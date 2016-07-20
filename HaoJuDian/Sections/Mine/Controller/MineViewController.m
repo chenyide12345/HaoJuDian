@@ -12,6 +12,8 @@
 #import "SetViewController.h"
 #import "MyInfoViewController.h"
 #import "OtherInfoViewController.h"
+#import "BranceController.h" //余额
+
 
 @interface MineViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -695,6 +697,10 @@
 
 - (void)yueBtnMethod:(UIButton *)sender
 {
+    
+    BranceController *bvc = [[BranceController alloc]init];
+    
+    [self.navigationController pushViewController:bvc animated:YES];
     
 }
 

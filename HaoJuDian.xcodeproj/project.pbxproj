@@ -75,7 +75,13 @@
 		05FD685D1D2CB67200D6C609 /* CYDSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FD685C1D2CB67200D6C609 /* CYDSlider.m */; };
 		05FD68611D2CDFC600D6C609 /* 1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05FD68601D2CDFC600D6C609 /* 1@2x.png */; };
 		3192A4681A65D875A4FF8614 /* libPods-HaoJuDian.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3FB6C3A249C579A968B687 /* libPods-HaoJuDian.a */; };
-		3A955F271D3DCA7800BF2A5E /* BalanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A955F261D3DCA7800BF2A5E /* BalanceController.m */; };
+		3A955F2F1D3DD14800BF2A5E /* JD_BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A955F2E1D3DD14800BF2A5E /* JD_BaseController.m */; };
+		3A955F351D3DED5900BF2A5E /* BranceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A955F341D3DED5900BF2A5E /* BranceController.m */; };
+		3A955F381D3DEF5C00BF2A5E /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A955F371D3DEF5C00BF2A5E /* UIImage+Extension.m */; };
+		3A955F3B1D3DF0D200BF2A5E /* JDTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A955F3A1D3DF0D200BF2A5E /* JDTools.m */; };
+		3A955F3E1D3E1E0F00BF2A5E /* JDAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A955F3D1D3E1E0F00BF2A5E /* JDAlertView.m */; };
+		3A955F411D3E1F3800BF2A5E /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A955F401D3E1F3800BF2A5E /* UIView+Extension.m */; };
+		3A955F441D3E1FEA00BF2A5E /* BranceRechargeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A955F431D3E1FEA00BF2A5E /* BranceRechargeController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -228,8 +234,20 @@
 		05FD685C1D2CB67200D6C609 /* CYDSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDSlider.m; sourceTree = "<group>"; };
 		05FD68601D2CDFC600D6C609 /* 1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1@2x.png"; sourceTree = "<group>"; };
 		1A3FB6C3A249C579A968B687 /* libPods-HaoJuDian.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HaoJuDian.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A955F251D3DCA7800BF2A5E /* BalanceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceController.h; sourceTree = "<group>"; };
-		3A955F261D3DCA7800BF2A5E /* BalanceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceController.m; sourceTree = "<group>"; };
+		3A955F2D1D3DD14800BF2A5E /* JD_BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JD_BaseController.h; sourceTree = "<group>"; };
+		3A955F2E1D3DD14800BF2A5E /* JD_BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JD_BaseController.m; sourceTree = "<group>"; };
+		3A955F331D3DED5900BF2A5E /* BranceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BranceController.h; sourceTree = "<group>"; };
+		3A955F341D3DED5900BF2A5E /* BranceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranceController.m; sourceTree = "<group>"; };
+		3A955F361D3DEF5C00BF2A5E /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Extension.h"; path = "../AppDelegate/BaseNavigation/UIImage+Extension.h"; sourceTree = "<group>"; };
+		3A955F371D3DEF5C00BF2A5E /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Extension.m"; path = "../AppDelegate/BaseNavigation/UIImage+Extension.m"; sourceTree = "<group>"; };
+		3A955F391D3DF0D200BF2A5E /* JDTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDTools.h; sourceTree = "<group>"; };
+		3A955F3A1D3DF0D200BF2A5E /* JDTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDTools.m; sourceTree = "<group>"; };
+		3A955F3C1D3E1E0F00BF2A5E /* JDAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDAlertView.h; sourceTree = "<group>"; };
+		3A955F3D1D3E1E0F00BF2A5E /* JDAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDAlertView.m; sourceTree = "<group>"; };
+		3A955F3F1D3E1F3800BF2A5E /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Extension.h"; path = "JKCountDownButton/UIView+Extension.h"; sourceTree = "<group>"; };
+		3A955F401D3E1F3800BF2A5E /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Extension.m"; path = "JKCountDownButton/UIView+Extension.m"; sourceTree = "<group>"; };
+		3A955F421D3E1FEA00BF2A5E /* BranceRechargeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BranceRechargeController.h; sourceTree = "<group>"; };
+		3A955F431D3E1FEA00BF2A5E /* BranceRechargeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranceRechargeController.m; sourceTree = "<group>"; };
 		3AC9389A1D3DBC4300B2CA58 /* URL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URL.h; sourceTree = "<group>"; };
 		3AC9389B1D3DBC5700B2CA58 /* ToolDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolDefine.h; sourceTree = "<group>"; };
 		48629B2E65DF7D958F9B7C92 /* Pods-HaoJuDian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaoJuDian.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HaoJuDian/Pods-HaoJuDian.debug.xcconfig"; sourceTree = "<group>"; };
@@ -377,6 +395,7 @@
 		05BF1A8D1D2BEC9D0095E18A /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
+				3A955F2C1D3DD11E00BF2A5E /* BaseNavigation */,
 				05BF1A8E1D2BEC9D0095E18A /* AppDelegate.h */,
 				05BF1A8F1D2BEC9D0095E18A /* AppDelegate.m */,
 				05BF1A901D2BEC9D0095E18A /* MainViewController.h */,
@@ -626,6 +645,14 @@
 				05FA752E1D338C8B006437AC /* UIColor+FlatColors */,
 				05FA75321D338C8B006437AC /* ZLSwipeableView */,
 				05F77DC91D2F87000023ECE4 /* JKCountDownButton */,
+				3A955F391D3DF0D200BF2A5E /* JDTools.h */,
+				3A955F3A1D3DF0D200BF2A5E /* JDTools.m */,
+				3A955F361D3DEF5C00BF2A5E /* UIImage+Extension.h */,
+				3A955F371D3DEF5C00BF2A5E /* UIImage+Extension.m */,
+				3A955F3C1D3E1E0F00BF2A5E /* JDAlertView.h */,
+				3A955F3D1D3E1E0F00BF2A5E /* JDAlertView.m */,
+				3A955F3F1D3E1F3800BF2A5E /* UIView+Extension.h */,
+				3A955F401D3E1F3800BF2A5E /* UIView+Extension.m */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -808,10 +835,45 @@
 		3A955F241D3DCA3000BF2A5E /* Balance */ = {
 			isa = PBXGroup;
 			children = (
-				3A955F251D3DCA7800BF2A5E /* BalanceController.h */,
-				3A955F261D3DCA7800BF2A5E /* BalanceController.m */,
+				3A955F291D3DCDD200BF2A5E /* Controller */,
+				3A955F2A1D3DCDD200BF2A5E /* Model */,
+				3A955F2B1D3DCDD200BF2A5E /* View */,
 			);
 			path = Balance;
+			sourceTree = "<group>";
+		};
+		3A955F291D3DCDD200BF2A5E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3A955F331D3DED5900BF2A5E /* BranceController.h */,
+				3A955F341D3DED5900BF2A5E /* BranceController.m */,
+				3A955F421D3E1FEA00BF2A5E /* BranceRechargeController.h */,
+				3A955F431D3E1FEA00BF2A5E /* BranceRechargeController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3A955F2A1D3DCDD200BF2A5E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3A955F2B1D3DCDD200BF2A5E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A955F2C1D3DD11E00BF2A5E /* BaseNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				3A955F2D1D3DD14800BF2A5E /* JD_BaseController.h */,
+				3A955F2E1D3DD14800BF2A5E /* JD_BaseController.m */,
+			);
+			path = BaseNavigation;
 			sourceTree = "<group>";
 		};
 		E49E5493583DB70A75D1F6FF /* Frameworks */ = {
@@ -1024,12 +1086,14 @@
 				05FA75721D33A393006437AC /* MASCompositeConstraint.m in Sources */,
 				05FA75791D33A393006437AC /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				05BF1AD71D2BEC9D0095E18A /* MeetViewController.m in Sources */,
+				3A955F3E1D3E1E0F00BF2A5E /* JDAlertView.m in Sources */,
 				05513E811D3C7E1C00987134 /* NetWorkCommon.m in Sources */,
 				05BF1ADB1D2BEC9D0095E18A /* NewsCell.m in Sources */,
 				05F77DCC1D2F87000023ECE4 /* JKCountDownButton.m in Sources */,
 				05FA757B1D33A393006437AC /* ViewController+MASAdditions.m in Sources */,
 				05BF1ACE1D2BEC9D0095E18A /* MainViewController.m in Sources */,
 				055115FD1D2CFB11003255C7 /* SearchViewController.m in Sources */,
+				3A955F381D3DEF5C00BF2A5E /* UIImage+Extension.m in Sources */,
 				05FA754C1D338C8B006437AC /* PanGestureRecognizer.m in Sources */,
 				05BF1A541D2BEBB60095E18A /* main.m in Sources */,
 				05FA74BD1D333737006437AC /* LoginViewController.m in Sources */,
@@ -1049,7 +1113,9 @@
 				05FA754A1D338C8B006437AC /* DefaultShouldSwipeDeterminator.m in Sources */,
 				05FA75731D33A393006437AC /* MASConstraint.m in Sources */,
 				05FA754B1D338C8B006437AC /* DefaultViewAnimator.m in Sources */,
+				3A955F3B1D3DF0D200BF2A5E /* JDTools.m in Sources */,
 				05FA75501D338C8B006437AC /* ZLSwipeableView.m in Sources */,
+				3A955F351D3DED5900BF2A5E /* BranceController.m in Sources */,
 				05FD685D1D2CB67200D6C609 /* CYDSlider.m in Sources */,
 				05F77DC51D2F5AAE0023ECE4 /* ChangePasswordViewController.m in Sources */,
 				05BF1AD11D2BEC9D0095E18A /* UIColor+RandomColor.m in Sources */,
@@ -1061,13 +1127,15 @@
 				05FA75741D33A393006437AC /* MASConstraintMaker.m in Sources */,
 				05FA75751D33A393006437AC /* MASLayoutConstraint.m in Sources */,
 				05FA75491D338C8B006437AC /* DefaultDirectionInterpretor.m in Sources */,
+				3A955F411D3E1F3800BF2A5E /* UIView+Extension.m in Sources */,
 				054B33CC1D3879D00053F0DA /* OtherInfoViewController.m in Sources */,
 				05FA75481D338C8B006437AC /* UIColor+FlatColors.m in Sources */,
+				3A955F441D3E1FEA00BF2A5E /* BranceRechargeController.m in Sources */,
+				3A955F2F1D3DD14800BF2A5E /* JD_BaseController.m in Sources */,
 				05B6150D1D379326001B261F /* MyHobbyViewController.m in Sources */,
 				05BF1ADC1D2BEC9D0095E18A /* NoticeCell.m in Sources */,
 				05F78ECC1D2DF02400AB61F5 /* GiftCell.m in Sources */,
 				05BF1AD01D2BEC9D0095E18A /* CYDNavigationController.m in Sources */,
-				3A955F271D3DCA7800BF2A5E /* BalanceController.m in Sources */,
 				05FA754E1D338C8B006437AC /* Utils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
