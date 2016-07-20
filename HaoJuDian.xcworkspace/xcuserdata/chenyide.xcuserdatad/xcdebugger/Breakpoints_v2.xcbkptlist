@@ -4,19 +4,13 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HaoJuDian/Sections/Mine/LoginAndRegister/Controller/RegisterFirstViewController.m"
-            timestampString = "490520826.708945"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
-            landmarkName = "-sendSMS"
-            landmarkType = "5">
+            scope = "0"
+            stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -25,29 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HaoJuDian/Sections/Mine/LoginAndRegister/Controller/RegisterFirstViewController.m"
-            timestampString = "490520780.220096"
+            filePath = "HaoJuDian/Sections/Mine/LoginAndRegister/Controller/LoginViewController.m"
+            timestampString = "490614904.822856"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
-            landmarkName = "-sendSMS"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HaoJuDian/Sections/Mine/LoginAndRegister/Controller/RegisterFirstViewController.m"
-            timestampString = "490520781.353255"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
-            landmarkName = "-sendSMS"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
+            landmarkName = "-loginBtnMethod:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
