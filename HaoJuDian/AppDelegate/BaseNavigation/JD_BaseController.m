@@ -8,6 +8,7 @@
 
 #import "JD_BaseController.h"
 
+
 @interface JD_BaseController ()
 
 @end
@@ -43,7 +44,7 @@
     [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
-    NSDictionary *attribute = @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:systemFont(17)};
+    NSDictionary *attribute = @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:JDFont(17)};
     
     [self.navigationController.navigationBar setTitleTextAttributes:attribute];
 }
@@ -118,7 +119,7 @@
     self.navigationItem.leftBarButtonItem=item;
     
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-    attrs[NSFontAttributeName] =systemFont(fontSize);
+    attrs[NSFontAttributeName] =JDFont(fontSize);
     attrs[NSForegroundColorAttributeName] =titleColor;
     [item setTitleTextAttributes:attrs forState:isEnable?UIControlStateNormal:UIControlStateDisabled];
 }
@@ -136,6 +137,58 @@
 {
 
 
+}
+- (MBProgressHUD *)progressHud
+{
+    
+    if (!_progressHud) {
+        
+        _progressHud = [[MBProgressHUD alloc] initWithView:self.view];
+        
+        _progressHud.frame = self.view.bounds;
+        
+        _progressHud.minSize = CGSizeMake(100, 100);
+        
+        _progressHud.mode = MBProgressHUDModeIndeterminate;
+        
+        _progressHud.label.text = @"加载中...";
+        
+        [self.view addSubview:_progressHud];
+    }
+    return _progressHud;
+}
+
+/**
+ * 显示菊花
+ */
+
+- (void)showHud
+{
+    [self.progressHud showAnimated:YES];
+   // [self.progressHud show:YES];
+}
+
+/**
+ * 隐藏菊花
+ */
+
+- (void)hidHud
+{
+    [self.progressHud hideAnimated:YES];
+   // [self.progressHud hide:YES];
+}
+
+/**
+ * 定制菊花下方显示字体
+ */
+
+- (void)showHudWithString:(NSString *)loadingText
+{
+    
+    self.progressHud.label.text = loadingText;
+    
+    [self.progressHud showAnimated:YES];
+    
 }
 
 

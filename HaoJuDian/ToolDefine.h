@@ -46,7 +46,7 @@
 
 
 //********************系统字体对应字号******//
-#define systemFont(x) [UIFont systemFontOfSize:x]
+#define JDFont(x) [UIFont systemFontOfSize:x]
 
 /***********************************  设备类型判断  ***************************************************************/
 #define IsiPad          (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)

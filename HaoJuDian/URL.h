@@ -29,6 +29,10 @@
 
 //用户银行卡
 #define JDFindPassword  @"/api/AppAccount/RetrievePassword"
+/**
+ *  用户银行卡列表
+ */
+#define bankCared  @"/api/AppUserInfo/GetSearchBankJson"
 
 
 #endif /* URL_h */

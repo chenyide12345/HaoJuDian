@@ -21,6 +21,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "NetWorkCommon.h"
 #import "MBProgressHUD.h"
+#import  "MJExtension.h"
 
 
 #import "JDHttpManager.h"   //请求类

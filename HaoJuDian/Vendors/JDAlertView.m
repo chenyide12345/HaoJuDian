@@ -57,7 +57,7 @@
     
     _tipLabel.textAlignment = NSTextAlignmentCenter;
     
-    _tipLabel.font = systemFont(TIP_ALERT_FONTSIZE);
+    _tipLabel.font = JDFont(TIP_ALERT_FONTSIZE);
     
     _tipLabel.textColor = [UIColor whiteColor];
     
@@ -89,7 +89,7 @@
 
 - (CGSize)calculateTextHeightWithTipString:(NSString *)tipStr andFontSize:(CGFloat)fontSize {
     
-    NSDictionary * textDic = [NSDictionary dictionaryWithObjectsAndKeys:systemFont(fontSize), NSFontAttributeName, nil];
+    NSDictionary * textDic = [NSDictionary dictionaryWithObjectsAndKeys:JDFont(fontSize), NSFontAttributeName, nil];
     
     CGRect rect = [tipStr boundingRectWithSize:CGSizeMake(TIP_ALERT_WIDTH, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:textDic context:nil];
     
