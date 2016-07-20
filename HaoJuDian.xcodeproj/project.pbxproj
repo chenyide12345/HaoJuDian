@@ -334,8 +334,8 @@
 		05513E7B1D3C781B00987134 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				3AA8459C1D3F2E2300AA9392 /* JDHttpManager.m */,
 				3AA8459D1D3F2E2300AA9392 /* JDHttpManager.h */,
+				3AA8459C1D3F2E2300AA9392 /* JDHttpManager.m */,
 				3A955F391D3DF0D200BF2A5E /* JDTools.h */,
 				3A955F3A1D3DF0D200BF2A5E /* JDTools.m */,
 				3A955F361D3DEF5C00BF2A5E /* UIImage+Extension.h */,
