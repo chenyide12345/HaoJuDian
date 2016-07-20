@@ -7,10 +7,11 @@
 //
 /*
  
-   个人中心 -》 余额  首页
+   个人中心 -> 余额  首页
  */
 #import <UIKit/UIKit.h>
 #import "JD_BaseController.h"
+
 
 @interface BranceController : JD_BaseController
 
