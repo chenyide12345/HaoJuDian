@@ -92,7 +92,7 @@
         textField.textColor = ZITIGRAYCOLOR;
         textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:[placAry objectAtIndex:i] attributes:@{NSForegroundColorAttributeName:ZITIGRAYCOLOR, NSFontAttributeName: [UIFont systemFontOfSize:16]}];
         textField.delegate = self;
-        textField.tag = 1000 + i;
+        textField.tag = 10000 + i;
         textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         [view1 addSubview:textField];
         
@@ -222,9 +222,44 @@
 
 - (void)loginBtnMethod:(UIButton *)sender
 {
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [MBProgressHUD showHUDAddedTo:WINDOW animated:YES];
     
-    WINDOW.rootViewController = [[CYDBaseNavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];;
+    UITextField * tf1 = (UITextField *)[self.view viewWithTag:10000];
+    UITextField * tf2 = (UITextField *)[self.view viewWithTag:10001];
+    
+    NSString * urlStr = [NSString stringWithFormat:@"%@%@", BaseURL, JDLogin];
+    
+    NSMutableDictionary * parameter = [NSMutableDictionary dictionary];
+    [parameter setObject:[NSString stringWithFormat:@"%@", tf1.text] forKey:@"username"];
+    [parameter setObject:[NSString stringWithFormat:@"%@", tf2.text] forKey:@"password"];
+    
+    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/plain",nil];
+    
+    [manager POST:urlStr parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        if ([responseObject[@"Status"] isEqualToString:@"success"]) {
+            
+            NSDictionary * dataDic = responseObject[@"Data"];
+            [DEFAULTS setObject:dataDic[@"UserID"] forKey:@"UserID"];
+            [DEFAULTS setObject:dataDic[@"HuanXinToken"] forKey:@"HuanXinToken"];
+            [DEFAULTS setObject:dataDic[@"HuanXinPassword"] forKey:@"HuanXinPassword"];
+            [DEFAULTS setObject:dataDic[@"HuanXinID"] forKey:@"HuanXinID"];
+            
+            WINDOW.rootViewController = [[CYDBaseNavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];
+            
+        }
+        
+        
+        
+        [MBProgressHUD hideHUDForView:WINDOW animated:YES];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        [MBProgressHUD hideHUDForView:WINDOW animated:YES];
+    }];
+    
+    
 }
 
 

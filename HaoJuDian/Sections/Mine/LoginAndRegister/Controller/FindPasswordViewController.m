@@ -12,6 +12,12 @@
 
 @property (nonatomic, strong) JKCountDownButton * sendCode; //发送验证码
 
+@property (nonatomic, copy) NSString * phoneStr; //手机号
+@property (nonatomic, copy) NSString * securityStr; // 验证码
+@property (nonatomic, copy) NSString * passStr; //密码
+
+@property (nonatomic, strong) UIButton *sureBtn; //下一步btn
+
 @end
 
 @implementation FindPasswordViewController
@@ -85,11 +91,7 @@
         textField.delegate = self;
         textField.tag = 1000 + i;
         textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-        //        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        //        [button setBackgroundColor:MAINCOLOR];
-        //        [button setFrame:CGRectMake(0.0f, 0.0f, 15.0f, 15.0f)]; // Required for iOS7
-        //        textField.rightView = button;
-        //        textField.rightViewMode = UITextFieldViewModeWhileEditing;
+        [textField addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
         [view1 addSubview:textField];
         
         UILabel * lineLab = [[UILabel alloc] initWithFrame:CGRectMake(0, viewH-0.5, WIDTH, 0.5)];
@@ -102,19 +104,19 @@
             //发送验证码
             self.sendCode = [JKCountDownButton buttonWithType:UIButtonTypeCustom];
             self.sendCode.frame = CGRectMake(view1.frame.size.width - 99, 7, 89, 35);
-            self.sendCode.backgroundColor = ANNIUGRAYCOLOR;
+            self.sendCode.backgroundColor = MAINCOLOR;
             [self.sendCode setTitle:@"获取验证码" forState:UIControlStateNormal];
-            [self.sendCode setTitleColor:ZITIGRAYCOLOR forState:UIControlStateNormal];
+            [self.sendCode setTitleColor:ZITIWHITECOLOR forState:UIControlStateNormal];
             self.sendCode.titleLabel.font = [UIFont systemFontOfSize:15];
             self.sendCode.layer.masksToBounds = YES;
             self.sendCode.layer.cornerRadius = 3;
             [view1 addSubview:self.sendCode];
             
-            textField.frame = CGRectMake(CGRectGetMaxX(label1.frame) + 5, 0, view1.frame.size.width - label1.frame.origin.x - label1.frame.size.width - 10 - 80, viewH);
+            textField.frame = CGRectMake(CGRectGetMaxX(label1.frame) + 5, 0, view1.frame.size.width - label1.frame.origin.x - label1.frame.size.width - 10 - 100, viewH);
             
             __weak typeof(self) weakSelf = self;
             [self.sendCode addToucheHandler:^(JKCountDownButton*sender, NSInteger tag) {
-                sender.enabled = NO;
+                
                 
                 UITextField * tf = (UITextField *)[weakSelf.view viewWithTag:1000];
                 NSLog(@"tf.text = %@", tf.text);
@@ -122,18 +124,20 @@
                 
                 if (isMN) {
                     
-                    //                    [weakSelf sendSMS];
-                    [sender startWithSecond:120];
-                    [sender setBackgroundColor:[UIColor lightGrayColor]];
+                    [weakSelf sendSMS];
+                    
                     
                     [sender didChange:^NSString *(JKCountDownButton *countDownButton,int second) {
+                        [sender setBackgroundColor:ANNIUGRAYCOLOR];
+                        [sender setTitleColor:ZITIWHITECOLOR forState:UIControlStateNormal];
                         NSString *title = [NSString stringWithFormat:@"剩余%d秒",second];
                         return title;
                     }];
                     [sender didFinished:^NSString *(JKCountDownButton *countDownButton, int second) {
                         countDownButton.enabled = YES;
-                        [sender setBackgroundColor:MAINCOLOR];
-                        return @"点击重新获取";
+                        sender.backgroundColor = MAINCOLOR;
+                        [sender setTitleColor:ZITIWHITECOLOR forState:UIControlStateNormal];
+                        return @"获取验证码";
                         
                     }];
                     
@@ -160,15 +164,15 @@
     }
     
     
-    UIButton *sureBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    sureBtn.frame = CGRectMake(10, TOPHEIGHT + 44 + viewH*3 + 50, WIDTH - 20, 40);
-    sureBtn.backgroundColor = ANNIUGRAYCOLOR;
-    sureBtn.layer.cornerRadius = 3;
-    [sureBtn setTitle:@"下一步" forState:UIControlStateNormal];
-    sureBtn.titleLabel.font = [UIFont systemFontOfSize:15];
-    [sureBtn setTitleColor:ZITIWHITECOLOR forState:UIControlStateNormal];
-    [sureBtn addTarget:self action:@selector(sureBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:sureBtn];
+    self.sureBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.sureBtn.frame = CGRectMake(10, TOPHEIGHT + 44 + viewH*3 + 50, WIDTH - 20, 40);
+    self.sureBtn.backgroundColor = ANNIUGRAYCOLOR;
+    self.sureBtn.layer.cornerRadius = 3;
+    [self.sureBtn setTitle:@"下一步" forState:UIControlStateNormal];
+    self.sureBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+    [self.sureBtn setTitleColor:ZITIWHITECOLOR forState:UIControlStateNormal];
+    [self.sureBtn addTarget:self action:@selector(sureBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.sureBtn];
     
     //全局返回键盘手势
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnceMethod:)];
@@ -181,8 +185,121 @@
 
 - (void)sureBtnMethod:(UIButton *)sender
 {
+    UITextField * tf1 = [self.view viewWithTag:1000];
+    UITextField * tf2 = [self.view viewWithTag:1001];
+    UITextField * tf3 = [self.view viewWithTag:1002];
+    
+    if ([tf1.text isEqualToString:self.phoneStr] && [tf2.text isEqualToString:self.securityStr] && tf3.text.length > 5) {
+        
+        [MBProgressHUD showHUDAddedTo:WINDOW animated:YES];
+        
+        NSMutableDictionary * parameter = [NSMutableDictionary dictionary];
+        [parameter setObject:[NSString stringWithFormat:@"%@", tf1.text] forKey:@"username"];
+        [parameter setObject:[NSString stringWithFormat:@"%@", tf2.text] forKey:@"checkcode"];
+        [parameter setObject:[NSString stringWithFormat:@"%@", tf3.text] forKey:@"newpassword"];
+        
+        
+        NSString * urlStr = [NSString stringWithFormat:@"%@%@", BaseURL, JDFindPassword];
+        
+        AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/plain",nil];
+        
+        [manager POST:urlStr parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            
+            if ([responseObject[@"Status"] isEqualToString:@"success"]) {
+                
+                NSDictionary * dataDic = responseObject[@"Data"];
+                
+                [self.navigationController popViewControllerAnimated:YES];
+                [MBProgressHUD hideHUDForView:WINDOW animated:YES];
+                
+            }
+            
+            
+            
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            
+            [MBProgressHUD hideHUDForView:WINDOW animated:YES];
+        }];
+        
+    }
+}
+
+
+
+#pragma mark - 发短信方法
+
+- (void)sendSMS
+{
+    [MBProgressHUD showHUDAddedTo:WINDOW animated:YES];
+    
+    UITextField * tf = (UITextField *)[self.view viewWithTag:1000];
+    
+    NSMutableDictionary * parameter = [NSMutableDictionary dictionary];
+    [parameter setObject:[NSString stringWithFormat:@"%@", tf.text] forKey:@"username"];
+    [parameter setObject:@"false" forKey:@"isregister"];
+    
+    NSString * urlStr = [NSString stringWithFormat:@"%@%@", BaseURL, JDSendCode];
+    
+    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/plain",nil];
+    
+    [manager POST:urlStr parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSDictionary * dataDic = responseObject[@"Data"];
+        
+        if ([[dataDic objectForKey:@"status"] intValue] == 0) {
+            
+            //            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@", dataDic[@"Message"]]];
+        }
+        
+        if ([[dataDic objectForKey:@"status"] intValue] == 1) {
+            
+            
+            [self.sendCode startWithSecond:60];
+            UITextField * tf1 = (UITextField *)[self.view viewWithTag:1001];
+            tf1.text = [NSString stringWithFormat:@"%@", dataDic[@"value"]];
+            self.securityStr = [NSString stringWithFormat:@"%@", dataDic[@"value"]];
+            self.phoneStr = [NSString stringWithFormat:@"%@", tf.text];
+            
+            [self textFieldChanged:nil];
+            
+        }
+        
+        [MBProgressHUD hideHUDForView:WINDOW animated:YES];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        [MBProgressHUD hideHUDForView:WINDOW animated:YES];
+    }];
     
 }
+
+
+
+#pragma mark - 监听输入内容改变
+
+- (void)textFieldChanged:(UITextField *)textField
+{
+    UITextField * tf1 = [self.view viewWithTag:1000];
+    UITextField * tf2 = [self.view viewWithTag:1001];
+    UITextField * tf3 = [self.view viewWithTag:1002];
+    
+    if ([tf1.text isEqualToString:self.phoneStr] && [tf2.text isEqualToString:self.securityStr] && tf3.text.length > 5) {
+        
+        [self.sureBtn setBackgroundColor:MAINCOLOR];
+        self.sureBtn.enabled = YES;
+        
+    }
+    
+    if (![tf1.text isEqualToString:self.phoneStr] || ![tf2.text isEqualToString:self.securityStr] || tf3.text.length < 6) {
+        [self.sureBtn setBackgroundColor:ANNIUGRAYCOLOR];
+        self.sureBtn.enabled = NO;
+        
+    }
+}
+
 
 
 

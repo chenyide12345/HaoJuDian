@@ -19,14 +19,16 @@
 
 
 //登录
-#define JDLogin  @"/api/AppAccount/login"
+#define JDLogin  @"/api/AppAccount/userLogin"
 
 //注册
-#define JDRegister  @"/api/AppAccount/register"
+#define JDRegister  @"/api/appaccount/UserCreate"
 
+//发送验证码
+#define JDSendCode @"/api/AppAccount/GetCheckCode"
 
 //用户银行卡
-#define JDUserBankInfo  @"/api/AppUserInfo/GeTUserBankInfo"
+#define JDFindPassword  @"/api/AppAccount/RetrievePassword"
 
 
 #endif /* URL_h */
