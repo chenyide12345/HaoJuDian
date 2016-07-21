@@ -51,6 +51,8 @@
     
     [self setupNav];
     [self setupViews];
+    
+    [self getMarryInfo];
 }
 
 
@@ -133,6 +135,11 @@
     self.disKeyTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnceMethod:)];
     
     
+//    UIDatePicker *datePicker = [[UIDatePicker alloc] init];
+//    datePicker.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
+//    datePicker.datePickerMode = UIDatePickerModeDate;
+//    [self.view addSubview:datePicker];
+    
 }
 
 
@@ -158,7 +165,7 @@
 - (NSMutableArray *)marryAry
 {
     if (_marryAry == nil) {
-        self.marryAry = [NSMutableArray arrayWithObjects:@"未婚", @"离异", @"丧偶", nil];
+        self.marryAry = [NSMutableArray array];
     }
     return _marryAry;
 }
@@ -285,6 +292,8 @@
     if (indexPath.row >0 && indexPath.row < self.titAry.count) {
         
         self.selectTabRow = indexPath.row;
+        [self.pickerView selectRow:0 inComponent:0 animated:NO];
+        
         [UIView animateWithDuration:0.3 animations:^{
             
             [WINDOW addSubview:self.backView];
@@ -438,7 +447,7 @@
     if (self.selectTabRow == 2) {
         myView = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 78, 30)];
         myView.textAlignment = NSTextAlignmentCenter;
-        myView.text = [self.marryAry objectAtIndex:row];
+        myView.text = [[self.marryAry objectAtIndex:row] objectForKey:@"Text"];
         myView.font = JDFont(15);
         myView.backgroundColor = BACKGROUNDCOLOR;
         myView.textColor = ZITIBLACKCOLOR;
@@ -468,11 +477,83 @@
 
 
 
+#pragma mark - 获取婚姻状态
+
+- (void)getMarryInfo
+{
+    [MBProgressHUD showHUDAddedTo:WINDOW animated:YES];
+    
+    NSString * urlStr = [NSString stringWithFormat:@"%@%@", BaseURL, JDGetDownList(3)];
+    
+    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/plain",nil];
+    
+    [manager GET:urlStr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        for (NSDictionary * dic in responseObject[@"Data"]) {
+            [self.marryAry addObject:dic];
+        }
+        [self.pickerView reloadAllComponents];
+        
+        [MBProgressHUD hideHUDForView:WINDOW animated:YES];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        [MBProgressHUD hideHUDForView:WINDOW animated:YES];
+    }];
+}
+
 
 #pragma mark - 完成方法
 
 - (void)finishBtnMethod:(UIButton *)sender
 {
+    [MBProgressHUD showHUDAddedTo:WINDOW animated:YES];
+    
+    UITextField * nickTF = [self.view viewWithTag:10000];
+    UILabel * sexLab = [self.view viewWithTag:10001];
+    UILabel * marryLab = [self.view viewWithTag:10002];
+    UILabel * heightLab = [self.view viewWithTag:10003];
+    UILabel * birthLab = [self.view viewWithTag:10004];
+    
+    NSString * urlStr = [NSString stringWithFormat:@"%@%@", BaseURL, JDUpdateUserBaseInfo];
+    
+    NSMutableDictionary * parameter = [NSMutableDictionary dictionary];
+    [parameter setValue:@"370" forKey:@"UserID"];
+    [parameter setValue:[nickTF.text stringByReplacingOccurrencesOfString:@"\r" withString:@""] forKey:@"NickName"];
+    if ([sexLab.text isEqualToString:@"男"]) {
+        //男
+        [parameter setValue:@"true" forKey:@"Sex"];
+    } else {
+        //女
+        [parameter setValue:@"false" forKey:@"Sex"];
+    }
+    
+    if ([marryLab.text isEqualToString:@"未婚"]) {
+        [parameter setValue:@"1" forKey:@"Marry"];
+    } else if ([marryLab.text isEqualToString:@"离异"]) {
+        [parameter setValue:@"2" forKey:@"Marry"];
+    } else {
+        [parameter setValue:@"3" forKey:@"Marry"];
+    }
+    
+    [parameter setValue:[NSString stringWithFormat:@"%@", [heightLab.text substringToIndex:2]] forKey:@"Heigth"];
+    [parameter setValue:nil forKey:@"BirthDay"];
+    
+    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/plain",nil];
+    
+    [manager POST:urlStr parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        if ([responseObject[@"Status"] isEqualToString:@"success"]) {
+            JDAlert(responseObject[@"Data"]);
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }
+        
+        [MBProgressHUD hideHUDForView:WINDOW animated:YES];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        [MBProgressHUD hideHUDForView:WINDOW animated:YES];
+    }];
     
 }
 
@@ -490,7 +571,7 @@
     
     /**婚姻状态**/
     if (self.selectTabRow == 2) {
-        contentLab.text = self.marryAry[self.selectPickRow];
+        contentLab.text = [self.marryAry[self.selectPickRow] objectForKey:@"Text"];
     }
     
     /**身高**/

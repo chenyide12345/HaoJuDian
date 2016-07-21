@@ -34,6 +34,9 @@
 		05BF1ADC1D2BEC9D0095E18A /* NoticeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1AB91D2BEC9D0095E18A /* NoticeCell.m */; };
 		05BF1ADD1D2BEC9D0095E18A /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1ABD1D2BEC9D0095E18A /* MineViewController.m */; };
 		05BF1ADE1D2BEC9D0095E18A /* NearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF1AC31D2BEC9D0095E18A /* NearbyViewController.m */; };
+		05EA54CA1D40A657007C350A /* MyPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EA54C91D40A657007C350A /* MyPhotoViewController.m */; };
+		05EA54CD1D40BC96007C350A /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EA54CC1D40BC96007C350A /* PhotoCollectionViewCell.m */; };
+		05EA54D11D40C4CB007C350A /* ZWCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EA54CF1D40C4CB007C350A /* ZWCollectionViewFlowLayout.m */; };
 		05F77A561D35D3FB002D928E /* nvdatu.png in Resources */ = {isa = PBXBuildFile; fileRef = 05F77A551D35D3FB002D928E /* nvdatu.png */; };
 		05F77DC21D2F55E60023ECE4 /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F77DC11D2F55E60023ECE4 /* SetViewController.m */; };
 		05F77DC51D2F5AAE0023ECE4 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F77DC41D2F5AAE0023ECE4 /* ChangePasswordViewController.m */; };
@@ -160,6 +163,12 @@
 		05BF1AC21D2BEC9D0095E18A /* NearbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyViewController.h; sourceTree = "<group>"; };
 		05BF1AC31D2BEC9D0095E18A /* NearbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyViewController.m; sourceTree = "<group>"; };
 		05BF1AE01D2BECC20095E18A /* HaoJuDian.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaoJuDian.pch; sourceTree = "<group>"; };
+		05EA54C81D40A657007C350A /* MyPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPhotoViewController.h; sourceTree = "<group>"; };
+		05EA54C91D40A657007C350A /* MyPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPhotoViewController.m; sourceTree = "<group>"; };
+		05EA54CB1D40BC96007C350A /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		05EA54CC1D40BC96007C350A /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		05EA54CF1D40C4CB007C350A /* ZWCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		05EA54D01D40C4CB007C350A /* ZWCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		05F77A551D35D3FB002D928E /* nvdatu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nvdatu.png; sourceTree = "<group>"; };
 		05F77DC01D2F55E60023ECE4 /* SetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetViewController.h; sourceTree = "<group>"; };
 		05F77DC11D2F55E60023ECE4 /* SetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetViewController.m; sourceTree = "<group>"; };
@@ -596,6 +605,7 @@
 		05BF1ABA1D2BEC9D0095E18A /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				05EA54C41D40A642007C350A /* MyPhoto */,
 				3A955F241D3DCA3000BF2A5E /* Balance */,
 				05FA74B71D333729006437AC /* LoginAndRegister */,
 				05F77DBC1D2F55AB0023ECE4 /* Set */,
@@ -674,12 +684,57 @@
 		05BF1ACC1D2BEC9D0095E18A /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				05EA54CE1D40C4A1007C350A /* ZWCollectionViewFlowLayout */,
 				05FA75561D33A393006437AC /* Masonry */,
 				05FA752E1D338C8B006437AC /* UIColor+FlatColors */,
 				05FA75321D338C8B006437AC /* ZLSwipeableView */,
 				05F77DC91D2F87000023ECE4 /* JKCountDownButton */,
 			);
 			path = Vendors;
+			sourceTree = "<group>";
+		};
+		05EA54C41D40A642007C350A /* MyPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				05EA54C51D40A642007C350A /* Controller */,
+				05EA54C61D40A642007C350A /* Model */,
+				05EA54C71D40A642007C350A /* View */,
+			);
+			path = MyPhoto;
+			sourceTree = "<group>";
+		};
+		05EA54C51D40A642007C350A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				05EA54C81D40A657007C350A /* MyPhotoViewController.h */,
+				05EA54C91D40A657007C350A /* MyPhotoViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		05EA54C61D40A642007C350A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		05EA54C71D40A642007C350A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				05EA54CB1D40BC96007C350A /* PhotoCollectionViewCell.h */,
+				05EA54CC1D40BC96007C350A /* PhotoCollectionViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		05EA54CE1D40C4A1007C350A /* ZWCollectionViewFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				05EA54D01D40C4CB007C350A /* ZWCollectionViewFlowLayout.h */,
+				05EA54CF1D40C4CB007C350A /* ZWCollectionViewFlowLayout.m */,
+			);
+			path = ZWCollectionViewFlowLayout;
 			sourceTree = "<group>";
 		};
 		05F77DBC1D2F55AB0023ECE4 /* Set */ = {
@@ -1113,6 +1168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05FA75771D33A393006437AC /* MASViewConstraint.m in Sources */,
+				05EA54CA1D40A657007C350A /* MyPhotoViewController.m in Sources */,
 				05BF1ACD1D2BEC9D0095E18A /* AppDelegate.m in Sources */,
 				05FA75761D33A393006437AC /* MASViewAttribute.m in Sources */,
 				05FA754D1D338C8B006437AC /* Scheduler.m in Sources */,
@@ -1124,6 +1180,7 @@
 				05BF1AD71D2BEC9D0095E18A /* MeetViewController.m in Sources */,
 				3A955F3E1D3E1E0F00BF2A5E /* JDAlertView.m in Sources */,
 				05513E811D3C7E1C00987134 /* NetWorkCommon.m in Sources */,
+				05EA54D11D40C4CB007C350A /* ZWCollectionViewFlowLayout.m in Sources */,
 				05BF1ADB1D2BEC9D0095E18A /* NewsCell.m in Sources */,
 				05F77DCC1D2F87000023ECE4 /* JKCountDownButton.m in Sources */,
 				05FA757B1D33A393006437AC /* ViewController+MASAdditions.m in Sources */,
@@ -1172,6 +1229,7 @@
 				054B33CC1D3879D00053F0DA /* OtherInfoViewController.m in Sources */,
 				05FA75481D338C8B006437AC /* UIColor+FlatColors.m in Sources */,
 				3A955F441D3E1FEA00BF2A5E /* BranceRechargeController.m in Sources */,
+				05EA54CD1D40BC96007C350A /* PhotoCollectionViewCell.m in Sources */,
 				3A955F2F1D3DD14800BF2A5E /* JD_BaseController.m in Sources */,
 				05B6150D1D379326001B261F /* MyHobbyViewController.m in Sources */,
 				3AA8459B1D3F280400AA9392 /* BranceBankModel.m in Sources */,

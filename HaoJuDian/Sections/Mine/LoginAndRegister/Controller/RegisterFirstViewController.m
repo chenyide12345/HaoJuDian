@@ -185,7 +185,7 @@
     self.sureBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     [self.sureBtn setTitleColor:ZITIWHITECOLOR forState:UIControlStateNormal];
     [self.sureBtn addTarget:self action:@selector(sureBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
-//    self.sureBtn.enabled = NO;
+    self.sureBtn.enabled = NO;
     [self.view addSubview:self.sureBtn];
     
     //全局返回键盘手势
@@ -199,56 +199,56 @@
 
 - (void)sureBtnMethod:(UIButton *)sender
 {
-//    UITextField * tf1 = [self.view viewWithTag:1000];
-//    UITextField * tf2 = [self.view viewWithTag:1001];
-//    UITextField * tf3 = [self.view viewWithTag:1002];
-//    
-//    if ([tf1.text isEqualToString:self.phoneStr] && [tf2.text isEqualToString:self.securityStr] && tf3.text.length > 5) {
-//        
-//        [MBProgressHUD showHUDAddedTo:WINDOW animated:YES];
-//        
-//        NSMutableDictionary * parameter = [NSMutableDictionary dictionary];
-//        [parameter setObject:[NSString stringWithFormat:@"%@", tf1.text] forKey:@"username"];
-//        [parameter setObject:[NSString stringWithFormat:@"%@", tf2.text] forKey:@"checkcode"];
-//        [parameter setObject:[NSString stringWithFormat:@"%@", tf3.text] forKey:@"password"];
-//        
-//        
-//        NSString * urlStr = [NSString stringWithFormat:@"%@%@", BaseURL, JDRegister];
-//        
-//        AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
-//        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/plain",nil];
-//        
-//        [manager POST:urlStr parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//            
-//            if ([responseObject[@"Status"] isEqualToString:@"success"]) {
-//                
-//                JDAlert(responseObject[@"Message"]);
-//                
-//                NSDictionary * dataDic = responseObject[@"Data"];
-//                
-//                [MBProgressHUD hideHUDForView:WINDOW animated:YES];
-//                
-//                RegisterSecondViewController * registerSecondVC = [RegisterSecondViewController new];
-//                registerSecondVC.UserID = [NSString stringWithFormat:@"%@", dataDic[@"UserID"]];
-//                [self.navigationController pushViewController:registerSecondVC animated:YES];
-//
-//                
-//            }
-//            
-//            
-//            
-//            
-//        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//            
-//            [MBProgressHUD hideHUDForView:WINDOW animated:YES];
-//        }];
-//        
-//    }
+    UITextField * tf1 = [self.view viewWithTag:1000];
+    UITextField * tf2 = [self.view viewWithTag:1001];
+    UITextField * tf3 = [self.view viewWithTag:1002];
+    
+    if ([tf1.text isEqualToString:self.phoneStr] && [tf2.text isEqualToString:self.securityStr] && tf3.text.length > 5) {
+        
+        [MBProgressHUD showHUDAddedTo:WINDOW animated:YES];
+        
+        NSMutableDictionary * parameter = [NSMutableDictionary dictionary];
+        [parameter setObject:[NSString stringWithFormat:@"%@", tf1.text] forKey:@"username"];
+        [parameter setObject:[NSString stringWithFormat:@"%@", tf2.text] forKey:@"checkcode"];
+        [parameter setObject:[NSString stringWithFormat:@"%@", tf3.text] forKey:@"password"];
+        
+        
+        NSString * urlStr = [NSString stringWithFormat:@"%@%@", BaseURL, JDRegister];
+        
+        AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/plain",nil];
+        
+        [manager POST:urlStr parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            
+            if ([responseObject[@"Status"] isEqualToString:@"success"]) {
+                
+                JDAlert(responseObject[@"Message"]);
+                
+                NSDictionary * dataDic = responseObject[@"Data"];
+                
+                [MBProgressHUD hideHUDForView:WINDOW animated:YES];
+                
+                RegisterSecondViewController * registerSecondVC = [RegisterSecondViewController new];
+                registerSecondVC.UserID = [NSString stringWithFormat:@"%@", dataDic[@"UserID"]];
+                [self.navigationController pushViewController:registerSecondVC animated:YES];
+
+                
+            }
+            
+            
+            
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            
+            [MBProgressHUD hideHUDForView:WINDOW animated:YES];
+        }];
+        
+    }
     
     
-    RegisterSecondViewController * registerSecondVC = [RegisterSecondViewController new];
+//    RegisterSecondViewController * registerSecondVC = [RegisterSecondViewController new];
 //    registerSecondVC.UserID = [NSString stringWithFormat:@"%@", dataDic[@"UserID"]];
-    [self.navigationController pushViewController:registerSecondVC animated:YES];
+//    [self.navigationController pushViewController:registerSecondVC animated:YES];
     
 
 }
