@@ -84,6 +84,7 @@
 #define WINDOW [[UIApplication sharedApplication] keyWindow]
 #define DEFAULTS [NSUserDefaults standardUserDefaults]
 
+#define JDAlert(str) [[JDAlertView sharedAlert] createTip:str]
 
 //********自定义日志输出宏*******/
 #if (DEBUG || TESTCASE)

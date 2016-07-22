@@ -119,7 +119,7 @@
             
             __weak typeof(self) weakSelf = self;
             [self.sendCode addToucheHandler:^(JKCountDownButton*sender, NSInteger tag) {
-                sender.enabled = NO;
+                
                 
                 UITextField * tf = (UITextField *)[weakSelf.view viewWithTag:1000];
                 NSLog(@"tf.text = %@", tf.text);
@@ -222,14 +222,16 @@
             
             if ([responseObject[@"Status"] isEqualToString:@"success"]) {
                 
+                JDAlert(responseObject[@"Message"]);
+                
                 NSDictionary * dataDic = responseObject[@"Data"];
                 
-//                [DEFAULTS setObject:dataDic[@"UserID"] forKey:@"UserID"];
-//                [DEFAULTS setObject:dataDic[@"HuanXinID"] forKey:@"HuanXinID"];
-//                [DEFAULTS setObject:dataDic[@"Password"] forKey:@"Password"];
-//                [DEFAULTS setObject:dataDic[@"modelIsNull"] forKey:@"modelIsNull"];
-                
                 [MBProgressHUD hideHUDForView:WINDOW animated:YES];
+                
+                RegisterSecondViewController * registerSecondVC = [RegisterSecondViewController new];
+                registerSecondVC.UserID = [NSString stringWithFormat:@"%@", dataDic[@"UserID"]];
+                [self.navigationController pushViewController:registerSecondVC animated:YES];
+
                 
             }
             
@@ -244,10 +246,10 @@
     }
     
     
-    
-    
 //    RegisterSecondViewController * registerSecondVC = [RegisterSecondViewController new];
+//    registerSecondVC.UserID = [NSString stringWithFormat:@"%@", dataDic[@"UserID"]];
 //    [self.navigationController pushViewController:registerSecondVC animated:YES];
+    
 
 }
 
@@ -294,7 +296,7 @@
         
         if ([[dataDic objectForKey:@"status"] intValue] == 0) {
             
-//            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@", dataDic[@"Message"]]];
+            JDAlert(dataDic[@"Message"]);
         }
         
         if ([[dataDic objectForKey:@"status"] intValue] == 1) {

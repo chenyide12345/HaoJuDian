@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HaoJuDian/Sections/Mine/LoginAndRegister/Controller/LoginViewController.m"
-            timestampString = "490614904.822856"
+            filePath = "HaoJuDian/Sections/Mine/LoginAndRegister/Controller/FindPasswordViewController.m"
+            timestampString = "490669168.444243"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
-            landmarkName = "-loginBtnMethod:"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
+            landmarkName = "-sendSMS"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -13,6 +13,7 @@
 #import "MyInfoViewController.h"
 #import "OtherInfoViewController.h"
 #import "BranceController.h" //余额
+#import "MyPhotoViewController.h"
 
 
 @interface MineViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -250,9 +251,9 @@
         [cell.contentView addSubview:setBtn];
         
         
-        UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 30, backImgW/2 - 15, 20, 30)];
+        UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 20, backImgW/2 - 7, 8, 14)];
         //        img.backgroundColor = MAINCOLOR;
-        img.image = [UIImage imageNamed:@"youjiantou"];
+        img.image = [UIImage imageNamed:@"ziliaoyoujiantou"];
         [cell.contentView addSubview:img];
         
         UILabel *contentLab = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH - 60, backImgW/2 - 10, 30, 20)];
@@ -284,15 +285,21 @@
         for (int i = 0; i < 4; i++) {
             
             UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(10 + (imgW+imgJG)*i, 7.5, imgW, imgW)];
-            img.backgroundColor = MAINCOLOR;
+            img.backgroundColor = [UIColor clearColor];
             img.layer.masksToBounds = YES;
             img.layer.cornerRadius = 6;
             [cell.contentView addSubview:img];
             
+            if (i == 0) {
+                img.image = [UIImage imageNamed:@"shangchuanzhaopianhong"];
+            } else {
+                img.image = [UIImage imageNamed:@"shangchuanzhaopianhui"];
+            }
+            
         }
         
         
-        UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 30, 10+imgW/2 - 15, 20, 30)];
+        UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 20, 10+imgW/2 - 7, 8, 14)];
 //        img.backgroundColor = MAINCOLOR;
         img.image = [UIImage imageNamed:@"youjiantou"];
         [cell.contentView addSubview:img];
@@ -326,7 +333,8 @@
             }
             
             UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(17.5, 12, imgW, imgW)];
-            imgV.backgroundColor = MAINCOLOR;
+            imgV.backgroundColor = [UIColor clearColor];
+            imgV.image = [UIImage imageNamed:@"wodezhanghu"];
             [cell.contentView addSubview:imgV];
             
             
@@ -395,12 +403,14 @@
             qingdouLab.textAlignment = NSTextAlignmentCenter;
             [qingdouBtn addSubview:qingdouLab];
             
-            UIImageView * lineImg1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 0.5, btnH)];
-            lineImg1.backgroundColor = MAINCOLOR;
+            UIImageView * lineImg1 = [[UIImageView alloc] initWithFrame:CGRectMake(0.5, btnH/6, 0.5, btnH/3*2)];
+            lineImg1.backgroundColor = [UIColor clearColor];
+            lineImg1.image = [UIImage imageNamed:@"wodefengexian"];
             [qingdouBtn addSubview:lineImg1];
             
-            UIImageView * lineImg2 = [[UIImageView alloc] initWithFrame:CGRectMake(btnW - 0.5, 0, 0.5, btnH)];
-            lineImg2.backgroundColor = MAINCOLOR;
+            UIImageView * lineImg2 = [[UIImageView alloc] initWithFrame:CGRectMake(btnW - 0.5, btnH/6, 0.5, btnH/3*2)];
+            lineImg2.backgroundColor = [UIColor clearColor];
+            lineImg2.image = [UIImage imageNamed:@"wodefengexian"];
             [qingdouBtn addSubview:lineImg2];
             
             
@@ -454,7 +464,8 @@
         if (indexPath.row == 0) {
             
             UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(17.5, 12, imgW, imgW)];
-            imgV.backgroundColor = MAINCOLOR;
+            imgV.backgroundColor = [UIColor clearColor];
+            imgV.image = [UIImage imageNamed:@"woderenzheng"];
             [cell.contentView addSubview:imgV];
             
             
@@ -467,22 +478,25 @@
             [cell.contentView addSubview:titLab];
             
             
-            UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 30, 7, 20, 30)];
+            UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 20, CGRectGetMidY(imgV.frame) - 7, 8, 14)];
             //        img.backgroundColor = MAINCOLOR;
             img.image = [UIImage imageNamed:@"youjiantou"];
             [cell.contentView addSubview:img];
             
             
-            self.emailRZImg = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMinX(img.frame) - 25, 9.5, 25, 25)];
-            self.emailRZImg.backgroundColor = MAINCOLOR;
+            self.emailRZImg = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMinX(img.frame) - 30, CGRectGetMinY(imgV.frame), 25, 25)];
+            self.emailRZImg.backgroundColor = [UIColor clearColor];
+            self.emailRZImg.image = [UIImage imageNamed:@"youxiangweirenzheng"];
             [cell.contentView addSubview:self.emailRZImg];
             
-            self.nameRZImg = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.emailRZImg.frame) - 30, 9.5, 25, 25)];
-            self.nameRZImg.backgroundColor = MAINCOLOR;
+            self.nameRZImg = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.emailRZImg.frame) - 30, CGRectGetMinY(self.emailRZImg.frame), 25, 25)];
+            self.nameRZImg.backgroundColor = [UIColor clearColor];
+            self.nameRZImg.image = [UIImage imageNamed:@"shimingweirenzheng"];
             [cell.contentView addSubview:self.nameRZImg];
             
-            self.phoneRZImg = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.nameRZImg.frame) - 30, 9.5, 25, 25)];
-            self.phoneRZImg.backgroundColor = MAINCOLOR;
+            self.phoneRZImg = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.nameRZImg.frame) - 30, CGRectGetMinY(self.nameRZImg.frame), 25, 25)];
+            self.phoneRZImg.backgroundColor = [UIColor clearColor];
+            self.phoneRZImg.image = [UIImage imageNamed:@"shoujiweirenzheng"];
             [cell.contentView addSubview:self.phoneRZImg];
             
         }
@@ -491,7 +505,8 @@
         if (indexPath.row == 1) {
             
             UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(17.5, 12, imgW, imgW)];
-            imgV.backgroundColor = MAINCOLOR;
+            imgV.backgroundColor = [UIColor clearColor];
+            imgV.image = [UIImage imageNamed:@"wodexihuan"];
             [cell.contentView addSubview:imgV];
             
             
@@ -503,7 +518,7 @@
             titLab.font = [UIFont systemFontOfSize:15];
             [cell.contentView addSubview:titLab];
             
-            UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 30, 7, 20, 30)];
+            UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 20, CGRectGetMidY(imgV.frame) - 7, 8, 14)];
             //        img.backgroundColor = MAINCOLOR;
             img.image = [UIImage imageNamed:@"youjiantou"];
             [cell.contentView addSubview:img];
@@ -534,11 +549,12 @@
         if (indexPath.row == 0) {
             
             UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(17.5, 12, imgW, imgW)];
-            imgV.backgroundColor = MAINCOLOR;
+            imgV.backgroundColor = [UIColor clearColor];
+            imgV.image = [UIImage imageNamed:@"yaoqinghaoyou"];
             [cell.contentView addSubview:imgV];
             
             
-            UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imgV.frame) + 5, 14.5, 100, 20)];
+            UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imgV.frame) + 5, CGRectGetMidY(imgV.frame) - 10, 100, 20)];
             titLab.text = @"邀请好友";
             titLab.textColor = ZITIBLACKCOLOR;
             titLab.textAlignment = NSTextAlignmentLeft;
@@ -546,19 +562,19 @@
             titLab.font = [UIFont systemFontOfSize:15];
             [cell.contentView addSubview:titLab];
             
-            UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 30, 7, 20, 30)];
+            UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 20, CGRectGetMidY(imgV.frame) - 7, 8, 14)];
             //        img.backgroundColor = MAINCOLOR;
             img.image = [UIImage imageNamed:@"youjiantou"];
             [cell.contentView addSubview:img];
             
-            UILabel *contentLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(img.frame) - 65, 12, 65, 20)];
+            UILabel *contentLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(img.frame) - 70, CGRectGetMidY(imgV.frame) - 10, 65, 20)];
             contentLab.text = @"邀请有奖啦!";
             contentLab.textColor = ZITIBLACKCOLOR;
             contentLab.font = [UIFont systemFontOfSize:10];
             contentLab.textAlignment = NSTextAlignmentRight;
             [cell.contentView addSubview:contentLab];
             
-            UILabel *dian = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(contentLab.frame) - 6, 39/2, 6, 6)];
+            UILabel *dian = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(contentLab.frame) - 6, CGRectGetMidY(imgV.frame) - 3, 6, 6)];
             dian.backgroundColor = [UIColor redColor];
             dian.layer.cornerRadius = 3;
             dian.layer.masksToBounds = YES;
@@ -572,7 +588,8 @@
         if (indexPath.row == 1) {
             
             UIImageView * imgV = [[UIImageView alloc] initWithFrame:CGRectMake(17.5, 12, imgW, imgW)];
-            imgV.backgroundColor = MAINCOLOR;
+            imgV.backgroundColor = [UIColor clearColor];
+            imgV.image = [UIImage imageNamed:@"tuijianliebiao"];
             [cell.contentView addSubview:imgV];
             
             UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imgV.frame) + 5, 14.5, 100, 20)];
@@ -583,7 +600,7 @@
             titLab.font = [UIFont systemFontOfSize:15];
             [cell.contentView addSubview:titLab];
             
-            UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 30, 7, 20, 30)];
+            UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH - 20, CGRectGetMidY(imgV.frame) - 7, 8, 14)];
             //        img.backgroundColor = MAINCOLOR;
             img.image = [UIImage imageNamed:@"youjiantou"];
             [cell.contentView addSubview:img];
@@ -596,7 +613,7 @@
     
     
     
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -647,20 +664,26 @@
 
 - (void)tableView:(UITableView *)tableView didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell * cell =  [tableView cellForRowAtIndexPath:indexPath];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    UITableViewCell * cell =  [tableView cellForRowAtIndexPath:indexPath];
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell * cell =  [tableView cellForRowAtIndexPath:indexPath];
-    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+//    UITableViewCell * cell =  [tableView cellForRowAtIndexPath:indexPath];
+//    cell.selectionStyle = UITableViewCellSelectionStyleGray;
     
-    
+    //个人资料
     if (indexPath.section == 0) {
         OtherInfoViewController * myInfoVC = [OtherInfoViewController new];
 //        MyInfoViewController * myInfoVC = [MyInfoViewController new];
         [self.navigationController pushViewController:myInfoVC animated:YES];
+    }
+    
+    //我的相册
+    if (indexPath.section == 1) {
+        MyPhotoViewController * myPhoto = [MyPhotoViewController new];
+        [self.navigationController pushViewController:myPhoto animated:YES];
     }
     
     

@@ -251,7 +251,7 @@
         
         if ([[dataDic objectForKey:@"status"] intValue] == 0) {
             
-            //            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@", dataDic[@"Message"]]];
+            JDAlert(@"");
         }
         
         if ([[dataDic objectForKey:@"status"] intValue] == 1) {

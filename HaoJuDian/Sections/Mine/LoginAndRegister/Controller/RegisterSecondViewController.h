@@ -10,4 +10,6 @@
 
 @interface RegisterSecondViewController : UIViewController
 
+@property (nonatomic, copy) NSString * UserID;//用户ID
+
 @end
