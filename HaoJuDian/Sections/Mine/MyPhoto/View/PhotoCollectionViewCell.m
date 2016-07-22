@@ -22,7 +22,14 @@
 
 - (void)addAllViews
 {
-    self.backgroundColor = MAINCOLOR;
+    self.backgroundColor = ZITIWHITECOLOR;
+    
+    CGFloat space = 1.5;
+    
+    self.imgView = [[UIImageView alloc] initWithFrame:CGRectMake(space, space, self.bounds.size.width - space*2, self.bounds.size.height - space*2)];
+    self.imgView.backgroundColor = MAINCOLOR;
+    [self addSubview:self.imgView];
+    
 }
 
 
