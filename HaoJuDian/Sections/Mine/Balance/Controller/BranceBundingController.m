@@ -102,6 +102,7 @@
   
     WS(weakself);
     [[JDHttpManager shareManager]requestWithURL:bankUrlStr RequestType:RequestTypePost Parameters:userDict Success:^(id responseObject) {
+        
         if ([responseObject[@"Status"]isEqualToString:@"success"]) {
             
 //            NSDictionary *dataDict = responseObject[@"Data"];

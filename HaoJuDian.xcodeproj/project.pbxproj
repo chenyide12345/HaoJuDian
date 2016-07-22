@@ -78,6 +78,9 @@
 		05FD685D1D2CB67200D6C609 /* CYDSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FD685C1D2CB67200D6C609 /* CYDSlider.m */; };
 		05FD68611D2CDFC600D6C609 /* 1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05FD68601D2CDFC600D6C609 /* 1@2x.png */; };
 		3192A4681A65D875A4FF8614 /* libPods-HaoJuDian.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3FB6C3A249C579A968B687 /* libPods-HaoJuDian.a */; };
+		3A54B8471D405AF800311F8D /* AddBankeNumberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A54B8461D405AF800311F8D /* AddBankeNumberCell.m */; };
+		3A54B84A1D407FDB00311F8D /* AddBankeMenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A54B8491D407FDB00311F8D /* AddBankeMenView.m */; };
+		3A54B84D1D40983200311F8D /* AddCaredTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A54B84C1D40983200311F8D /* AddCaredTypeView.m */; };
 		3A955F2F1D3DD14800BF2A5E /* JD_BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A955F2E1D3DD14800BF2A5E /* JD_BaseController.m */; };
 		3A955F351D3DED5900BF2A5E /* BranceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A955F341D3DED5900BF2A5E /* BranceController.m */; };
 		3A955F381D3DEF5C00BF2A5E /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A955F371D3DEF5C00BF2A5E /* UIImage+Extension.m */; };
@@ -250,6 +253,12 @@
 		05FD685C1D2CB67200D6C609 /* CYDSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDSlider.m; sourceTree = "<group>"; };
 		05FD68601D2CDFC600D6C609 /* 1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1@2x.png"; sourceTree = "<group>"; };
 		1A3FB6C3A249C579A968B687 /* libPods-HaoJuDian.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HaoJuDian.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A54B8451D405AF800311F8D /* AddBankeNumberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBankeNumberCell.h; sourceTree = "<group>"; };
+		3A54B8461D405AF800311F8D /* AddBankeNumberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBankeNumberCell.m; sourceTree = "<group>"; };
+		3A54B8481D407FDB00311F8D /* AddBankeMenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBankeMenView.h; sourceTree = "<group>"; };
+		3A54B8491D407FDB00311F8D /* AddBankeMenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBankeMenView.m; sourceTree = "<group>"; };
+		3A54B84B1D40983200311F8D /* AddCaredTypeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCaredTypeView.h; sourceTree = "<group>"; };
+		3A54B84C1D40983200311F8D /* AddCaredTypeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCaredTypeView.m; sourceTree = "<group>"; };
 		3A955F2D1D3DD14800BF2A5E /* JD_BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JD_BaseController.h; sourceTree = "<group>"; };
 		3A955F2E1D3DD14800BF2A5E /* JD_BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JD_BaseController.m; sourceTree = "<group>"; };
 		3A955F331D3DED5900BF2A5E /* BranceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BranceController.h; sourceTree = "<group>"; };
@@ -953,6 +962,12 @@
 				3A955F461D3E2A1800BF2A5E /* RechargeViewCell.m */,
 				3AA845931D3F260900AA9392 /* BranceCaredCell.h */,
 				3AA845941D3F260900AA9392 /* BranceCaredCell.m */,
+				3A54B8451D405AF800311F8D /* AddBankeNumberCell.h */,
+				3A54B8461D405AF800311F8D /* AddBankeNumberCell.m */,
+				3A54B8481D407FDB00311F8D /* AddBankeMenView.h */,
+				3A54B8491D407FDB00311F8D /* AddBankeMenView.m */,
+				3A54B84B1D40983200311F8D /* AddCaredTypeView.h */,
+				3A54B84C1D40983200311F8D /* AddCaredTypeView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1203,6 +1218,8 @@
 				05BF1AD61D2BEC9D0095E18A /* FlowerViewController.m in Sources */,
 				05FA74C61D3372B8006437AC /* RegisterSecondViewController.m in Sources */,
 				05BF1AD81D2BEC9D0095E18A /* MessageViewController.m in Sources */,
+				3A54B84A1D407FDB00311F8D /* AddBankeMenView.m in Sources */,
+				3A54B8471D405AF800311F8D /* AddBankeNumberCell.m in Sources */,
 				05FA754A1D338C8B006437AC /* DefaultShouldSwipeDeterminator.m in Sources */,
 				3AA845981D3F26E700AA9392 /* JDBaseModel.m in Sources */,
 				05FA75731D33A393006437AC /* MASConstraint.m in Sources */,
@@ -1217,6 +1234,7 @@
 				05F77DCF1D2F8EB10023ECE4 /* ShowViewController.m in Sources */,
 				05F77DC81D2F7D470023ECE4 /* PayPasswordViewController.m in Sources */,
 				3AA845921D3F234600AA9392 /* BranceBundingController.m in Sources */,
+				3A54B84D1D40983200311F8D /* AddCaredTypeView.m in Sources */,
 				05F77DC21D2F55E60023ECE4 /* SetViewController.m in Sources */,
 				3AA845951D3F260900AA9392 /* BranceCaredCell.m in Sources */,
 				05FD68111D2C986000D6C609 /* NearbyCell.m in Sources */,
