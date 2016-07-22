@@ -218,26 +218,32 @@
 //图像选取器的委托方法，选完图片后回调该方法
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
     
-    //当图片不为空时显示图片并保存图片
-    if (image != nil) {
-        //图片显示在界面上
-        
-        
-        //以下是保存文件到沙盒路径下
-        //把图片转成NSData类型的数据来保存文件
-        NSData *data;
-        //判断图片是不是png格式的文件
-        if (UIImagePNGRepresentation(image)) {
-            //返回为png图像。
-            data = UIImagePNGRepresentation(image);
-        }else {
-            //返回为JPEG图像。
-            data = UIImageJPEGRepresentation(image, 1.0);
-        }
-        //保存
-        [[NSFileManager defaultManager] createFileAtPath:self.imagePath contents:data attributes:nil];
-        
-    }
+//    //当图片不为空时显示图片并保存图片
+//    if (image != nil) {
+//        //图片显示在界面上
+//        
+//        
+//        //以下是保存文件到沙盒路径下
+//        //把图片转成NSData类型的数据来保存文件
+//        NSData *data;
+//        //判断图片是不是png格式的文件
+//        if (UIImagePNGRepresentation(image)) {
+//            //返回为png图像。
+//            data = UIImagePNGRepresentation(image);
+//        }else {
+//            //返回为JPEG图像。
+//            data = UIImageJPEGRepresentation(image, 1.0);
+//        }
+//        //保存
+//        [[NSFileManager defaultManager] createFileAtPath:self.imagePath contents:data attributes:nil];
+//        
+//    }
+    
+    
+//    //从相册中选取的照片
+//    self.editImage = [editingInfo objectForKey:UIImagePickerControllerOriginalImage];
+    
+    
     //关闭相册界面
     [picker dismissViewControllerAnimated:YES completion:^{
         
